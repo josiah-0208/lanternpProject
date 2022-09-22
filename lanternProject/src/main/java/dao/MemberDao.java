@@ -74,4 +74,8 @@ public class MemberDao {
 				hm.put("endRow", endRow);
 				return (List<Member>)session.selectList("memberns.list",hm);
 			}
+
+			public Member select(int mno) {
+				return (Member) session.selectOne("memberns.selectReserve", mno);
+			}
 }

@@ -71,7 +71,7 @@ input {
 	<div class="container-table">
 		<table>
 			<tr>
-				<th>회원번호</th><th>Id</th><th>비밀번호</th><th>이름</th><th>별명</th><th>연락처</th><th>성별</th><th>연령대</th><th>지역</th><th>회원가입일</th><th>프로필</th><th>탈퇴여부</th><th>수정</th><th>탈퇴</th>
+				<th>회원번호</th><th>Id</th><th>비밀번호</th><th>이름</th><th>연락처</th><th>이메일</th><th>회원가입일</th><th>프로필</th><th>탈퇴여부</th><th>수정</th><th>탈퇴</th>
 			</tr>
 			<c:if test="${empty list} ">
 				<tr><th colspan="11">회원 데이터가 존재하지 않습니다</th></tr>
@@ -88,7 +88,7 @@ input {
 						<td>${member.reg_date}</td>
 						<td>${member.profile}</td>
 						<td>${member.del}</td>
-						<td><a href="../member/updateForm.na?mno=${member.mno}" class="btn btn_small">수정</a></td>
+						<td><a href="../member/updateForm.do?mno=${member.mno}" class="btn btn_small">수정</a></td>
 						<td><a onclick="del(${member.mno})" class="btn btn_small">탈퇴</a></td>
 					</tr>
 				</c:forEach>

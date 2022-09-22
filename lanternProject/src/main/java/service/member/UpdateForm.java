@@ -22,8 +22,12 @@ public class UpdateForm implements CommandProcess {
 
 		Member member = new Member();
 		MemberDao md = MemberDao.getInstance();
-
-		member = md.select(id);
+		if (id.equals("master")) {
+			int mno = Integer.parseInt(request.getParameter("mno"));
+			member = md.select(mno);
+		} else {
+			member = md.select(id);
+		}
 
 		request.setAttribute("member", member);
 		/* request.setAttribute("prevUrl", prevUrl); */
