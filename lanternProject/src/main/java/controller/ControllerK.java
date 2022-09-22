@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import service.CommandProcess;
 
 // .do로 끝나는걸 처리
-@WebServlet(urlPatterns = "*.do", initParams = {@WebInitParam(name = "config", value = "/WEB-INF/command_do.properties") })
+@WebServlet(urlPatterns = "*.do", initParams = {@WebInitParam(name = "config", value = "/WEB-INF/command_khs.properties") })
 public class ControllerK extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Map<String, Object> commandMap = new HashMap<>();

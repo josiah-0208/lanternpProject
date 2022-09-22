@@ -1,0 +1,24 @@
+@charset "UTF-8";
+#member_icon{
+	margin: 10px;
+}
+
+.main{
+	font-size: 0;
+	width:70%;
+}
+
+.mng{
+	display:inline-block;
+	width:33.33333333%;
+	text-align: center;
+}
+
+.txt{
+	font-size: 16px;
+}
+
+a{
+	display: inline-grid;
+}
+
