@@ -32,7 +32,7 @@ public class LoginResult implements CommandProcess {
 				int member_no = member.getMember_no();
 				HttpSession session = request.getSession();
 				session.setAttribute("id", id);
-				session.setAttribute("mno", member_no);
+				session.setAttribute("member_no", member_no);
 				result = 1;
 			}else result=0;
 		}

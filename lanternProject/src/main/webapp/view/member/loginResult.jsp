@@ -10,7 +10,7 @@
 <body>
 	<c:if test="${result>0 }">
 		<script>
-			location.href="updateForm.do";
+			location.href="../board/boardList.en";
 		</script>
 	</c:if>
 	
