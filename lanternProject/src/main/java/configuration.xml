@@ -4,6 +4,8 @@
 	<properties resource="dbconnect.properties" />
 	<typeAliases>
 		<typeAlias alias="member" type="model.Member" />
+		<typeAlias type="model.Board" alias="board"/>
+		<typeAlias type="model.BoardReply" alias="reply"/>
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
@@ -18,5 +20,7 @@
 	</environments>
 	<mappers>
 		<mapper resource="member.xml" />
+		<mapper resource="board.xml"/>
+		<mapper resource="reply.xml"/>
 	</mappers>
 </configuration>

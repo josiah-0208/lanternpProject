@@ -25,7 +25,7 @@ public class MasterBoard implements CommandProcess {
 		int total = bd.getTotal();
 		int startRow = (currentPage-1)*ROW_PER_PAGE+1;
 		int endRow = startRow + ROW_PER_PAGE-1;
-		List<Board> list = bd.masterList(startRow, endRow);
+		List<Board> list = bd.list(startRow, endRow);
 		
 		int number = total - startRow + 1;
 		int totalPage = (int)Math.ceil((double)total/ROW_PER_PAGE);

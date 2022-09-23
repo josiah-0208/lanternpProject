@@ -20,7 +20,7 @@ public class MyBoard implements CommandProcess {
 		// session mno
 					HttpSession session = request.getSession();
 				
-					int mno = (int) session.getAttribute("mno");
+					int member_no = (int) session.getAttribute("member_no");
 
 					/*
 					 * /////// 마이페이지 공통 시작 /////// // 로그인 한 회원 정보 가져오기 MemberDao md =
@@ -38,7 +38,7 @@ public class MyBoard implements CommandProcess {
 						pageNum = "1";
 					int currentPage = Integer.parseInt(pageNum); // 현재 페이지
 
-					int total = bd.getTotalMy(mno); // 총 게시글 수
+					int total = bd.getTotalMy(member_no); // 총 게시글 수
 					int totalPage = (int) Math.ceil((double) total / ROW_PER_PAGE); // 총 페이지 수
 
 					int startRow = (currentPage - 1) * ROW_PER_PAGE + 1; // 게시글의 시작 번호(변수 num의 제일 마지막)
@@ -50,7 +50,7 @@ public class MyBoard implements CommandProcess {
 					if (endPage > totalPage)
 						endPage = totalPage; // 마지막 페이지가 총 페이지 수 보다 클 경우
 
-					List<Board> list = bd.myList(mno, startRow, endRow);
+					List<Board> list = bd.myList(member_no, startRow, endRow);
 
 					/* request.setAttribute("member", member); */
 					request.setAttribute("list", list);

@@ -21,9 +21,9 @@
         
         <script src="../../js2/jsf.js"></script>
 		<script type="text/javascript">
-		function del(mno) {
+		function del(member_no) {
 			var con = confirm("탈퇴 하시겠습니까?");
-			if(con) location.href="delete.do?mno="+mno;
+			if(con) location.href="delete.do?member_no="+member_no;
 			else alert("탈퇴가 취소 되었습니다.");
 		}
 		</script>
@@ -57,7 +57,7 @@
 						<input class="login animated fadeInUp animate6" type="tel" name="phone" value="${member.phone }" placeholder="${member.phone }">
                     </fieldset>
                     <input type="submit" id="update-form-submit" class="update_form button animated fadeInUp animate7" value="회원정보 수정">
-               <br> <a class="animated fadeInUp animate7"id="delete" onclick="del(${member.mno})" style="text-decoration: underline;">회원탈퇴</a>
+               <br> <a class="animated fadeInUp animate7"id="delete" onclick="del(${member.member_no})" style="text-decoration: underline;">회원탈퇴</a>
                 </form>
             </div>
         </div>

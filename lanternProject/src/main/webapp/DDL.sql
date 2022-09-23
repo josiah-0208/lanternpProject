@@ -2,7 +2,7 @@
 drop table member cascade constraints;
 CREATE TABLE member
 (
-	mno    NUMBER CONSTRAINT member_mno_PK PRIMARY KEY NOT NULL,
+	member_no    NUMBER CONSTRAINT member_mno_PK PRIMARY KEY NOT NULL,
     id    VARCHAR2(30) NOT NULL,
     password    VARCHAR2(20) NOT NULL,
     name    VARCHAR2(20) NOT NULL,
@@ -30,16 +30,31 @@ CREATE TABLE reservation
     mno    NUMBER constraint reservation_mno_fk references member NOT NULL,
     fno    NUMBER constraint reservation_dno_fk references display NOT NULL
 );
---게시판 테이블
-CREATE TABLE board
-(
-    bno    NUMBER CONSTRAINT board_bno_PK PRIMARY KEY NOT NULL,   
-    mno    NUMBER constraint board_mno_fk references member NOT NULL,
-    title    VARCHAR2(100) NOT NULL,
-    content    VARCHAR2(4000) NOT NULL,
-    likes    NUMBER default 0,
-    read_cnt    NUMBER default 0 NOT NULL,
-    reg_date    DATE NOT NULL,
-    del    CHAR(1) default 'n' NOT NULL,
-     thumbnail VARCHAR2(100)
+-- 축제 후기 게시판
+drop table review_board;
+CREATE TABLE review_board (
+	review_no NUMBER(5) PRIMARY KEY NOT NULL,
+	member_no NUMBER(15) constraint review_board_member_no_fk references member NOT NULL,
+	title VARCHAR2(20) NOT NULL,
+	content VARCHAR2(2999) NOT NULL,
+	filedata varchar(200),
+	likes NUMBER default 0,
+	read_cnt NUMBER default 0 NOT NULL,
+	reg_date DATE NOT NULL,
+	del CHAR(1) default 'n' NOT NULL
 );
+
+-- 후기 게시판 댓글
+drop table board_reply;
+CREATE TABLE board_reply (
+	reply_no NUMBER(5) PRIMARY KEY NOT NULL,
+	member_no NUMBER(15) constraint board_reply_member_no_fk references member  NOT NULL,
+	review_no NUMBER(5) references review_board NOT NULL,
+	rp_content VARCHAR2(200) NOT NULL,
+	rp_reg_date DATE NOT NULL,
+	rp_del CHAR(1) default 'n' NOT NULL
+);
+
+
+select * from REVIEW_BOARD;
+select * from BOARD_REPLY;

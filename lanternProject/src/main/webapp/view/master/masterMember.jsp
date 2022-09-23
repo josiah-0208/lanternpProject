@@ -26,10 +26,10 @@ input {
 
 </style>
 <script type="text/javascript">
-	function del(delMno) {
+	function del(delmember_no) {
 		var con = confirm("탈퇴처리 하시겠습니까?");
 		if(con) {
-			location.href="../member/delete.do?mno="+delMno;
+			location.href="../member/delete.do?member_no="+delmember_no;
 		}
 	}
 	
@@ -79,7 +79,7 @@ input {
 			<c:if test="${not empty list }">
 				<c:forEach var="member" items="${list }">
 					<tr>
-						<td>${member.mno}</td>
+						<td>${member.member_no}</td>
 						<td>${member.id}</td>
 						<td>${member.password}</td>
 						<td>${member.name}</td>
@@ -88,8 +88,8 @@ input {
 						<td>${member.reg_date}</td>
 						<td>${member.profile}</td>
 						<td>${member.del}</td>
-						<td><a href="../member/updateForm.do?mno=${member.mno}" class="btn btn_small">수정</a></td>
-						<td><a onclick="del(${member.mno})" class="btn btn_small">탈퇴</a></td>
+						<td><a href="../member/updateForm.do?member_no=${member.member_no}" class="btn btn_small">수정</a></td>
+						<td><a onclick="del(${member.member_no})" class="btn btn_small">탈퇴</a></td>
 					</tr>
 				</c:forEach>
 			</c:if>

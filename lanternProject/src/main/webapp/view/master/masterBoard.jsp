@@ -24,10 +24,10 @@ input {
 </style>
 
 <script type="text/javascript">
-	function del(delBno) {
+	function del(delreview_no) {
 		var con = confirm("해당 후기를 삭제 하시겠습니까?");
 		if(con) {
-			location.href="../board/boardDelete.do?bno="+delBno;
+			location.href="../board/boardDelete.en?review_no="+delreview_no;
 		}
 	}
 	
@@ -68,7 +68,7 @@ input {
 	<div class="container-table">
 		<table>
 			<tr>
-				<th>글번호</th><th>제목</th><th>게시일자</th><th>조회수</th><th>좋아요 수</th><th>작성자</th><th>삭제여부</th><th>수정</th><th>삭제</th>
+				<th>글번호</th><th>회원번호</th><th>제목</th><th>게시일자</th><th>조회수</th><th>좋아요 수</th><th>삭제여부</th><th>수정</th><th>삭제</th>
 			</tr>
 			<c:if test="${empty list} ">
 				<tr><th colspan="10">데이터가 존재하지 않습니다</th></tr>
@@ -77,33 +77,32 @@ input {
 			<c:if test="${not empty list }">
 				<c:forEach var="board" items="${list }">
 					<tr>
-						<td>${board.bno} </td>
-						<td>${board.mno} </td>
+						<td>${board.review_no} </td>
+						<td>${board.member_no} </td>
 						<td>${board.title} </td>
-						<td>${board.content} </td>
 						<td>${board.reg_date} </td>
 						<td>${board.read_cnt} </td>
 						<td>${board.likes} </td>
 						<td>${board.del} </td>
-						<td><a href="../board/boardUpdateForm.do?bno=${board.bno}" class="btn btn_stroke btn_small">수정</a></td>
-						<td><a onclick="del(${board.bno})" class="btn btn_small">삭제</a></td>
+						<td><a href="../board/boardUpdateForm.en?review_no=${board.review_no}" class="btn btn_stroke btn_small">수정</a></td>
+						<td><a onclick="del(${board.review_no})" class="btn btn_small">삭제</a></td>
 					</tr>
 				</c:forEach>
 			</c:if>		
 		</table>
 	</div>
 	<!-- paging -->
-	<div class="paging nums">
+	<div class="paging nums" align="center">
 		<div class="items">
 				<c:if test="${startPage > PAGE_PER_BLOCK}">
 					<button class="first" onclick="location.href='masterBoard.do?pageNum=${startPage-1}'">
-						<img alt="이전" src="../../images/left-arrow.png">
-						<img alt="이전" src="../../images/left-arrow.png">
+						<img alt="이전" src="../../images/left-arrow.png" width="10px" height="10px">
+						<img alt="이전" src="../../images/left-arrow.png" width="10px" height="10px">
 					</button> 
 				</c:if>
 				<c:if test="${pageNum > 1}">
 					<button class="prev" onclick="location.href='masterBoard.do?pageNum=${currentPage - 1}'">
-						<img alt="이전" src="../../images/left-arrow.png">
+						<img alt="이전" src="../../images/left-arrow.png" width="10px" height="10px">
 					</button>
 				</c:if>
 			<c:forEach var="i" begin="${startPage}" end="${endPage}">
@@ -111,13 +110,13 @@ input {
 			</c:forEach>
 				<c:if test="${currentPage < totalPage}">
 					<button class="next" onclick="location.href='masterBoard.do?pageNum=${currentPage + 1}'">
-						<img alt="다음" src="../../images/right-arrow.png">
+						<img alt="다음" src="../../images/right-arrow.png" width="10px" height="10px">
 					</button>
 				</c:if>
 				<c:if test="${endPage < totalPage}">
 					<button class=last onclick="location.href='masterBoard.do?pageNum=${endPage + 1}'">
-						<img alt="다음" src="../../images/right-arrow.png">
-						<img alt="다음" src="../../images/right-arrow.png">
+						<img alt="다음" src="../../images/right-arrow.png" width="10px" height="10px">
+						<img alt="다음" src="../../images/right-arrow.png" width="10px" height="10px">
 					</button> 
 				</c:if>
 		</div> <!-- number -->

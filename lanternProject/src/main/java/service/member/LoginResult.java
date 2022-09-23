@@ -29,10 +29,10 @@ public class LoginResult implements CommandProcess {
 			result=-1;
 		else {
 			if(member.getPassword().equals(password)) {
-				int mno = member.getMno();
+				int member_no = member.getMember_no();
 				HttpSession session = request.getSession();
 				session.setAttribute("id", id);
-				session.setAttribute("mno", mno);
+				session.setAttribute("mno", member_no);
 				result = 1;
 			}else result=0;
 		}

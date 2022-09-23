@@ -3,7 +3,7 @@ package model;
 import java.sql.Date;
 
 public class Member {
-	private int mno;
+	private int member_no;
 	private String id;
 	private String password;
 	private String name;
@@ -13,11 +13,11 @@ public class Member {
 	private Date reg_date;
 	private String profile;
 	
-	public int getMno() {
-		return mno;
+	public int getMember_no() {
+		return member_no;
 	}
-	public void setMno(int mno) {
-		this.mno = mno;
+	public void setMember_no(int mno) {
+		this.member_no = mno;
 	}
 	public String getId() {
 		return id;

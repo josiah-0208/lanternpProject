@@ -44,7 +44,7 @@ article { background: pink; height: 400px; float: left; width: 80%; }
 				<c:forEach var="board" items="${list }">
 					<tr>
 						<td>${board.bno} </td>
-						<td>${board.mno} </td>
+						<td>${board.member_no} </td>
 						<td>${board.title} </td>
 						<td>${board.content} </td>
 						<td>${board.reg_date} </td>

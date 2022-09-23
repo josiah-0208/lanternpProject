@@ -45,8 +45,8 @@ public class MemberDao {
 				return session.update("memberns.update",member);
 			}
 
-			public int delete(int mno) {
-				return session.update("memberns.delete",mno);
+			public int delete(int member_no) {
+				return session.update("memberns.delete",member_no);
 			}
 			// FindIdResult
 			public Member findId(String name, String phone) {
@@ -75,7 +75,7 @@ public class MemberDao {
 				return (List<Member>)session.selectList("memberns.list",hm);
 			}
 
-			public Member select(int mno) {
-				return (Member) session.selectOne("memberns.selectReserve", mno);
+			public Member select(int member_no) {
+				return (Member) session.selectOne("memberns.selectReserve", member_no);
 			}
 }

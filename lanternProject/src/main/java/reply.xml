@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="replyns">
+
+	<!-- 댓글 list -->
+	<select id="list" parameterType="integer" resultType="reply">
+		select * from board_reply where review_no=#{review_no}
+	</select>
+	
+	<!-- 댓글 insert -->
+	<insert id="insert" parameterType="reply">
+		<!-- reply_no 올리기 -->
+		<selectKey keyProperty="reply_no" order="BEFORE"
+			resultType="integer">
+			select nvl(max(reply_no), 0) + 1 reply_no from board_reply
+		</selectKey>
+		insert into board_reply values( #{reply_no}, #{member_no}, 
+			#{review_no}, #{rp_content}, sysdate, 'n' )
+	</insert>
+
+	<!-- 댓글 delete -->
+	<delete id="delete">
+		update board_reply set rp_del='y' where reply_no=#{reply_no}
+	</delete>
+
+</mapper>

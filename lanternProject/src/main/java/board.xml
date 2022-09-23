@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardns">
+
+	<!-- 게시글 list -->
+	<select id="selectOne" resultType="board">
+		select * from review_board where review_no=#{review_no}
+	</select>
+	
+	<!-- 게시글 insert -->
+	<insert id="insert" parameterType="board">
+		<!-- review_no 올리기 -->
+		<selectKey keyProperty="review_no" order="BEFORE"
+			resultType="integer">
+			select nvl(max(review_no), 0) + 1 review_no from review_board
+		</selectKey>
+		insert into review_board values( #{review_no}, #{member_no}, 
+			#{title}, #{content}, '0', 0, 0, sysdate, 'n' )
+	</insert>
+	
+	<!-- 게시글 update -->
+	<update id="update" parameterType="board">
+		update review_board set title=#{title}, content=#{content}, fileData='0', 
+			del='n' where review_no=#{review_no}
+	</update>
+	
+	<!-- 게시글 delete -->
+	<update id="delete">
+		update review_board set del='y' where review_no=#{review_no}
+	</update>
+	
+	
+	<!-- 조회수 올리기 -->
+	<update id="read_cntUpdate" parameterType="integer">
+		update review_board set read_cnt = read_cnt + 1 where review_no=#{review_no}
+	</update>
+	
+	<!-- 페이징 -->
+	<!-- 게시글 목록 (게시글 수) -->
+	<select id="getTotal" resultType="integer">
+		select count(*) from review_board where del='n'
+	</select>
+	
+	<!-- 게시글 목록 (정렬) -->
+	<select id="list" parameterType="map" resultType="board">
+				select * from (select rowNum rn, a.* from 
+				(select * from review_board order by review_no desc) a)
+					where rn between #{startRow} and #{endRow}
+	</select>
+
+</mapper>

@@ -9,22 +9,22 @@
 	
 	<!-- id로 회원번호 조회 -->
 	<select id="selectMno" parameterType="string" resultType="integer">
-		select mno from member where id=#{id}
+		select member_no from member where id=#{id}
 	</select>
 	
 	
 	<!-- mno로 회원 정보 조회 -->
 	<select id="selectReserve" parameterType="integer" resultType="member">
-		select * from member where mno = #{mno}
+		select * from member where member_no = #{memeber_no}
 	</select>
 
 
 	<!-- 회원 가입 -->
 	<insert id="insert" parameterType="member">
-		<selectKey keyProperty="mno" order="BEFORE" resultType="integer">
-			select nvl(max(mno), 0) + 1 mno from member
+		<selectKey keyProperty="member_no" order="BEFORE" resultType="integer">
+			select nvl(max(member_no), 0) + 1 member_no from member
 		</selectKey>
-		insert into member values(#{mno},#{id},#{password},#{name},#{email},
+		insert into member values(#{member_no},#{id},#{password},#{name},#{email},
 			#{phone},'n',sysdate, 'user.png')
 	</insert>
 	
@@ -59,7 +59,7 @@
 			<otherwise> nick_nm like '%'||#{searchValue}||'%'
 			</otherwise>
 		</choose>
-			 order by mno desc
+			 order by member_no desc
 	</select>
 	
 	<!-- 회원정보 수정 -->
@@ -72,6 +72,6 @@
 	
 	<!-- 회원 탈퇴 -->
 	<update id="delete" parameterType="integer">
-		update member set del='y' where mno=#{mno}	
+		update member set del='y' where member_no=#{member_no}	
 	</update> 
 </mapper>

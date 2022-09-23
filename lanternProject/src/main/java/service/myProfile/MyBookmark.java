@@ -17,11 +17,11 @@ public class MyBookmark implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
-		if (session.getAttribute("mno") != null) {
-			int mno = (int) session.getAttribute("mno"); // session mno
+		if (session.getAttribute("member_no") != null) {
+			int member_no = (int) session.getAttribute("member_no"); // session member_no
 
 			MemberDao md = MemberDao.getInstance();
-			Member member = md.select(mno);
+			Member member = md.select(member_no);
 
 			BookmarkDao bmd = BookmarkDao.getInstance();
 
@@ -33,7 +33,7 @@ public class MyBookmark implements CommandProcess {
 				pageNum = "1";
 			int currentPage = Integer.parseInt(pageNum); // 현재 페이지
 
-			int total = bmd.getTotalMy(mno); // 총 게시글 수
+			int total = bmd.getTotalMy(member_no); // 총 게시글 수
 			int totalPage = (int) Math.ceil((double) total / ROW_PER_PAGE); // 총 페이지 수
 
 			int startRow = (currentPage - 1) * ROW_PER_PAGE + 1; // 게시글의 시작 번호(변수 num의 제일 마지막)
@@ -45,7 +45,7 @@ public class MyBookmark implements CommandProcess {
 			if (endPage > totalPage)
 				endPage = totalPage; // 마지막 페이지가 총 페이지 수 보다 클 경우
 
-			List<Bookmark> list = bmd.myList(mno, startRow, endRow);
+			List<Bookmark> list = bmd.myList(member_no, startRow, endRow);
 
 			request.setAttribute("member", member);
 			request.setAttribute("list", list);
