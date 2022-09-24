@@ -14,6 +14,32 @@ CREATE TABLE member
 );
 select * from member;
 insert into member values(0,'master','master','master','ksh98520@naver.com','010-8838-0247','n',sysdate,'no');
+--축제 테이블
+CREATE TABLE fest
+(
+	fno 	   NUMBER PRIMARY KEY,
+	fname      VARCHAR2(70) NOT NULL,
+	thumbnail  VARCHAR2(150) NOT NULL,
+	start_date DATE NOT NULL,
+	end_date   DATE NOT NULL,
+	hours      VARCHAR2(50),
+	intro      VARCHAR2(150),
+	host       VARCHAR2(100) NOT NULL,
+	loc        VARCHAR2(50),
+	addr       VARCHAR2(150),
+	spot       VARCHAR2(80),
+	home_pg    VARCHAR2(250),
+	tel        VARCHAR2(50),
+	fee        NUMBER(6) default 0,
+	fee_adult  NUMBER(6) default 0,
+    fee_teen   NUMBER(6) default 0,
+    fee_child  NUMBER(6) default 0,
+    f_image    VARCHAR2(200),
+    f_txt      VARCHAR2(2000),
+	del        CHAR(1) default 'n'
+);
+select * from fest;
+select end_date from fest;
 --북마크 테이블
 CREATE TABLE bookmark
 (
@@ -55,6 +81,6 @@ CREATE TABLE board_reply (
 	rp_del CHAR(1) default 'n' NOT NULL
 );
 
-
+select * from fest where del = 'n' and sysdate between start_date and end_date;
 select * from REVIEW_BOARD;
 select * from BOARD_REPLY;

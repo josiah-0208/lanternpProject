@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="festivalns">
+	<select id="list1" resultType="festival">
+		select * from (select rownum rn, e.* from (
+		select * from fest where del = 'n' and (sysdate between start_date and end_date) order by fno desc) e)
+		where rn between #{startRow} and #{endRow}
+	</select>
+	
+	<select id="list2" resultType="festival">
+		select * from (select rownum rn, e.* from (
+		select * from fest where del = 'n' and start_date > sysdate order by fno desc) e)
+		where rn between #{startRow} and #{endRow}
+	</select>
+	
+	<select id="selectLoc1" resultType="festival">
+		select * from (select rownum rn, e.* from (
+		select * from fest where loc = #{loc}
+		and del = 'n' and (sysdate between start_date and end_date) order by fno desc) e)
+		where rn between #{startRow} and #{endRow}
+	</select>
+	
+	<select id="selectLoc2" resultType="festival">
+		select * from (select rownum rn, e.* from (
+		select * from fest where loc = #{loc}
+		and del = 'n' and start_date > sysdate order by fno desc) e)
+		where rn between #{startRow} and #{endRow}
+	</select>
+	
+	<select id="getTotal1" resultType="integer">
+		select count(*) from fest where del = 'n' and sysdate between start_date and end_date
+	</select>
+	
+	<select id="getTotal2" resultType="integer">
+		select count(*) from fest where del = 'n' and start_date > sysdate
+	</select>
+	
+	<select id="getTotalLoc1" resultType="integer">
+		select count(*) from fest where loc = #{loc} and del = 'n' 
+		and sysdate between start_date and end_date order by fno desc
+	</select>
+	
+	<select id="getTotalLoc2" resultType="integer">
+		select count(*) from fest where loc = #{loc} and del = 'n' 
+		and start_date > sysdate order by fno desc
+	</select>
+	
+	<insert id="insert" parameterType="festival">
+		<selectKey keyProperty="fno" order="BEFORE" resultType="integer">
+			select nvl(max(fno), 0) + 1 fno from fest
+		</selectKey>
+		insert into fest values(#{fno}, #{fname}, #{thumbnail}, #{start_date},
+		#{end_date}, #{hours}, #{intro}, #{host}, #{loc}, #{addr}, #{spot},
+		#{home_pg}, #{tel}, #{fee}, #{fee_adult}, #{fee_teen}, #{fee_child},
+		#{f_image}, #{f_txt}, 'n'
+		)
+	</insert>
+	
+	<select id="select" parameterType="integer" resultType="festival">
+		select * from fest where fno = #{fno} and del='n'
+	</select>
+	
+	<update id="update" parameterType="festival">
+		update fest set fname=#{fname}, thumbnail=#{thumbnail} ,start_date=#{start_date},
+		end_date=#{end_date}, hours=#{hours}, intro=#{intro}, host=#{host}, 
+		loc=#{loc}, addr=#{addr}, spot=#{spot}, home_pg=#{home_pg}, tel=#{tel}, fee=#{fee},
+		fee_adult=#{fee_audult}, fee_teen=#{fee_teen}, fee_child=#{fee_child},
+		f_image=#{f_image}, f_txt=#{f_txt} 
+		where fno = #{fno}
+	</update>
+	
+	<update id="delete" parameterType="integer">
+		update fest set del = 'y'
+		where fno = #{fno}
+	</update>
+</mapper> 

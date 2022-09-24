@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+	body {
+		padding: 0px;
+		margin: 0px;
+	}
+	
+	.video_box {
+		width: 100%;
+		position: absolute;
+	}
+	
+	video {
+		width: 100%;
+		height: 100vh;
+		object-fit: cover;
+	}
+	
+	.title1 {
+		position: absolute;
+		top: 26%;
+		right: 10%;
+		color: white;
+		z-index: 100;
+		padding: 0px;
+		font-size: 18pt;
+		display: none;
+		
+	}
+	
+	.fade_box {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		display: none;
+	}
+	
+	.title2 {
+		position: absolute; 
+		top: 31%;
+		right: 7%;
+		color: white;
+		z-index: 100;
+		padding: 0px;
+		letter-spacing: 35px;
+		font-size: 58pt;
+	}
+	
+	.main {
+		position: absolute;
+		top: 45%;
+		right: 10%;
+		color: white;
+		z-index: 100;
+		font-size: 20pt;
+	}
+	
+	.login {
+		position: absolute;
+		top: 51%;
+		right: 10%;
+		color: white;
+		z-index: 100;
+		font-size: 20pt;
+	}

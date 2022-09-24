@@ -6,6 +6,7 @@
 		<typeAlias alias="member" type="model.Member" />
 		<typeAlias type="model.Board" alias="board"/>
 		<typeAlias type="model.BoardReply" alias="reply"/>
+		<typeAlias alias="festival" type="model.Festival"/>
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
@@ -22,5 +23,6 @@
 		<mapper resource="member.xml" />
 		<mapper resource="board.xml"/>
 		<mapper resource="reply.xml"/>
+		<mapper resource="festival.xml"/>
 	</mappers>
 </configuration>

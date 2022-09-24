@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+	.container {
+		display: flex;
+		justify-content: center;
+	}
+	.view_content {
+		flex-direction: column;
+	}
