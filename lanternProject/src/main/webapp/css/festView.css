@@ -8,6 +8,6 @@
 		flex-direction: column;
 	}
 	
-	.bookmark1 {
+	.active {
 		display: none;
 	}
