@@ -16,7 +16,9 @@ public class FindIdAction implements CommandProcess {
 	
 		MemberDao md = MemberDao.getInstance();
 		Member member = md.findId(name, phone);		
-		if(member.getId().equals("master"))member=null;
+		if(member!=null) {
+			if(member.getId().equals("master"))member=null;
+		}
 		request.setAttribute("member", member);
 		return "findIdResult";
 	}

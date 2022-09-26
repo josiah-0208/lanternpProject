@@ -16,7 +16,9 @@ public class FindPwAction implements CommandProcess {
 		
 		MemberDao md = MemberDao.getInstance();
 		Member member = md.findPassword(id, name);	
-		if(member.getId().equals("master"))member=null;//관리자면 안알랴줌
+		if(member!=null) {
+			if(member.getId().equals("master"))member=null;
+		}//관리자면 안알랴줌
 		request.setAttribute("member", member);
 		return "findPwResult";
 	}

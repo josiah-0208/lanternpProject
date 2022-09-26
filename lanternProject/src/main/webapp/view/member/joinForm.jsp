@@ -40,6 +40,9 @@
 					$('#err').html(data);
 				});
 			}
+			function forgotPopup(){
+				window.open("findForm.do","","width=700 height=700 left=700px top=100px scrollbars=no loaction=no toolbars=no status=no");
+			}
 		</script>
     </head>
     <body>
@@ -62,7 +65,7 @@
                         <input class="login animated fadeInUp animate6" type="tel" name="phone" required="required"placeholder="010-0000-0000" pattern="010-\d{3,4}-\d{4}" title="형식 010-1111-1111">
                     </fieldset>
                     <input type="submit" id="signup-form-submit" class="login_form button animated fadeInUp animate7" value="Sign up">
-                    <p><a id="lost-password-link" href="" class="animated fadeIn animate7">아이디나 비밀번호를 잊어버리셨나요?</a></p>
+                    <p><a id="lost-password-link" onclick="forgotPopup()" class="animated fadeIn animate7">아이디나 비밀번호를 잊어버리셨나요?</a></p>
                 </form>
             </div>
         </div>
