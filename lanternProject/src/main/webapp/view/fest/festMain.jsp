@@ -50,7 +50,7 @@
 			<c:if test="${empty loc}">
 				<c:forEach var="festival" items="${list }">
 					<c:if test="${today >= festival.start_date && festival.end_date >= today }">
-						<div class="item" onclick="location.href='festView.do?fno=${festival.fno}'">
+						<div class="item" onclick="location.href='festView.so?fno=${festival.fno}'">
 							<div class="item_thumb">
 								<img class="fest_img" src="/lanternProject/images/festival/${festival.thumbnail }">
 							</div>
@@ -69,7 +69,7 @@
 			<c:if test="${not empty loc }">
 				<c:forEach var="festival" items="${listLoc }">
 					<c:if test="${festival.start_date <= today && festival.end_date >= today }">
-						<div class="item" onclick="location.href='festView.do?fno=${festival.fno}'">
+						<div class="item" onclick="location.href='festView.so?fno=${festival.fno}'">
 							<img style="background: url(/lanternProject/images/festival/${festival.thumbnail}) no-repeat center; background-size: contain;">
 							<div class="item_fname">${festival.fname }
 							</div>
@@ -90,7 +90,7 @@
 			<c:if test="${empty loc}">
 				<c:forEach var="festival" items="${list }">
 					<c:if test="${today <= festival.start_date}">
-						<div class="item" onclick="location.href='festView.do?fno=${festival.fno}'">
+						<div class="item" onclick="location.href='festView.so?fno=${festival.fno}'">
 							<div class="item_thumb">
 								<img class="fest_img" src="/lanternProject/images/festival/${festival.thumbnail }">
 							</div>
@@ -109,7 +109,7 @@
 			<c:if test="${not empty loc }">
 				<c:forEach var="festival" items="${listLoc }">
 					<c:if test="${festival.start_date >= today}">
-						<div class="item" onclick="location.href='festView.do?fno=${festival.fno}'">
+						<div class="item" onclick="location.href='festView.so?fno=${festival.fno}'">
 							<img style="background: url(/lanternProject/images/festival/${festival.thumbnail}) no-repeat center; background-size: contain;">
 							<div class="item_fname">${festival.fname }
 							</div>

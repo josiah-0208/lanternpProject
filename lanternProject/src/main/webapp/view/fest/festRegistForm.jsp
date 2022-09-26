@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">@import url("/lanterProject/css/festRegistForm.css");</style>
+<style type="text/css">@import url("/lanternProject/css/festRegistForm.css");</style>
 </head>
 <body>
 <div class="layout">

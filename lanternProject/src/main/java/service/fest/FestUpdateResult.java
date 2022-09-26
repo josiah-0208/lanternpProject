@@ -89,6 +89,6 @@ public String requestPro(HttpServletRequest request, HttpServletResponse respons
 	FestivalDao fd = FestivalDao.getInstance();
 	fd.update(festival);
 	
-	return "festMain";
+	return "festRegistResult";
 }
 }

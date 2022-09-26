@@ -7,6 +7,7 @@
 		<typeAlias type="model.Board" alias="board"/>
 		<typeAlias type="model.BoardReply" alias="reply"/>
 		<typeAlias alias="festival" type="model.Festival"/>
+		<typeAlias alias="bookmark" type="model.Bookmark"/>
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
@@ -24,5 +25,6 @@
 		<mapper resource="board.xml"/>
 		<mapper resource="reply.xml"/>
 		<mapper resource="festival.xml"/>
+		<mapper resource="bookmark.xml"/>
 	</mappers>
 </configuration>

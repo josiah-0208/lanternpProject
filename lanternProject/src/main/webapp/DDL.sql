@@ -44,8 +44,8 @@ select end_date from fest;
 CREATE TABLE bookmark
 (
     bm_no    NUMBER CONSTRAINT bookmark_bm_no_PK PRIMARY KEY NOT NULL,
-    mno    NUMBER constraint bookmark_mno_fk references member NOT NULL,
-    fno    NUMBER constraint bookmark_dno_fk references display NOT NULL
+    member_no    NUMBER constraint bookmark_member_no_fk references member NOT NULL,
+    fno    NUMBER constraint bookmark_dno_fk references fest NOT NULL
 );
 --예매 테이블
 CREATE TABLE reservation

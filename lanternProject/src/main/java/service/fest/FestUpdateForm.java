@@ -18,6 +18,7 @@ public class FestUpdateForm implements CommandProcess{
 		Festival festival = fd.select(fno);
 		
 		request.setAttribute("festival", festival);
+		request.setAttribute("fno", fno);
 		
 		return "festUpdateForm";
 	}

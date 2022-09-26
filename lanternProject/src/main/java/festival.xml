@@ -64,7 +64,7 @@
 		update fest set fname=#{fname}, thumbnail=#{thumbnail} ,start_date=#{start_date},
 		end_date=#{end_date}, hours=#{hours}, intro=#{intro}, host=#{host}, 
 		loc=#{loc}, addr=#{addr}, spot=#{spot}, home_pg=#{home_pg}, tel=#{tel}, fee=#{fee},
-		fee_adult=#{fee_audult}, fee_teen=#{fee_teen}, fee_child=#{fee_child},
+		fee_adult=#{fee_adult}, fee_teen=#{fee_teen}, fee_child=#{fee_child},
 		f_image=#{f_image}, f_txt=#{f_txt} 
 		where fno = #{fno}
 	</update>

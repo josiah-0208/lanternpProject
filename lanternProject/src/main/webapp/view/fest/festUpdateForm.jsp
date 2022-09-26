@@ -21,7 +21,7 @@
 		<p>축제 수정</p>
 	</div>
 	<div class="contents">
-		<form action="festUpdateResult.so?dno=${festival.fno }" method="post" name="frm" enctype="multipart/form-data">
+		<form action="festUpdateResult.so?fno=${festival.fno }" method="post" name="frm" enctype="multipart/form-data">
 			<div class="line">
 				<div class="line-tag">
 					축제명

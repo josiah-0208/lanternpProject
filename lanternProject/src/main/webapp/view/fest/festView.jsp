@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">@import url("/lanterProject/css/festView.css");</style>
+<style type="text/css">@import url("/lPj/css/festView.css");</style>
 </head>
 <body>
 <div class="container">
@@ -15,13 +15,39 @@
 		${festival.fname }
 		</div>
 		<div class="view_top">
-			<div class="img"></div>
+			<div class="top_img">
+			</div>
+			<div class="top_content">
+				<div>${festival.intro }</div>
+				<div>기간: ${festival.start_date } ~ ${festival.end_date }</div>
+				<div>운영시간: ${festival.hours }</div>
+				<div>주최: ${festival.host }</div>
+				<div>장소: ${festival.spot }</div>
+				<div>입장료: ${festival.fee }원</div>
+				<div>어린이: ${festival.fee_child }원 중고등학생: ${festival.fee_teen }원 성인: ${festival.fee_adult }</div>	
+				<div>
+					<div class="bookmark1" onclick="bookmark()">북마크</div>
+					<div class="bookmark2" onclick="bookmark()">북마크</div>
+					<div class="reserve">예매</div>
+				</div>
+			</div>
 		</div>
 		<div class="view_middle">
-		
+			<div class="tel home_pg">
+			전화번호 : ${festival.tel }  홈페이지 : ${festival.home_pg }	
+			</div>
+			<div class="addr">
+			주소 : ${festival.addr } 
+			</div>
+			<div class="f_txt">
+			${festival.f_txt }
+			</div>
 		</div>
 		<div class="view_bottom">
-		
+			<div class="view_update" onclick="location.href='festUpdateForm.so?fno=${festival.fno}'">수정
+			</div>
+			<div class="view_delete" onclick="location.href='festDelete.so?fno=${festival.fno}'">삭제
+			</div>
 		</div>
 	</div>
 </div>

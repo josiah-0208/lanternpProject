@@ -91,6 +91,6 @@ public String requestPro(HttpServletRequest request, HttpServletResponse respons
 	fd.insert(festival);
 	
 	
-	return "festMain";
+	return "festRegistResult";
 }
 }
