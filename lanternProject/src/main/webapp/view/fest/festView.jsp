@@ -6,7 +6,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">@import url("/lPj/css/festView.css");</style>
+<style type="text/css">@import url("/lanternProject/css/festView.css");</style>
+<script type="text/javascript" src="/lanternProject/js/jquery.js"></script>
+<script type="text/javascript">
+	$(function () {
+		// 초기에 보내준 북마크 값을 확인해서 값이 동일하면 css 체크된 이미지 url,
+		// 다르면, 기준 안두고
+		
+	});
+	function bookmark() 
+	//펑션으로 북마크() 만들고, 누르면 업데이트 되게 
+</script>
 </head>
 <body>
 <div class="container">

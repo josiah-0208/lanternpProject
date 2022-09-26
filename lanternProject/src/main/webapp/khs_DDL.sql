@@ -44,17 +44,16 @@ select end_date from fest;
 CREATE TABLE bookmark
 (
     bm_no    NUMBER CONSTRAINT bookmark_bm_no_PK PRIMARY KEY NOT NULL,
-    member_no    NUMBER constraint bookmark_member_no_fk references member NOT NULL,
-    fno    NUMBER constraint bookmark_dno_fk references fest NOT NULL
+    mno    NUMBER constraint bookmark_mno_fk references member NOT NULL,
+    fno    NUMBER constraint bookmark_dno_fk references display NOT NULL
 );
 --예매 테이블
-drop table reservation;
 CREATE TABLE reservation
 (
     rs_no    NUMBER CONSTRAINT reservation_rs_no_PK PRIMARY KEY NOT NULL,
     cnt    NUMBER(4) default 0,
     refund char(1) default 'n' not null,
-    member_no    NUMBER constraint reservation_mno_fk references member NOT NULL,
+    mno    NUMBER constraint reservation_mno_fk references member NOT NULL,
     fno    NUMBER constraint reservation_dno_fk references display NOT NULL
 );
 -- 축제 후기 게시판
