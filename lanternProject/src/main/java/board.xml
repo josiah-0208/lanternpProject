@@ -45,7 +45,7 @@
 	<!-- 게시글 목록 (정렬) -->
 	<select id="list" parameterType="map" resultType="board">
 				select * from (select rowNum rn, a.* from 
-				(select * from review_board order by review_no desc) a)
+				(select * from review_board where del='n' order by review_no desc) a)
 					where rn between #{startRow} and #{endRow}
 	</select>
 
