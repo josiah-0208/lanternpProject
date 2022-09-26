@@ -73,4 +73,12 @@
 		update fest set del = 'y'
 		where fno = #{fno}
 	</update>
+	<select id="getTotal" resultType="integer">
+		select count(*) from fest where del='n' order by fno
+	</select>
+	<select id="list" resultType="festival">
+		select * from (select rownum rn, e.* from (
+		select * from fest where del = 'n' order by fno desc) e)
+		where rn between #{startRow} and #{endRow}
+	</select>
 </mapper> 

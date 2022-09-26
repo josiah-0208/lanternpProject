@@ -14,13 +14,13 @@
 	<h1 class="title">축제 정보 관리</h1>
 	<div class="main">
 		<div class="mng">
-			<a class="txt" href="festivalResisterForm.do">
+			<a class="txt" href="../fest/festRegistForm.so">
 				<img alt="" src="../../images/add.png" width="300" height="300">축제정보 등록
 			</a>
 		</div>
 		
 		<div class="mng">
-			<a class="txt" href="festivalList.do">
+			<a class="txt" href="festList.do">
 				<img id = "member_icon" alt="" src="../../images/document.png" width="300" height="300">축제정보 수정/삭제
 			</a>
 		</div>

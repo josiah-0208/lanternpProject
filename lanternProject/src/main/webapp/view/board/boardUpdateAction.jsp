@@ -13,6 +13,7 @@
 	<script type="text/javascript">
 		alert("수정이 완료되었습니다.");
 		location.href="boardList.en?pageNum=${pageNum }";
+		
 	</script>
 </c:if>
 <c:if test="${result == 0 }">

@@ -2,6 +2,7 @@ package service.board;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.BoardDao;
 import model.Board;
@@ -11,7 +12,9 @@ public class BoardUpdateAction implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		
+		// master가 수정하는건지 확인
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("id");
 		/* boardUpdateForm에서 넘어온 데이터를 받아온다 */
 		int review_no = Integer.parseInt(request.getParameter("review_no"));
 		int member_no = Integer.parseInt(request.getParameter("member_no"));
@@ -36,6 +39,7 @@ public class BoardUpdateAction implements CommandProcess {
 		
 		request.setAttribute("result", result);
 		request.setAttribute("pageNum", pageNum);
+		request.setAttribute("id", id);
 		
 		return "boardUpdateAction";
 	}

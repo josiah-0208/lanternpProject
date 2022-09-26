@@ -17,6 +17,6 @@ public class FestDelete implements CommandProcess{
 		fd.delete(fno);
 		
 		
-		return "festRegistResult";
+		return "../master/festDelete";
 }
 }

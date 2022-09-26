@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import model.Board;
 import model.Festival;
 
 public class FestivalDao {
@@ -93,6 +94,15 @@ public class FestivalDao {
 	}
 	public int delete(int fno) {
 		return session.update("festivalns.delete", fno);
+	}
+	public int getTotal() {
+		return (int)session.selectOne("festivalns.getTotal");
+	}
+	public List<Festival> list(int startRow, int endRow) {
+		Map<String, Integer> map = new HashMap<>();
+		map.put("startRow", startRow);
+		map.put("endRow", endRow);
+		return (List<Festival>)session.selectList("festivalns.list",map);
 	}
 	
 	

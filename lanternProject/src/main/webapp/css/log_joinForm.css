@@ -238,7 +238,7 @@ a{
     display: none;
 }
 .chk-msg {
-	position: absolute;
+	position: relative;
 	right:500px;
 	top:405px;
 	color: red;
@@ -248,7 +248,7 @@ a{
 
 .chk-btn {
 	display: inline-block;
-	position: absolute;
+	position: relative;
 	top:362px;
     right: 410px;
 	width: 60px;

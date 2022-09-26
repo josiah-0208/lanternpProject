@@ -24,10 +24,10 @@ input {
 </style>
 
 <script type="text/javascript">
-	function del(delreview_no) {
-		var con = confirm("해당 후기를 삭제 하시겠습니까?");
+	function del(delfno) {
+		var con = confirm("해당 축제정보를 삭제 하시겠습니까?");
 		if(con) {
-			location.href="../board/boardDelete.en?review_no="+delreview_no;
+			location.href="../fest/festDelete.so?fno="+delfno;
 		}
 	}
 	
@@ -68,24 +68,28 @@ input {
 	<div class="container-table">
 		<table>
 			<tr>
-				<th>글번호</th><th>회원번호</th><th>제목</th><th>게시일자</th><th>조회수</th><th>좋아요 수</th><th>삭제여부</th><th>수정</th><th>삭제</th>
+				<th>축제번호</th><th>축제이름</th><th>기간</th><th>개장시간</th><th>주최</th><th>지역</th><th>주소</th><th>장소</th><th>홈페이지</th><th>전화</th><th>삭제여부</th><th>수정</th><th>삭제</th>
 			</tr>
 			<c:if test="${empty list} ">
-				<tr><th colspan="10">데이터가 존재하지 않습니다</th></tr>
+				<tr><th colspan="13">데이터가 존재하지 않습니다</th></tr>
 			</c:if>
 				
 			<c:if test="${not empty list }">
-				<c:forEach var="board" items="${list }">
+				<c:forEach var="fest" items="${list }">
 					<tr>
-						<td>${board.review_no} </td>
-						<td>${board.member_no} </td>
-						<td>${board.title} </td>
-						<td>${board.reg_date} </td>
-						<td>${board.read_cnt} </td>
-						<td>${board.likes} </td>
-						<td>${board.del} </td>
-						<td><a href="../board/boardUpdateForm.en?review_no=${board.review_no}&member_no=${board.member_no}" class="btn btn_stroke btn_small">수정</a></td>
-						<td><a onclick="del(${board.review_no})" class="btn btn_small">삭제</a></td>
+						<td>${fest.fno} </td>
+						<td>${fest.fname} </td>
+						<td>${fest.start_date}~${fest.end_date } </td>
+						<td>${fest.hours} </td>
+						<td>${fest.host} </td>
+						<td>${fest.loc} </td>
+						<td>${fest.addr} </td>
+						<td>${fest.spot} </td>
+						<td><a href="${fest.home_pg}">${fest.home_pg}</a></td>
+						<td>${fest.tel} </td>
+						<td>${fest.del} </td>
+						<td><a href="../fest/festUpdateForm.so?fno=${fest.fno}" class="btn btn_stroke btn_small">수정</a></td>
+						<td><a onclick="del(${fest.fno})" class="btn btn_small">삭제</a></td>
 					</tr>
 				</c:forEach>
 			</c:if>		

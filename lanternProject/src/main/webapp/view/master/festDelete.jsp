@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<script>
-	alert("로그아웃 되었습니다");
-	location.href="/lanternProject/views/festHome.so";
+<script type="text/javascript">
+		var preUrl = document.referrer.split("/")[6];
+		alert("삭제 되었습니다");
+		history.go(-1);
 </script>
 </body>
 </html>

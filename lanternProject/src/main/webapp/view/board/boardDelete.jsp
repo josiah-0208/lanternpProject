@@ -10,8 +10,13 @@
 <body>
 <c:if test="${result > 0 }">
 	<script type="text/javascript">
+		var preUrl = document.referrer.split("/")[6];
 		alert("게시글이 삭제되었습니다");
-		location.href="boardList.en";
+		if(preUrl == "masterBoard.do") {
+			history.back();
+		}else  if (preUrl == "boardUpdateForm.en") {
+			location.href="boardList.en";
+		}
 	</script>
 </c:if>
 <c:if test="${result == 0 }">
