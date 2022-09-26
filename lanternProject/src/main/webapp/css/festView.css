@@ -7,3 +7,7 @@
 	.view_content {
 		flex-direction: column;
 	}
+	
+	.bookmark1 {
+		display: none;
+	}

@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">@import url("/lPj/css/festView.css");</style>
+<style type="text/css">@import url("/lanternProject/css/festView.css");</style>
 </head>
 <body>
 <div class="container">
