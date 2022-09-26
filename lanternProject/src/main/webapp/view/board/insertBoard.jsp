@@ -11,7 +11,7 @@
 <%
 	BoardDao bd = BoardDao.getInstance();
 	
-	for (int i = 1; i <= 200; i++) {
+	for (int i = 1; i <= 100; i++) {
 		Board board = new Board();
 		
 		board.setReview_no(i);
