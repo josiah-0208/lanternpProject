@@ -14,7 +14,7 @@
 		// 다르면, 기준 안두고
 		
 	});
-	function bookmark()
+	function bookmark() 
 	//펑션으로 북마크() 만들고, 누르면 업데이트 되게 
 </script>
 </head>

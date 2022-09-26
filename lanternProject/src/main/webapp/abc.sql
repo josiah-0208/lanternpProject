@@ -51,3 +51,5 @@ select * from (select rownum rn, e.* from (
 		where rn between 1 and 3;
 
 select * from fest where fno = 121 and del='n';
+select* from member;
+select*from REVIEW_BOARD;

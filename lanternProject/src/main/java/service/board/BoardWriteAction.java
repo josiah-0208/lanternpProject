@@ -16,13 +16,15 @@ public class BoardWriteAction implements CommandProcess {
 		int result = 0;
 		
 		/* boardWriteForm에서 넘어온 데이터를 받는다 */
-		int review_no = (Integer.parseInt(request.getParameter("review_no")));
+		/* int review_no = (Integer.parseInt(request.getParameter("review_no"))); */
+		int member_no = (Integer.parseInt(request.getParameter("member_no")));
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		String fileData = request.getParameter("fileData");
 		
 		/* board객체를 생성해 받은 데이터를 담는다 */
 		Board board = new Board();
+		board.setMember_no(member_no);
 		board.setTitle(title);
 		board.setContent(content);
 		board.setFileData(fileData);
