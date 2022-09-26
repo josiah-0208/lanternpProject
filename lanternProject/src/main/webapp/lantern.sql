@@ -20,9 +20,13 @@ CREATE TABLE board_reply (
 	rp_del CHAR(1) default 'n' NOT NULL
 );
 
+-- 후기 게시판 좋아요
+CREATE TABLE board_likes (
+	member_no NUMBER(15) references member NOT NULL,
+	review_no NUMBER(5) references review_board NOT NULL
+);
 
 select * from REVIEW_BOARD;
 select * from BOARD_REPLY;
+select * from BOARD_LIKES;
 
-
-	
