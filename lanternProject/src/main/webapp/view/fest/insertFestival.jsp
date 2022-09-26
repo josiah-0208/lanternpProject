@@ -18,7 +18,7 @@
 		festival.setFname("제15회 제주해비치아트페스티벌강원"+i);
 		festival.setThumbnail("제주해비치아트페스티벌.jpg");
 		festival.setStart_date(Date.valueOf("2022-09-19"));
-		festival.setEnd_date(Date.valueOf("2022-09-22"));
+		festival.setEnd_date(Date.valueOf("2022-10-01"));
 		festival.setHours("종일");
 		festival.setIntro("Over the Bridger, 다리를 넘어");
 		festival.setHost("한국문화예술회관연합회(코카카)");

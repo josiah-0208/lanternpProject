@@ -30,7 +30,7 @@
 	
 	<!-- 전체회원정보 조회 -->
 	<select id="list" parameterType="hashmap" resultType="member">
-		select * from (select rowNum rn, a.* from (select * from member order by mno desc) a) 
+		select * from (select rowNum rn, a.* from (select * from member order by member_no desc) a) 
 			where rn between #{startRow} and #{endRow}
 	</select>
 	
