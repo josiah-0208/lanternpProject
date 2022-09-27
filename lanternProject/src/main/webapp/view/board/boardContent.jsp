@@ -8,16 +8,28 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="../../css/common.css">
 <script type="text/javascript">
+	/* 게시글 삭제 */
 	function del() {
 		var bdt = confirm("정말 삭제하시겠습니까?");
 		if (bdt) location.href = "boardDelete.en?review_no=${board.review_no}";
 		else alert("삭제가 취소되었습니다");
 	};
 	
+	/* 댓글 삭제 */
 	function reply_del(reply_no) {
 		var rdt = confirm("정말 삭제하시겠습니까?");
 		if (rdt) location.href = "replyDelete.en?review_no=${board.review_no}&reply_no="+reply_no;
 		else alert("삭제가 취소되었습니다");
+	}
+	
+	/* 게시글 좋아요 */
+	function likes_up() {
+		$.post("boardLikes.en", "review_no=${board.review_no }", function(data) {
+			var likes = data.split(",")[0];
+			var imgSrc = data.split(",")[1];
+			$(".likes_cnt").text(likes);
+			$(".likes_cnt").siblings("img").attr("src", imgSrc);
+		});
 	}
 	
 </script>
@@ -26,11 +38,9 @@
 	<!-- 게시글 불러오기 -->
 	<table>
 		<caption>게시글</caption>
-		<tr><th width="50">제목</th>
-				<td>${board.title }</td>
-			<th width="50">
-				<button>❤</button>
-				</th><td>${board.likes }</td>
+		<tr>
+			<th width="50">제목</th>
+			<td>${board.title }</td>
 		</tr>
 		<tr>
 			<th>작성자</th>
@@ -51,6 +61,15 @@
 			</td>
 		</tr>
 	</table>
+	
+	<!-- 좋아요 -->
+	<div>
+		<div align="center">
+			<img onclick="likes_up()" alt="하트" src="${imgSrc }">
+			<span class="likes_cnt">${board.likes }</span>
+		</div>
+	</div>
+	<p>
 	
 	<div align="center">
 		<button onclick="location.href='boardUpdateForm.en?review_no=${board.review_no}&pageNum=${pageNum }'">수정</button>
@@ -103,10 +122,6 @@
 						</th>
 						<th>
 							${reply.rp_reg_date }
-						</th>
-						<%-- <c:if test="${reply.member_no == 1 }"></c:if> --%>
-						<th>
-							<a>수정</a>
 						</th>
 						<th>
 							<a onclick="reply_del(${reply.reply_no})">삭제</a>

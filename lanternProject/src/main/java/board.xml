@@ -48,5 +48,15 @@
 				(select * from review_board where del='n' order by review_no desc) a)
 					where rn between #{startRow} and #{endRow}
 	</select>
+	
+	<!-- 댓글 좋아요 + 1 -->
+	<update id="likesPlus" parameterType="integer">
+		update review_board set likes = likes + 1 where review_no = #{review_no}
+	</update>
+	
+	<!-- 댓글 좋아요 - 1 -->
+	<update id="likesMinus" parameterType="integer">
+		update review_board set likes = likes - 1 where review_no = #{review_no}
+	</update>
 
 </mapper>

@@ -77,5 +77,17 @@ public class BoardDao {
 		
 	}
 
+	/* 좋아요 + 1 */
+	public void likesMinus(int review_no) {
+		session.update("boardns.likesPlus", review_no);
+		
+	}
+
+	/* 좋아요 - 1 */
+	public void likesPlus(int review_no) {
+		session.update("boardns.likesMinus", review_no);
+		
+	}
+
 	
 }
