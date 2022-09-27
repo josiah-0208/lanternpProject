@@ -13,9 +13,9 @@
 		var preUrl = document.referrer.split("/")[6];
 		alert("탈퇴처리 되었습니다");
 			
-/* 		if(preUrl == "adminMember.na") {
+ 		if(preUrl == "masterMember.do") {
 			history.back();
-		}else  */if (preUrl == "updateForm.do") {
+		}else  if (preUrl == "updateForm.do") {
 			location.href="/index.html";
 		}
 	</script>

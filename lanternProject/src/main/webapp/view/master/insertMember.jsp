@@ -11,7 +11,7 @@
 <%
 	MemberDao md = MemberDao.getInstance();
 	
-	for (int i = 1; i <= 200; i++) {
+	for (int i = 1; i <= 100; i++) {
 		Member member = new Member();
 		
 		member.setId("abc"+i);

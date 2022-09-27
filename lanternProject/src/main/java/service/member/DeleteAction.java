@@ -16,7 +16,7 @@ public class DeleteAction implements CommandProcess {
 		int member_no = 0;
 		int result = 0;
 		MemberDao md = MemberDao.getInstance();
-		if (id.equals("admin")) {
+		if (id.equals("master")) {
 			member_no = Integer.parseInt(request.getParameter("member_no"));
 			result = md.delete(member_no);
 			

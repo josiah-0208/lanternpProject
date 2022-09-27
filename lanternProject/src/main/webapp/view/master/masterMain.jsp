@@ -14,7 +14,7 @@
 	<h1 class="title">관리자님 환영합니다</h1>
 	<div class="main">
 		<div class="mng">
-			<a class="txt" href="masterFestival.do">
+			<a class="txt" href="masterFestival.do">	
 				<img alt="" src="../../images/sky-lantern.png" width="300" height="300">축제정보 관리
 			</a>
 		</div>
