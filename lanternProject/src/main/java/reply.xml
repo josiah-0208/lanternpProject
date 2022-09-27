@@ -5,7 +5,7 @@
 
 	<!-- 댓글 list -->
 	<select id="list" parameterType="integer" resultType="reply">
-		select * from board_reply where review_no=#{review_no}
+		select * from board_reply where review_no=#{review_no} order by reply_no
 	</select>
 	
 	<!-- 댓글 insert -->

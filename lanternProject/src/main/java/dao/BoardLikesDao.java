@@ -8,6 +8,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import model.Bookmark;
+import service.board.BoardLikes;
+
 public class BoardLikesDao {
 	// SingleTon
 	private static BoardLikesDao instance = new BoardLikesDao();
@@ -31,11 +34,30 @@ public class BoardLikesDao {
 			}
 	}
 	
-	// BoardLikes에서 member_no가 좋아요했던 review_no이 있는지 확인
-	public int select(int review_no) {
-		HashMap<String, Integer> hm = new HashMap<>();
-		hm.put("reivew_no", review_no);
-		return (int) session.selectOne("bdlikesns.select", hm);
+	// 게시글 좋아요 조회
+	public BoardLikes select(int review_no, int member_no) {
+		HashMap<String, Integer> hm = new HashMap<String, Integer>();
+		hm.put("review_no", review_no);
+		hm.put("member_no", member_no);
+		return (BoardLikes)session.selectOne("bdlikesns.select", hm);
+	}
+
+	// 게시글 좋아요 insert
+	public void insert(int review_no, int member_no) {
+		HashMap<String, Integer> hm = new HashMap<String, Integer>();
+		hm.put("review_no", review_no);
+		hm.put("member_no", member_no);
+		session.selectOne("bdlikesns.insert", hm);
+		
+	}
+
+	// 게시글 좋아요 delete
+	public void delete(int review_no, int member_no) {
+		HashMap<String, Integer> hm = new HashMap<String, Integer>();
+		hm.put("review_no", review_no);
+		hm.put("member_no", member_no);
+		session.selectOne("bdlikesns.delete", hm);
+		
 	}
 	
 	

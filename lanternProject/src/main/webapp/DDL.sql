@@ -81,7 +81,14 @@ CREATE TABLE board_reply (
 	rp_reg_date DATE NOT NULL,
 	rp_del CHAR(1) default 'n' NOT NULL
 );
+-- 후기 게시판 좋아요
+CREATE TABLE board_likes (
+    likes_no    NUMBER PRIMARY KEY NOT NULL,
+    member_no    NUMBER references member NOT NULL,
+    review_no    NUMBER references review_board NOT NULL
+);
 
 select * from fest where del = 'n' and sysdate between start_date and end_date;
 select * from REVIEW_BOARD;
 select * from BOARD_REPLY;
+select * from bookmark;

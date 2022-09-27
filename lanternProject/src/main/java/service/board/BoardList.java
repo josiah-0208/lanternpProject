@@ -39,9 +39,11 @@ public class BoardList implements CommandProcess {
 		
 		// 데이터를 담을 객체 생성
 		List<Board> list = bd.list(startRow, endRow);
+		List<Board> list2 = bd.list2(startRow, endRow);
 
 		// 객체 안에 담을 데이터 준비
 		request.setAttribute("list", list);
+		request.setAttribute("list2", list2);
 		request.setAttribute("pageNum", pageNum);
 		request.setAttribute("currentPage", currentPage);
 		request.setAttribute("totalPage", totalPage);

@@ -9,9 +9,25 @@
 <style type="text/css">
 	
 </style>
+<c:set var="member_no" value='${sessionScope.member_no}'></c:set>
 <link rel="stylesheet" type="text/css" href="../../css/common.css">
 <script type="text/javascript">
-
+  //페이지 로드 시 board_list로 세팅, 페이지넘 색상 세팅
+	$(document).ready(function() {
+		$('#board_list1').css("display", "block");
+ 		$('#page'+${currentPage}).css({
+			"color" : "var(--point-color)",
+			"font-weight" : "700"
+		}); 
+	});
+	
+	// 게시판 정렬 설정 
+	function filterChange() {
+		var filter = document.getElementById("filter");
+		var value = filter.options[filter.selectedIndex].value;
+		$('.board_list').css("display", "none");
+		$('#board_list' + value).css("display", "block");
+	} 
 </script>
 </head>
 <body>
@@ -19,11 +35,17 @@
 			<!-- 후기 게시글 작성 버튼 -->
 			<div>
 				<div>
-					<a href="boardWriteForm.en">글작성</a>
+					<a href="boardWriteForm.en?member_no=${board.member_no }">글작성</a>
 					<ul></ul>
 				</div>
 				<hr>
 			</div>
+			<!-- 게시판 정렬 설정 -->
+			<select id="filter" onchange="filterChange()">
+				<option value="1">최신순</option>
+				<option value="2">조회순</option>
+			</select>
+			
 			<table>
 				<!-- 테이블 헤드 간격 설정 -->
 				<colgroup>
@@ -54,32 +76,56 @@
 					
 					<!-- 게시글 데이터가 있으면 -->
 					<c:if test="${not empty list }">
-						<c:forEach var="board" items="${list }">
-							<tr>		
-								<c:if test="${board.del == 'n' }">
-									<th>
-										${board.member_no }
-									</th>
-									<th><a href="boardContent.en?review_no=${board.review_no }&pageNum=${pageNum }">
-										${board.title }</a>
-							 		</th>
-									<th>
-										${board.reg_date }
-									</th>
-									<th>
-										${board.read_cnt }
-									</th>
-									<th>
-										${board.likes }
-									</th>
-								</c:if>
-							</tr>
-						</c:forEach>
-					</c:if>
+							<c:forEach var="board" items="${list }">
+								<tr>		
+									<c:if test="${board.del == 'n' }">
+										<th>
+											${board.member_no }
+										</th>
+										<th><a href="boardContent.en?review_no=${board.review_no }&pageNum=${pageNum }">
+											${board.title }</a>
+								 		</th>
+										<th>
+											${board.reg_date }
+										</th>
+										<th>
+											${board.read_cnt }
+										</th>
+										<th>
+											${board.likes }
+										</th>
+									</c:if>
+								</tr>
+							</c:forEach>
+						</c:if>
+						
+						<c:if test="${not empty list2 }">
+							<c:forEach var="board" items="${list2 }">
+								<tr>		
+									<c:if test="${board.del == 'n' }">
+										<th>
+											${board.member_no }
+										</th>
+										<th><a href="boardContent.en?review_no=${board.review_no }&pageNum=${pageNum }">
+											${board.title }</a>
+								 		</th>
+										<th>
+											${board.reg_date }
+										</th>
+										<th>
+											${board.read_cnt }
+										</th>
+										<th>
+											${board.likes }
+										</th>
+									</c:if>
+								</tr>
+							</c:forEach>
+						</c:if>
 				</tbody>
 				
 			</table>
-		</div>
+
 		<hr>
 
 

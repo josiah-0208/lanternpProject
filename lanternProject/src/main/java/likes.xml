@@ -3,8 +3,22 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="bdlikesns">
 
-	<select id="select" resultType="likes">
-		select * from board_likes where review_no=#{review_no}
+	<!-- 좋아요 조회 -->
+	<select id="select" parameterType="hashmap" resultType="likes">
+		select * from board_likes where member_no=#{member_no} and review_no=#{review_no}
 	</select>
+	
+	<!-- 좋아요 insert -->
+	<insert id="insert" parameterType="hashmap">
+		<selectKey keyProperty="likes_no" order="BEFORE" resultType="integer">
+				select nvl(max(likes_no), 0) + 1 likes_no from board_likes
+		</selectKey>
+		insert into board_likes values(#{likes_no}, #{member_no}, #{review_no})
+	</insert>
+	
+	<!-- 좋아요 delete -->
+	<delete id="delete" parameterType="hashmap">
+		delete board_likes where member_no = #{member_no} and review_no=#{review_no}
+	</delete>
 
 </mapper>

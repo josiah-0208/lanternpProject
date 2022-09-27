@@ -6,8 +6,39 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<c:set var="member_no" value='${sessionScope.member_no}'></c:set>
 <link rel="stylesheet" type="text/css" href="../../css/common.css">
 <script type="text/javascript">
+
+	/* 게시글 좋아요 */
+	$(function () {
+		if (${check} === 1) {
+			$('.likes_on').hide();
+		} else {
+			$('.likes_off').hide();
+		};
+			
+		$('.likes_on').on('click', function() {
+			$('.likes_off').show();
+			$('.likes_on').hide();
+		});
+			
+		$('.likes_off').on('click', function() {
+			$('.likes_on').show();
+			$('.likes_off').hide();
+		});
+	});
+	
+	function likes_updt() {
+		if (${empty member_no}) {
+			var con = confirm("로그인이 필요합니다.");
+			if (con) {
+				location.href="/lanternProject/view/member/loginForm.do";
+			}
+		} else {
+			$.post("boardLikes.en", "review_no=${board.review_no}");		
+		}
+	}
 	/* 게시글 삭제 */
 	function del() {
 		var bdt = confirm("정말 삭제하시겠습니까?");
@@ -22,15 +53,6 @@
 		else alert("삭제가 취소되었습니다");
 	}
 	
-	/* 게시글 좋아요 */
-	function likes_up() {
-		$.post("boardLikes.en", "review_no=${board.review_no }", function(data) {
-			var likes = data.split(",")[0];
-			var imgSrc = data.split(",")[1];
-			$(".likes_cnt").text(likes);
-			$(".likes_cnt").siblings("img").attr("src", imgSrc);
-		});
-	}
 	
 </script>
 </head>
@@ -43,7 +65,7 @@
 			<td>${board.title }</td>
 		</tr>
 		<tr>
-			<th>작성자</th>
+			<th>작성자 ${check }</th>
 			<td>${board.member_no }</td>
 		</tr>
 		<tr>
@@ -61,12 +83,11 @@
 			</td>
 		</tr>
 	</table>
-	
 	<!-- 좋아요 -->
 	<div>
-		<div align="center">
-			<img onclick="likes_up()" alt="하트" src="${imgSrc }">
-			<span class="likes_cnt">${board.likes }</span>
+		<div onclick="likes_updt()">
+			<img class="likes_on" alt="채운하트" src="/lanternProject/images/orangeHt.png" width="200" height="200">
+			<img class="likes_off" alt="빈 하트" src="/lanternProject/images/transHt.png" width="200" height="200">
 		</div>
 	</div>
 	<p>
@@ -81,7 +102,7 @@
 	<div>
 		<form action="replyWrite.en" method="post">
 			<input type="hidden" name="review_no" value="${board.review_no}">
-			<input type="hidden" name="member_no" value="${board.member_no}">
+			<input type="hidden" name="member_no" value="${sessionScope.member_no}">
 			<input type="hidden" name="reply_no" value="${reply.reply_no }">
 				<!-- 댓글 작성 -->
 				<div class="container">
@@ -128,6 +149,7 @@
 						</th>
 					</tr>
 				</table>
+				
 				</c:if>
 				</c:forEach>
 			</c:if>
