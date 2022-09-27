@@ -25,9 +25,7 @@ public class BookmarkCheck implements CommandProcess{
 			bmd.delete(fno, member_no);
 		}
 		
-		
-		
-		return null;
+		return "bookmarkCheck";
 	}
 
 }
