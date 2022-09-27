@@ -7,14 +7,76 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">@import url("/lanternProject/css/festView.css");</style>
+<c:set var="id" value='${sessionScope.id}'></c:set>
 <script type="text/javascript" src="/lanternProject/js/jquery.js"></script>
 <script type="text/javascript">
 	$(function () {
-		// 초기에 보내준 북마크 값을 확인해서 값이 동일하면 css 체크된 이미지 url,
-		// 다르면, 기준 안두고
+			if (${check} === 1) {
+				$('.bm_img2').hide();
+			} else {
+				$('.bm_img1').hide();
+			};
+			
+			$('.bm_img2').on('click', function() {
+				$('.bm_img1').show();
+				$('.bm_img2').hide();
+			});
+			
+			$('.bm_img1').on('click', function() {
+				$('.bm_img2').show();
+				$('.bm_img1').hide();
+			});
+		
+		/* if (${check} === 1) {
+			$('img').attr('src','/lanternProject/images/icons/bm1.png');
+		}; */
+		
+		/* $("img[src='/lanternProject/images/icons/bm1.png']").on('click', function() {
+			$('img').attr('src','/lanternProject/images/icons/bm2.png');
+		});
+			$("img[src='/lanternProject/images/icons/bm2.png']").on('click', function() {
+			$('img').attr('src','/lanternProject/images/icons/bm1.png');
+		}); */ 
+		
+		/* $.on("click","img[src='/lanternProject/images/icons/bm1.png']", function() {
+			$('img').attr('src','/lanternProject/images/icons/bm2.png');
+		}); */
+		
+		/* if ($('img').attr('src') === '/lanternProject/images/icons/bm1.png') {
+			$('img').toggle(function() {
+				$('img').attr('src','/lanternProject/images/icons/bm2.png');
+			}, function() {
+				$('img').attr('src','/lanternProject/images/icons/bm1.png');
+			})
+		} else {
+			$('img').toggle(function() {
+				$('img').attr('src','/lanternProject/images/icons/bm1.png');
+			}, function() {
+				$('img').attr('src','/lanternProject/images/icons/bm2.png');
+			})
+		} */
+		
+		/* $('bookmark1').click(function() {
+			if ($('img').attr('src') === '/lanternProject/images/icons/bm1.png') {
+				$('img').attr('src', '/lanternProject/images/icons/bm2.png')
+			} $('img').attr('src', '/lanternProject/images/icons/bm1.png')
+		}) */
+		
 		
 	});
-	function bookmark() 
+	
+	function bookmark() {
+		if (${empty id}) {
+			var con = confirm("로그인이 필요합니다.");
+			if (con) {
+				location.href="/lanternProject/view/member/loginForm.do";
+			}
+		} else {
+			$.post("bookmarkCheck.so", "fno=${festival.fno}");
+			
+		}
+		
+	}
 	//펑션으로 북마크() 만들고, 누르면 업데이트 되게 
 </script>
 </head>
@@ -36,8 +98,10 @@
 				<div>입장료: ${festival.fee }원</div>
 				<div>어린이: ${festival.fee_child }원 중고등학생: ${festival.fee_teen }원 성인: ${festival.fee_adult }</div>	
 				<div>
-					<div class="bookmark1" onclick="bookmark()">북마크</div>
-					<div class="bookmark2" onclick="bookmark()">북마크</div>
+					<div class="bookmark1" onclick="bookmark()">
+						<img class="bm_img2" src="/lanternProject/images/icons/bm2.png">
+						<img class="bm_img1" src="/lanternProject/images/icons/bm1.png">
+					</div>
 					<div class="reserve">예매</div>
 				</div>
 			</div>

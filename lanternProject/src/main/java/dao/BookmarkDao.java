@@ -32,21 +32,21 @@ public class BookmarkDao {
 	public Bookmark select(int fno, int member_no) {
 		HashMap<String, Integer> hm = new HashMap<String, Integer>();
 		hm.put("fno", fno);
-		hm.put("mno", member_no);
+		hm.put("member_no", member_no);
 		return (Bookmark)session.selectOne("bookmarkns.select", hm);
 	}
 
 	public void insert(int fno, int member_no) {
 		HashMap<String, Integer> hm = new HashMap<String, Integer>();
 		hm.put("fno", fno);
-		hm.put("mno", member_no);
+		hm.put("member_no", member_no);
 		session.selectOne("bookmarkns.insert", hm);
 	}
 
 	public void delete(int fno, int member_no) {
 		HashMap<String, Integer> hm = new HashMap<String, Integer>();
 		hm.put("fno", fno);
-		hm.put("mno", member_no);
+		hm.put("member_no", member_no);
 		session.selectOne("bookmarkns.delete", hm);
 	}
 }

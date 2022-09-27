@@ -53,3 +53,5 @@ select * from (select rownum rn, e.* from (
 select * from fest where fno = 121 and del='n';
 select* from member;
 select*from REVIEW_BOARD;
+
+select * from bookmark;
