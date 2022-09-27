@@ -23,5 +23,12 @@
 	<delete id="delete">
 		update board_reply set rp_del='y' where reply_no=#{reply_no}
 	</delete>
-
+	<select id="getTotalMy" parameterType="integer" resultType="integer">
+		select count(*) from board_reply where member_no=#{member_no}
+	</select>
+	<select id="myList" parameterType="integer" resultType="reply">
+		select * from (select rowNum rn, e.* from (
+		select * from board_reply where member_no = #{member_no} order by reply_no desc) e)
+		where rn between #{startRow} and #{endRow}
+	</select>
 </mapper>

@@ -77,5 +77,17 @@ public class BoardDao {
 		
 	}
 
+	public int getTotalMy(int member_no) {
+		return (int)session.selectOne("boardns.getTotalMy",member_no);
+	}
+
+	public List<Board> myList(int member_no, int startRow, int endRow) {
+		HashMap<String, Integer> hm = new HashMap<>();
+		hm.put("member_no", member_no);
+		hm.put("startRow", startRow);
+		hm.put("endRow", endRow);
+		return session.selectList("boardns.myList", hm);
+	}
+
 	
 }

@@ -2,6 +2,7 @@ package dao;
 
 import java.io.Reader;
 import java.util.HashMap;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -48,5 +49,17 @@ public class BookmarkDao {
 		hm.put("fno", fno);
 		hm.put("member_no", member_no);
 		session.selectOne("bookmarkns.delete", hm);
+	}
+
+	public int getTotalMy(int member_no) {
+		return (int)session.selectOne("bookmarkns.getTotalMy",member_no);
+	}
+
+	public List<Bookmark> myList(int member_no, int startRow, int endRow) {
+		HashMap<String, Integer> hm = new HashMap<>();
+		hm.put("member_no", member_no);
+		hm.put("startRow", startRow);
+		hm.put("endRow", endRow);
+		return session.selectList("bookmarkns.myList", hm);
 	}
 }

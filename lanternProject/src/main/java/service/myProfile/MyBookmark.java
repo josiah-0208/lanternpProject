@@ -1,5 +1,6 @@
 package service.myProfile;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,8 +8,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.BookmarkDao;
+import dao.FestivalDao;
 import dao.MemberDao;
 import model.Bookmark;
+import model.Festival;
 import model.Member;
 import service.CommandProcess;
 
@@ -44,11 +47,16 @@ public class MyBookmark implements CommandProcess {
 
 			if (endPage > totalPage)
 				endPage = totalPage; // 마지막 페이지가 총 페이지 수 보다 클 경우
-
+			FestivalDao fd = FestivalDao.getInstance();
 			List<Bookmark> list = bmd.myList(member_no, startRow, endRow);
-
+			List<Festival> flist = new ArrayList<>();
+			for(Bookmark bm : list) {
+				int fno=bm.getFno();
+				flist.add(fd.select(fno));
+			}
 			request.setAttribute("member", member);
 			request.setAttribute("list", list);
+			request.setAttribute("flist", flist);
 			request.setAttribute("pageNum", pageNum);
 			request.setAttribute("currentPage", currentPage);
 			request.setAttribute("totalPage", totalPage);

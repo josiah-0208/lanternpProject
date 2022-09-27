@@ -15,4 +15,12 @@
 	<delete id="delete" parameterType="hashmap">
 		delete bookmark where member_no = #{member_no} and fno = #{fno}
 	</delete>
+	<select id="getTotalMy" parameterType="integer" resultType="integer">
+		select count(*) from bookmark where member_no=#{member_no} 
+	</select>
+	<select id="myList" parameterType="integer" resultType="bookmark">
+		select * from (select rowNum rn, e.* from (
+		select * from bookmark where member_no = #{member_no} order by bm_no desc) e)
+		where rn between #{startRow} and #{endRow}
+	</select>
 </mapper> 

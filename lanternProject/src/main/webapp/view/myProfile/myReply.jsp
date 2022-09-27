@@ -15,6 +15,12 @@
 			"font-weight" : "600"
 		});
 	});
+	function del(delreview_no) {
+		var con = confirm("해당 후기를 삭제 하시겠습니까?");
+		if(con) {
+			location.href="../board/replyDelete.en?review_no=${board.review_no}&reply_no="+reply_no;
+		}
+	}
 </script>
 <style type="text/css">
 nav { background: gray; height: 400px; float: left; width: 20%; }
@@ -31,60 +37,58 @@ article { background: pink; height: 400px; float: left; width: 80%; }
 		
 		<nav><jsp:include page="profileMenu.jsp"></jsp:include></nav>
 		<!-- 내용 -->
-		<div class="content">
-			<c:if test="${list.size() == 0}">
-				<ul class="noItems">
-					<li><span class="txt_title">북마크한 축제가 없습니다.</span></li>
-				</ul>
+		<div class="container-table">
+		<table>
+			<tr>
+				<th>글번호</th><th>글제목</th><th>내가쓴 댓글</th>
+			</tr>
+			<c:if test="${empty list} ">
+				<tr><th colspan="4">데이터가 존재하지 않습니다</th></tr>
 			</c:if>
-			<c:if test="${list.size() != 0}">
-				<h3>북마크한 축제 ${total}</h3>
-				<ul>
-					<c:forEach var="fest" items="${flist}">
-						<li>
-							<a href="../fest/festView.so?fno=${fest.fno}">
-								<img alt="포스터" src="/lanternProject/images/festival/${fest.thumbnail}"> 
-							</a>
-							<br>
-							<a href="../fest/festView.so?fno=${fest.fno}">${fest.fname }</a>
-							<a href="../fest/festView.so?fno=${fest.fno}" class="cursor">
-									<span class="txt_title"></span>
-									<span class="txt"><span>장소</span>${fest.spot } </span>
-									<span class="txt"><span>기간</span>${fest.start_date }~${fest.end_date } </span>
-							</a>
-						</li>
+			<c:if test="${not empty list }">
+				<c:forEach var="board" items="${blist }">
+				<tr>	<td>${board.review_no} </td>
+						<td> ${board.title }</td><td>
+								<c:forEach var="reply" items="${list }">
+									<c:if test="${reply.review_no==board.review_no }">
+										<img alt="" src="../../images/level.gif" height="5" width="10">
+										<img alt="" src="../../images/re.gif">
+										<a href="../board/boardUpdateForm.en?review_no=${board.review_no}">${reply.rp_content }</a><br>
+									</c:if>
+								</c:forEach>
+						</td>
 					</c:forEach>
-				</ul>
-			</c:if>
-		</div>
+			</c:if>		
+		</table>
+	</div>
 
 		<!-- paging -->
 		<div class="paging">
 			<div class="items">
 				<div class="prev_btn">
 					<c:if test="${startPage > PAGE_PER_BLOCK}">
-						<button class="first" onclick="location.href='myBookmark.do?pageNum=${startPage - 1}'">
+						<button class="first" onclick="location.href='myBoard.do?pageNum=${startPage - 1}'">
 							<img alt="이전" src="../../images/left-arrow.png">
 							<img alt="이전" src="../../images/left-arrow.png">
 						</button> 
 					</c:if>
 					<c:if test="${pageNum > 1}">
-						<button class="prev" onclick="location.href='myBookmark.do?pageNum=${currentPage - 1}'">
+						<button class="prev" onclick="location.href='myBoard.do?pageNum=${currentPage - 1}'">
 							<img alt="이전" src="../../images/left-arrow.png">
 						</button>
 					</c:if>
 				</div>
 				<c:forEach var="i" begin="${startPage}" end="${endPage}">
-					<span id="page${i}" class="page_num" onclick="location.href='myBookmark.do?pageNum=${i}'">${i}</span>
+					<span id="page${i}" class="page_num" onclick="location.href='myBoard.do?pageNum=${i}'">${i}</span>
 				</c:forEach>
 				<div class="next_btn">
 					<c:if test="${currentPage < totalPage}">
-						<button class="next" onclick="location.href='myBookmark.do?pageNum=${currentPage + 1}'">
+						<button class="next" onclick="location.href='myBoard.do?pageNum=${currentPage + 1}'">
 							<img alt="다음" src="../../images/right-arrow.png">
 						</button>
 					</c:if>
 					<c:if test="${endPage < totalPage}">
-						<button class=last onclick="location.href='myBookmark.do?pageNum=${endPage + 1}'">
+						<button class=last onclick="location.href='myBoard.do?pageNum=${endPage + 1}'">
 							<img alt="다음" src="../../images/right-arrow.png">
 							<img alt="다음" src="../../images/right-arrow.png">
 						</button> 

@@ -48,5 +48,12 @@
 				(select * from review_board where del='n' order by review_no desc) a)
 					where rn between #{startRow} and #{endRow}
 	</select>
-
+	<select id="myList" parameterType="integer" resultType="board">
+		select * from (select rowNum rn, e.* from (
+		select * from review_board where member_no = #{member_no} and del='n' order by review_no desc) e)
+		where rn between #{startRow} and #{endRow}
+	</select>
+	<select id="getTotalMy" parameterType="integer" resultType="integer">
+		select count(*) from review_board where del='n' and member_no=#{member_no}
+	</select>
 </mapper>
