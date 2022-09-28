@@ -10,7 +10,7 @@
 <script type="text/javascript">
 	$(function() {
 		var selectValue = ${festival.loc};
-		$('select option[value='+selectValue+']').attr('selected','selected');
+		$('select option[value='+selectValue+']').attr('selected', true);
 	})
 </script>
 </head>

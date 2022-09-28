@@ -8,11 +8,3 @@
 		flex-direction: column;
 	}
 	
-	.view_top {
-		display: flex;
-		flex-direction: row;
-	}
-	
-	.active {
-		display: none;
-	}
