@@ -122,22 +122,22 @@
 			<c:if test="${startPage - PAGE_PER_BLOCK > 0 }">
 	
 				<button
-					onclick="location.href='boardList.en?pageNum=${startPage-1 }'">◀</button>
+					onclick="location.href='boardList.en?pageNum=${startPage-1 }&filter=${filter }'">◀</button>
 			</c:if>
 			<c:forEach var="i" begin="${startPage }" end="${endPage }">
 			
 				<!-- 숫자를 클릭하면 그 숫자에 해당하는 page를 출력한다 -->
 				<c:if test="${currentPage == i }">
-					<button onclick="location.href='boardList.en?pageNum=${i }'"
+					<button onclick="location.href='boardList.en?pageNum=${i }filter=${filter }'"
 						style="background: skyblue; color: black">${i }</button>					</c:if>
 				<c:if test="${currentPage != i }">
-					<button onclick="location.href='boardList.en?pageNum=${i }'">${i }</button>
+					<button onclick="location.href='boardList.en?pageNum=${i }filter=${filter }'">${i }</button>
 				</c:if>
 				
 			</c:forEach>
 			<!-- endPage가 totalPage가 작다는 것은 아직 보여줄 것이 남아있는 것 -->
 			<c:if test="${endPage - totalPage < 0 }">
-				<button onclick="location.href='boardList.en?pageNum=${endPage+1 }'">▶</button>
+				<button onclick="location.href='boardList.en?pageNum=${endPage+1 }filter=${filter }'">▶</button>
 			</c:if>
 		</div>
 </body>
