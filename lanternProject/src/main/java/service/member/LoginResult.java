@@ -12,12 +12,11 @@ public class LoginResult implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		/*
-		 * String prevUrl = request.getParameter("prevUrl"); //
-		 * System.out.println("prevUrl = "+prevUrl); if
-		 * (prevUrl.equals("/lanternProject/view/member/joinResult.na")) prevUrl =
-		 * "/lanternProject/index.html";
-		 */
+		
+		String prevUrl = request.getParameter("prevUrl"); //
+		if(prevUrl.equals("/lanternProject/view/member/joinResult.do")) 
+			prevUrl ="/lanternProject/index.html";
+		
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
 		
@@ -37,7 +36,7 @@ public class LoginResult implements CommandProcess {
 			}else result=0;
 		}
 		request.setAttribute("result", result);
-//		request.setAttribute("prevUrl", prevUrl);
+		request.setAttribute("prevUrl", prevUrl);
 		return "loginResult";
 	}
 
