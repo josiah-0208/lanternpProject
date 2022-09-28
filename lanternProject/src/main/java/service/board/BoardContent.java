@@ -17,18 +17,16 @@ public class BoardContent implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		
 		int check = 0;
-		
+		int member_no=-1;
 		/* boardList에서 받아온 데이터 */
 		int review_no = Integer.parseInt(request.getParameter("review_no"));
 		String pageNum = request.getParameter("pageNum");
-		
 		/* 좋아요 체크 */
 		BoardLikesDao bld = BoardLikesDao.getInstance();
 		HttpSession session = request.getSession();
 		if (session.getAttribute("member_no") != null) {
-			int member_no = (int)session.getAttribute("member_no");
+			member_no = (int)session.getAttribute("member_no");
 			System.out.println(member_no);
 			BoardLikes bl = bld.select(review_no, member_no);
 			
@@ -51,7 +49,7 @@ public class BoardContent implements CommandProcess {
 		/* 담은 정보들을 보낼 준비 */
 		request.setAttribute("board", board);
 		request.setAttribute("pageNum", pageNum);
-		
+		request.setAttribute("member_no", member_no);
 		request.setAttribute("rp_list", rp_list);
 		
 		request.setAttribute("check", check);

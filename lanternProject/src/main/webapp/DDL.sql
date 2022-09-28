@@ -92,3 +92,4 @@ select * from fest where del = 'n' and sysdate between start_date and end_date;
 select * from REVIEW_BOARD;
 select * from BOARD_REPLY;
 select * from bookmark;
+select * from board_likes;
