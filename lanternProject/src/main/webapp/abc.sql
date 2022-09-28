@@ -54,4 +54,5 @@ select * from fest where fno = 121 and del='n';
 select* from member;
 select*from REVIEW_BOARD;
 
+select * from board_likes;
 select * from bookmark;

@@ -7,7 +7,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <c:set var="member_no" value='${sessionScope.member_no}'></c:set>
+<c:set var="id" value='${sessionScope.id}'></c:set>
 <link rel="stylesheet" type="text/css" href="../../css/common.css">
+<script type="text/javascript" src="/lanternProject/js/jquery.js"></script>
 <script type="text/javascript">
 
 	/* 게시글 좋아요 */
@@ -30,7 +32,7 @@
 	});
 	
 	function likes_updt() {
-		if (${empty member_no}) {
+		if (${empty id}) {
 			var con = confirm("로그인이 필요합니다.");
 			if (con) {
 				location.href="/lanternProject/view/member/loginForm.do";
