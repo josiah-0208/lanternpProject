@@ -40,7 +40,7 @@ public class BoardLikesDao {
 		hm.put("review_no", review_no);
 		hm.put("member_no", member_no);
 		return (BoardLikes)session.selectOne("bdlikesns.select", hm);
-	}
+	};
 
 	// 게시글 좋아요 insert
 	public void insert(int review_no, int member_no) {
