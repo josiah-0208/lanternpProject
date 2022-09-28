@@ -13,8 +13,10 @@
 	$(function () {
 			if (${check} === 1) {
 				$('.bm_img2').hide();
+				
 			} else {
 				$('.bm_img1').hide();
+				
 			};
 			
 			$('.bm_img2').on('click', function() {
@@ -26,48 +28,15 @@
 				$('.bm_img2').show();
 				$('.bm_img1').hide();
 			});
-		
-		/* if (${check} === 1) {
-			$('img').attr('src','/lanternProject/images/icons/bm1.png');
-		}; */
-		
-		/* $("img[src='/lanternProject/images/icons/bm1.png']").on('click', function() {
-			$('img').attr('src','/lanternProject/images/icons/bm2.png');
-		});
-			$("img[src='/lanternProject/images/icons/bm2.png']").on('click', function() {
-			$('img').attr('src','/lanternProject/images/icons/bm1.png');
-		}); */ 
-		
-		/* $.on("click","img[src='/lanternProject/images/icons/bm1.png']", function() {
-			$('img').attr('src','/lanternProject/images/icons/bm2.png');
-		}); */
-		
-		/* if ($('img').attr('src') === '/lanternProject/images/icons/bm1.png') {
-			$('img').toggle(function() {
-				$('img').attr('src','/lanternProject/images/icons/bm2.png');
-			}, function() {
-				$('img').attr('src','/lanternProject/images/icons/bm1.png');
-			})
-		} else {
-			$('img').toggle(function() {
-				$('img').attr('src','/lanternProject/images/icons/bm1.png');
-			}, function() {
-				$('img').attr('src','/lanternProject/images/icons/bm2.png');
-			})
-		} */
-		
-		/* $('bookmark1').click(function() {
-			if ($('img').attr('src') === '/lanternProject/images/icons/bm1.png') {
-				$('img').attr('src', '/lanternProject/images/icons/bm2.png')
-			} $('img').attr('src', '/lanternProject/images/icons/bm1.png')
-		}) */
-		
+			
 		
 	});
 	
 	function bookmark() {
 		if (${empty id}) {
 			var con = confirm("로그인이 필요합니다.");
+			$('.bm_img2').show();
+			$('.bm_img1').hide();
 			if (con) {
 				location.href="/lanternProject/view/member/loginForm.do";
 			}
@@ -77,7 +46,6 @@
 		}
 		
 	}
-	//펑션으로 북마크() 만들고, 누르면 업데이트 되게 
 </script>
 </head>
 <body>
@@ -88,6 +56,7 @@
 		</div>
 		<div class="view_top">
 			<div class="top_img">
+				<img src="/lanternProject/images/festival/${festival.thumbnail }">
 			</div>
 			<div class="top_content">
 				<div>${festival.intro }</div>

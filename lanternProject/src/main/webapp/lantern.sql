@@ -22,11 +22,14 @@ CREATE TABLE board_reply (
 
 -- 후기 게시판 좋아요
 CREATE TABLE board_likes (
-	member_no NUMBER(15) references member NOT NULL,
-	review_no NUMBER(5) references review_board NOT NULL
+    likes_no    NUMBER PRIMARY KEY NOT NULL,
+    member_no    NUMBER references member NOT NULL,
+    review_no    NUMBER references review_board NOT NULL
 );
 
 select * from REVIEW_BOARD;
 select * from BOARD_REPLY;
 select * from BOARD_LIKES;
+drop table board_reply;
+drop table board_likes;
 

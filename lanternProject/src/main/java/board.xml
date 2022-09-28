@@ -44,10 +44,11 @@
 	
 	<!-- 게시글 목록 (정렬) -->
 	<select id="list" parameterType="map" resultType="board">
-				select * from (select rowNum rn, a.* from 
-				(select * from review_board where del='n' order by review_no desc) a)
-					where rn between #{startRow} and #{endRow}
+		select * from (select rowNum rn, a.* from 
+		(select * from review_board where del='n' order by review_no desc) a)
+			where rn between #{startRow} and #{endRow}
 	</select>
+
 	<select id="myList" parameterType="integer" resultType="board">
 		select * from (select rowNum rn, e.* from (
 		select * from review_board where member_no = #{member_no} and del='n' order by review_no desc) e)
@@ -56,4 +57,11 @@
 	<select id="getTotalMy" parameterType="integer" resultType="integer">
 		select count(*) from review_board where del='n' and member_no=#{member_no}
 	</select>
+	
+	<select id="list2" parameterType="map" resultType="board">
+		select * from (select rowNum rn, a.* from 
+		(select * from review_board where del='n' order by read_cnt desc) a)
+			where rn between #{startRow} and #{endRow}
+	</select>	
+
 </mapper>

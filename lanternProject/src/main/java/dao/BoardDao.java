@@ -61,15 +61,25 @@ public class BoardDao {
 	public int getTotal() {
 		return (int) session.selectOne("boardns.getTotal");
 	}
-	 // BoardList
+	
+	 // BoardList - list
 	@SuppressWarnings("unchecked")
 	public List<Board> list(int startRow, int endRow) {
-			HashMap<String, Integer> map = new HashMap<>();
+		HashMap<String, Integer> map = new HashMap<>();
 		map.put("startRow", startRow);
 		map.put("endRow", endRow);
 		return session.selectList("boardns.list", map);
 	}
-
+	
+	// BoardList - list2
+	@SuppressWarnings("unchecked")
+	public List<Board> list2(int startRow, int endRow) {
+		HashMap<String, Integer> map = new HashMap<>();
+		map.put("startRow", startRow);
+		map.put("endRow", endRow);
+		return session.selectList("boardns.list2", map);
+	}
+	
 	
 	/* 게시판 조회수(read_cnt) 증가 */
 	public void read_cntUpdate(int review_no) {
@@ -88,6 +98,7 @@ public class BoardDao {
 		hm.put("endRow", endRow);
 		return session.selectList("boardns.myList", hm);
 	}
+
 
 	
 }

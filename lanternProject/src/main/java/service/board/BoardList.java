@@ -19,7 +19,8 @@ public class BoardList implements CommandProcess {
 		final int ROW_PER_PAGE = 10;	// 한 페이지에 들어갈 게시글 갯수
 		final int PAGE_PER_BLOCK = 5;	// 한 블럭에 들어갈 페이지수
 		
-		
+		String filter = request.getParameter("filter");
+		if(filter==null)filter="recent";
 		String pageNum = request.getParameter("pageNum");
 		if (pageNum == null || pageNum.equals(""))
 			pageNum = "1"; // 페이지 초기값 1로 설정
@@ -37,10 +38,16 @@ public class BoardList implements CommandProcess {
 		if (endPage > totalPage) // 마지막 페이지가 총 페이지보다 클 경우
 			endPage = totalPage;
 		
+		List<Board> list = bd.list(startRow, endRow);			
 		// 데이터를 담을 객체 생성
-		List<Board> list = bd.list(startRow, endRow);
+		if(filter.equals("recent")) {
+			list = bd.list(startRow, endRow);			
+		}else if(filter.equals("cnt")) {
+			list = bd.list2(startRow, endRow);			
+		}
 
 		// 객체 안에 담을 데이터 준비
+		request.setAttribute("filter", filter);
 		request.setAttribute("list", list);
 		request.setAttribute("pageNum", pageNum);
 		request.setAttribute("currentPage", currentPage);
