@@ -9,7 +9,7 @@
 </head>
 <body>
 	<form action="boardWriteAction.en" method="post">
-		<input type="hidden" name="member_no" value="${board.member_no }">
+		<input type="hidden" name="member_no" value="${member_no }">
 
 	<h2>후기 작성</h2>
 	<table>			
