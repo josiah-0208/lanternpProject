@@ -10,7 +10,7 @@
 <body>
 	<c:if test="${result>0 }">
 		<script>
-			location.href="../board/boardList.en";
+			location.href="${prevUrl}";
 		</script>
 	</c:if>
 	

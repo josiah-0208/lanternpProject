@@ -95,8 +95,10 @@
 	<p>
 	
 	<div align="center">
+		<c:if test="${member_no==board.member_no }">
 		<button onclick="location.href='boardUpdateForm.en?review_no=${board.review_no}&pageNum=${pageNum }'">수정</button>
 		<button onclick="del()">삭제</button>
+		</c:if>
 		<button onclick="location.href='boardList.en?pageNum=${pageNum }'">목록</button>
 	</div>
 
@@ -146,9 +148,11 @@
 						<th>
 							${reply.rp_reg_date }
 						</th>
+						<c:if test="${member_no==reply.member_no }">
 						<th>
 							<a onclick="reply_del(${reply.reply_no})">삭제</a>
 						</th>
+						</c:if>
 					</tr>
 				</table>
 				

@@ -25,8 +25,12 @@
 	function filterChange() {
 		var filter = document.getElementById("filter");
 		var value = filter.options[filter.selectedIndex].value;
-		$('.board_list').css("display", "none");
-		$('#board_list' + value).css("display", "block");
+		if(value==1){
+			location.href='boardList.en?pageNum=${currentPage }';
+		}
+		else if(value==2){
+			location.href='boardList.en?pageNum=${currentPage }&filter=cnt';
+		}
 	} 
 </script>
 </head>
@@ -41,9 +45,15 @@
 				<hr>
 			</div>
 			<!-- 게시판 정렬 설정 -->
-			<select id="filter" onchange="filterChange()">
+			<select id="filter" onchange="filterChange()" >
 				<option value="1">최신순</option>
+				<c:if test="${filter=='recent' }">
 				<option value="2">조회순</option>
+				</c:if>
+				<c:if test="${filter=='cnt' }">
+				<option value="2" selected="selected">조회순</option>
+				</c:if>
+				
 			</select>
 			
 			<table>
@@ -98,30 +108,7 @@
 								</tr>
 							</c:forEach>
 						</c:if>
-						
-						<c:if test="${not empty list2 }">
-							<c:forEach var="board" items="${list2 }">
-								<tr>		
-									<c:if test="${board.del == 'n' }">
-										<th>
-											${board.member_no }
-										</th>
-										<th><a href="boardContent.en?review_no=${board.review_no }&pageNum=${pageNum }">
-											${board.title }</a>
-								 		</th>
-										<th>
-											${board.reg_date }
-										</th>
-										<th>
-											${board.read_cnt }
-										</th>
-										<th>
-											${board.likes }
-										</th>
-									</c:if>
-								</tr>
-							</c:forEach>
-						</c:if>
+		
 				</tbody>
 				
 			</table>
@@ -135,22 +122,22 @@
 			<c:if test="${startPage - PAGE_PER_BLOCK > 0 }">
 	
 				<button
-					onclick="location.href='boardList.en?pageNum=${startPage-1 }'">◀</button>
+					onclick="location.href='boardList.en?pageNum=${startPage-1 }&filter=${filter }'">◀</button>
 			</c:if>
 			<c:forEach var="i" begin="${startPage }" end="${endPage }">
 			
 				<!-- 숫자를 클릭하면 그 숫자에 해당하는 page를 출력한다 -->
 				<c:if test="${currentPage == i }">
-					<button onclick="location.href='boardList.en?pageNum=${i }'"
+					<button onclick="location.href='boardList.en?pageNum=${i }&filter=${filter }'"
 						style="background: skyblue; color: black">${i }</button>					</c:if>
 				<c:if test="${currentPage != i }">
-					<button onclick="location.href='boardList.en?pageNum=${i }'">${i }</button>
+					<button onclick="location.href='boardList.en?pageNum=${i }&filter=${filter }'">${i }</button>
 				</c:if>
 				
 			</c:forEach>
 			<!-- endPage가 totalPage가 작다는 것은 아직 보여줄 것이 남아있는 것 -->
 			<c:if test="${endPage - totalPage < 0 }">
-				<button onclick="location.href='boardList.en?pageNum=${endPage+1 }'">▶</button>
+				<button onclick="location.href='boardList.en?pageNum=${endPage+1 }&filter=${filter }'">▶</button>
 			</c:if>
 		</div>
 </body>
