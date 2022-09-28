@@ -8,8 +8,8 @@
 <link rel="stylesheet" type="text/css" href="../../css/common.css">
 </head>
 <body>
-	<form action="boardWriteAction.en" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="member_no" value="${board.member_no }">
+	<form action="boardWriteAction.en" method="post">
+		<input type="hidden" name="member_no" value="${member_no }">
 
 	<h2>후기 작성</h2>
 	<table>			

@@ -16,7 +16,9 @@ public class BoardLikes implements CommandProcess {
 		
 		HttpSession session = request.getSession();
 		int review_no = Integer.parseInt(request.getParameter("review_no"));
+		System.out.println("review_no: "+review_no);
 		int member_no = (int)session.getAttribute("member_no");
+		System.out.println("member_no: "+member_no);
 		
 		BoardLikesDao bld = BoardLikesDao.getInstance();
 		BoardLikes bm = bld.select(review_no, member_no);

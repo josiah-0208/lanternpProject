@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">@import url("/lanternProject/css/festMain.css?2");</style>
+<style type="text/css">@import url("/lanternProject/css/festMain.css?4");</style>
 <script type="text/javascript" src="../../js/jquery.js"></script>
 <script type="text/javascript">
 	$(function() {

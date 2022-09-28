@@ -1,29 +1,34 @@
 @charset "UTF-8";
+/* festMain */
 	/* 컨테이너 */
 	.container_main {
+		width: 100%;
+		height: 100vh;
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 	}
 	
-	/* 텝 */
+	/* 진행 중, 예정된 설정 */
 	.festival_tab {
 		display: flex;
 		justify-content: center;
 	}
+	
 	.title {
 		margin: 30px;
 	}
+	
 	.title.active {
 		color: orange;
 	}
-	/* 필터 이미지 */
 	
+	/* 필터 이미지 */
 	.filter {
 		position: absolute;
 		right: 100px;
 	}
-	/* 리스트 */
 	
+	/* 리스트 */
 	.festival_list {
 		display: flex;
 		justify-content: space-evenly;
