@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="../../css/common.css">
 </head>
 <body>
-	<form action="boardWriteAction.en" method="post">
+	<form action="boardWriteAction.en" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="member_no" value="${board.member_no }">
 
 	<h2>후기 작성</h2>
@@ -34,7 +34,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td><input type="file" value="파일 업로드"><p>
+				<td><input type="file" name="fileData" value="파일 업로드"><p>
 					<input type="submit" value="게시">
 				</td>
 			</tr>

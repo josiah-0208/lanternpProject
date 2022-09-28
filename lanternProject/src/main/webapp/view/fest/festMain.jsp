@@ -34,16 +34,18 @@
 </head>
 <body>
 <div class="container_main">
-	<div class="festival_tab"> 
-			<div class="title" id="tab1" onclick="location.href='festMain.so?tab=1'">진행중인</div>
-			<div class="title" id="tab2" onclick="location.href='festMain.so?tab=2'">예정된</div>
-			<div>넘어오는 값 체크</div>
-	</div>
 	<div class="filter_box">
 		<div class="filter">
 			<img src="/lanternProject/images/icons/filter.png" style="width: 25px">
 		</div>				
 	</div>
+	
+	<div class="festival_tab"> 
+			<div class="title" id="tab1" onclick="location.href='festMain.so?tab=1'">진행중인</div>
+			<div class="title" id="tab2" onclick="location.href='festMain.so?tab=2'">예정된</div>
+
+	</div>
+
 	<!-- 축제 리스트 불러오기 뷰, 썸네일이미지파일, 데이터 입력 해야함-->
 	 <div class="festival_list">
 		<c:if test="${tab == 1}">
