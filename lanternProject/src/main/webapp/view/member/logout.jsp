@@ -10,7 +10,7 @@
 <body>
 <script>
 	alert("로그아웃 되었습니다");
-	location.href="/lanternProject/views/festHome.so";
+	location.href="/lanternProject/view/fest/festHome.jsp";
 </script>
 </body>
 </html>

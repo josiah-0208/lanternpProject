@@ -10,7 +10,11 @@
 <script type="text/javascript">
 		var preUrl = document.referrer.split("/")[6];
 		alert("삭제 되었습니다");
-		history.go(-1);
+		if(preUrl == "festList.do") {
+			history.back();
+		}else  {
+			location.href="../fest/festMain.so?tab=1";
+		}
 </script>
 </body>
 </html>

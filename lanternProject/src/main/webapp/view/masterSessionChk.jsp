@@ -4,6 +4,6 @@
 <c:set var="id" value='${sessionScope.id}'></c:set>
 <c:if test="${id!='master' }">
 	<script type="text/javascript">
-		location.href="/lanternProject/view/member/loginForm.do"
+		location.href="/lanternProject/view/member/logout.do"
 	</script>
 </c:if>

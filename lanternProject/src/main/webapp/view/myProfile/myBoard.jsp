@@ -36,6 +36,7 @@ article { background: pink; height: 400px; float: left; width: 80%; }
 		<!-- 프로필, 메뉴 -->
 		
 		<nav><jsp:include page="profileMenu.jsp"></jsp:include></nav>
+		<article>
 		<!-- 내용 -->
 		<div class="container-table">
 		<table>
@@ -98,6 +99,7 @@ article { background: pink; height: 400px; float: left; width: 80%; }
 				</div> <!-- next_btn -->
 			</div> <!-- number -->
 		</div> <!-- paging -->
+		</article>
 	</div>
 </body>
 </html>

@@ -10,6 +10,7 @@
 	
 </style>
 <c:set var="member_no" value='${sessionScope.member_no}'></c:set>
+<c:set var="id" value='${sessionScope.id}'></c:set>
 <link rel="stylesheet" type="text/css" href="../../css/common.css">
 <script type="text/javascript">
   //페이지 로드 시 board_list로 세팅, 페이지넘 색상 세팅
@@ -90,7 +91,7 @@
 								<tr>		
 									<c:if test="${board.del == 'n' }">
 										<th>
-											${board.member_no }
+											${id }
 										</th>
 										<th><a href="boardContent.en?review_no=${board.review_no }&pageNum=${pageNum }">
 											${board.title }</a>

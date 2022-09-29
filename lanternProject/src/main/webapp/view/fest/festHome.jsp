@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,6 +28,7 @@
 		
 	})
 </script>
+<c:set var="member_no" value='${sessionScope.member_no}'></c:set>
 </head>
 <body>
 	<div class="video_box">
@@ -38,7 +40,15 @@
 		<div class="title2">등불</div>
 			
 		<div class="main" onclick="location.href='festMain.so?tab=1'">둘러보기</div>
-		<div class="login" onclick="location.href='../member/loginForm.do'">로그인</div>
+		<c:if test="${empty member_no }">
+			<div class="login" onclick="location.href='../member/loginForm.do'">로그인/회원가입</div>
+		</c:if>
+		<c:if test="${not empty member_no }">
+			<div class="login" onclick="location.href='../member/logout.do'">로그아웃</div>
+		</c:if>
+		<c:if test="${member_no==0 }">
+			<div class="" onclick="location.href='../master/masterMain.do'">관리자 페이지</div>
+		</c:if>
 	</div>
 		
 </body>
