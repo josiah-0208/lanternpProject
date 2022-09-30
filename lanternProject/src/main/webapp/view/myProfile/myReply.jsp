@@ -67,28 +67,28 @@ article { background: pink; height: 400px; float: left; width: 80%; }
 			<div class="items">
 				<div class="prev_btn">
 					<c:if test="${startPage > PAGE_PER_BLOCK}">
-						<button class="first" onclick="location.href='myBoard.do?pageNum=${startPage - 1}'">
+						<button class="first" onclick="location.href='myReply.do?pageNum=${startPage - 1}'">
 							<img alt="이전" src="../../images/left-arrow.png">
 							<img alt="이전" src="../../images/left-arrow.png">
 						</button> 
 					</c:if>
 					<c:if test="${pageNum > 1}">
-						<button class="prev" onclick="location.href='myBoard.do?pageNum=${currentPage - 1}'">
+						<button class="prev" onclick="location.href='myReply.do?pageNum=${currentPage - 1}'">
 							<img alt="이전" src="../../images/left-arrow.png">
 						</button>
 					</c:if>
 				</div>
 				<c:forEach var="i" begin="${startPage}" end="${endPage}">
-					<span id="page${i}" class="page_num" onclick="location.href='myBoard.do?pageNum=${i}'">${i}</span>
+					<span id="page${i}" class="page_num" onclick="location.href='myReply.do?pageNum=${i}'">${i}</span>
 				</c:forEach>
 				<div class="next_btn">
 					<c:if test="${currentPage < totalPage}">
-						<button class="next" onclick="location.href='myBoard.do?pageNum=${currentPage + 1}'">
+						<button class="next" onclick="location.href='myReply.do?pageNum=${currentPage + 1}'">
 							<img alt="다음" src="../../images/right-arrow.png">
 						</button>
 					</c:if>
 					<c:if test="${endPage < totalPage}">
-						<button class=last onclick="location.href='myBoard.do?pageNum=${endPage + 1}'">
+						<button class=last onclick="location.href='myReply.do?pageNum=${endPage + 1}'">
 							<img alt="다음" src="../../images/right-arrow.png">
 							<img alt="다음" src="../../images/right-arrow.png">
 						</button> 
