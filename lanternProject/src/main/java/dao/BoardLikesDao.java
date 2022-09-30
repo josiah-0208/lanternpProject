@@ -8,8 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import model.Bookmark;
-import service.board.BoardLikes;
+import model.BoardLikes;
 
 public class BoardLikesDao {
 	// SingleTon
@@ -39,7 +38,7 @@ public class BoardLikesDao {
 		HashMap<String, Integer> hm = new HashMap<String, Integer>();
 		hm.put("review_no", review_no);
 		hm.put("member_no", member_no);
-		return (BoardLikes)session.selectOne("bdlikesns.select", hm);
+		return (BoardLikes) session.selectOne("bdlikesns.select", hm);
 	};
 
 	// 게시글 좋아요 insert
