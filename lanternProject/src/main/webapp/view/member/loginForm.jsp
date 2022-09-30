@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8">
 <style type="text/css">@import url("/lanternProject/css/common.css?1");</style>
-<link rel="stylesheet" href="../../css/log_joinForm.css?1" >
+<link rel="stylesheet" href="../../css/log_joinForm.css?3" >
 
         <!-- Required meta tags -->
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

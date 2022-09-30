@@ -53,7 +53,7 @@
 	    display: inline-block;
 	    width: 100px;
 	    height: 40px;
-	    background: #E5331E;
+	    background: #E5871E;
 	    margin: 0px 10px 50px;
 	    border: none;
 	    color: #fff;
@@ -67,7 +67,7 @@
 	}
 	
 	.panel-switch button:active{
-	    background: #E5331E;
+	    background: #E5871E;
 	    color: #c9c9c9;
 	}
 	
@@ -200,7 +200,7 @@
 	    margin-top: 150px;
 	    border: none;
 	    border-radius: 10em;
-	    background: #E5331E;
+	    background: #E5871E;
 	    color: #fff;
 	    font-family: 'Open Sans', sans-serif;
 	    text-transform: uppercase;
@@ -212,14 +212,14 @@
 	}
 	
 	#login-form-submit:active{
-	    background: #b52773;
+	    background: #E5871E;
 	    color: #c9c9c9;
 	}
 	#signup-form-submit{
 	    margin: 10px;
 	}
 	#signup-form-submit:active{
-	    background: #b52773;
+	    background: #E5871E;
 	    color: #c9c9c9;
 	}
 	
@@ -241,7 +241,7 @@
 		position: relative;
 		right:500px;
 		top:405px;
-		color: red;
+		color: #E5331E;
 		font-size: 10px;
 		z-index: 3;
 	}
