@@ -6,7 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">@import url("/lanternProject/css/festView.css");</style>
+<style type="text/css">@import url("/lanternProject/css/festView.css?1");</style>
+<style type="text/css">@import url("/lanternProject/css/common.css?1");</style>
 <c:set var="id" value='${sessionScope.id}'></c:set>
 <script type="text/javascript" src="/lanternProject/js/jquery.js"></script>
 <script type="text/javascript">
@@ -52,38 +53,55 @@
 <div class="container">
 	<div class="view_content">
 		<div class="view_title">
-		${festival.fname }
+			${festival.fname }
 		</div>
-		<div class="view_top">
-			<div class="top_img">
-				<img src="/lanternProject/images/festival/${festival.thumbnail }">
-			</div>
-			<div class="top_content">
-				<div>${festival.intro }</div>
-				<div>기간: ${festival.start_date } ~ ${festival.end_date }</div>
-				<div>운영시간: ${festival.hours }</div>
-				<div>주최: ${festival.host }</div>
-				<div>장소: ${festival.spot }</div>
-				<div>입장료: ${festival.fee }원</div>
-				<div>어린이: ${festival.fee_child }원 중고등학생: ${festival.fee_teen }원 성인: ${festival.fee_adult }</div>	
-				<div>
-					<div class="bookmark1" onclick="bookmark()">
-						<img class="bm_img2" src="/lanternProject/images/icons/bm2.png">
-						<img class="bm_img1" src="/lanternProject/images/icons/bm1.png">
-					</div>
-					<div class="reserve">예매</div>
-				</div>
+		<p>
+		<div class="view_intro">
+			" ${festival.intro } "
+		</div>
+		<p>
+		<div class="top_img">
+			<img src="/lanternProject/images/festival/${festival.thumbnail }" style="width:100%; height:100%;">
+		</div>
+		<p>
+		<div>
+			<div class="bookmark1" onclick="bookmark()">
+				<img class="bm_img2" src="/lanternProject/images/icons/bm2.png" style="width: 100px; height: 100px;"> 
+				<img class="bm_img1" src="/lanternProject/images/icons/bm1.png" style="width: 100px; height: 100px;">
 			</div>
 		</div>
+		<p>
+		<div class="information">상세 정보</div>
+		<p>
+		<div class="top_content">
+			<div>
+				기간: ${festival.start_date }  ~  ${festival.end_date }
+			</div><p>
+			<div>운영시간: ${festival.hours }</div><p>
+			<div>장소: ${festival.spot }</div><p>
+			<div>입장료: ${festival.fee }원</div><p>
+			<div>
+				어린이: ${festival.fee_child }원 <br>
+				중고등학생: ${festival.fee_teen }원 <br>
+				성인: ${festival.fee_adult }원
+			</div>	
+		</div>
+		<p>
 		<div class="view_middle">
-			<div class="tel home_pg">
-			전화번호 : ${festival.tel }  홈페이지 : ${festival.home_pg }	
+			<div>
+				주최: ${festival.host }
+			</div><p>
+			<div class="tel">
+				전화번호 : ${festival.tel }
+			</div>
+			<div>
+				홈페이지 : ${festival.home_pg }	
 			</div>
 			<div class="addr">
-			주소 : ${festival.addr } 
+				주소 : ${festival.addr } 
 			</div>
 			<div class="f_txt">
-			${festival.f_txt }
+				${festival.f_txt }
 			</div>
 		</div>
 		<div class="view_bottom">

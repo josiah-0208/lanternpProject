@@ -1,10 +1,51 @@
 @charset "UTF-8";
 
+	/* 컨테이너 */
 	.container {
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 	}
+	
+	/* 전체적인 뷰 영역 */
 	.view_content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	
+	/* 축제 제목 */
+	.view_title {
+		display: flex;
+		font-size: 32px;
+	}
+	
+	/* 축제 인트로 */
+	.view_intro {
+		display: flex;
+		font-size: 26px;
+	}
+	
+	/* 대표 이미지 */
+	.top_img {
+		display: flex;
+		width: 330px;
+		height: 510px;
+		justify-content: center;
+	}
+	
+	/* 상세 정보 */
+	.information {
+		display: flex;
+		font-size: 26px;
+		flex-grow: 1;
+	}
+	
+	/* 상세 정보 내용 */
+	.top_content {
+		display: flex;
+		font-size: 17px;
 		flex-direction: column;
 	}
 	

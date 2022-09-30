@@ -1,49 +1,65 @@
 @charset "UTF-8";
+/* festMain */
 	/* 컨테이너 */
 	.container_main {
 		display: flex;
+		width: 100%;
+		height: 100vh;
 		flex-direction: column;
+		justify-content: space-around;
 	}
-	/* 텝 */
+	
+	/* 진행, 예정 탭 */
 	.festival_tab {
 		display: flex;
-		justify-content: center;
+		justify-content: space-evenly;
 	}
+	
+	/* festival_tab - 진행, 예정 */
 	.title {
-		margin: 30px;
+		margin: 10px;
 	}
-	.title.active {
-		color: orange;
-	}
-	/* 필터 이미지 */
 	
-	.filter {
-		position: absolute;
-		right: 100px;
-	}
 	/* 리스트 */
-	
 	.festival_list {
 		display: flex;
 		justify-content: space-evenly;
 	}
-	.item {
-		display: flex;
-		flex-direction: column;
-		background: orange;
+	
+	/* 글자색 반전 */
+	.title.active {
+		color: orange;
 	}
-	.item_thumb {
-		width: 330px;
-		height: 510px;
+	
+	/* 지역선택 필터 아이콘 이미지 */
+	.filter {
+		position: absolute;
+		right: 200px;
 	}
+	
+	/* main페이지 축제 썸네일 */
 	.fest_img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
 	}
 	
+	/* main페이지 썸네일 사진 크기 조정 */
+	.item_thumb {
+		width: 330px;
+		height: 510px;
+	}
 	
-	/* 모달 */
+	/* main페이지 썸네일 하단 설명 */
+	.item {
+		display: flex;
+		flex-direction: column;
+		/* background: orange; */
+	}
+	
+
+	
+	/* 지역선택 모달 설정 */
 	.filter_modal {
 		display: none;
 		position: fixed;
@@ -53,23 +69,31 @@
 		top: 0;
 		left: 0;
 	}
+	
+	/* 모달창 제목 (지역설정) */
+	.modal_title {
+		background: #08080D;
+		font-size: 26px;
+	}
+	
+	/* 모달창 밖 뒷설정 */
 	.modal_background {
 		width: 100%;
 		height: 100%;
-		background-color: #000;
+		background-color: #08080D;
 		opacity: 0.6;
 	}
+	
+	/* 모달창 콘텐츠 */
 	.modal_content {
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		background: #fff;
+		background: #08080D;
 		width: 34%;
 		min-height: 50vh;
 		padding: 60px;
 	}
-	.modal_title {
-		background: orange;
-	}
+
 	

@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">@import url("/lanternProject/css/festRegistForm.css");</style>
+<style type="text/css">@import url("/lanternProject/css/common.css");</style>
 <script type="text/javascript" src="/lanternProject/js/jquery.js"></script>
 <script type="text/javascript">
 	$(function() {

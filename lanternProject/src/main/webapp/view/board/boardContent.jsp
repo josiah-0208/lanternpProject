@@ -34,6 +34,8 @@
 	function likes_updt() {
 		if (${empty id}) {
 			var con = confirm("로그인이 필요합니다.");
+			$('.likes_off').show();
+			$('.likes_on').hide();
 			if (con) {
 				location.href="/lanternProject/view/member/loginForm.do";
 			}
@@ -41,6 +43,7 @@
 			$.post("boardLikes.en", "review_no=${board.review_no}");		
 		}
 	}
+	
 	/* 게시글 삭제 */
 	function del() {
 		var bdt = confirm("정말 삭제하시겠습니까?");
@@ -88,8 +91,8 @@
 	<!-- 좋아요 -->
 	<div>
 		<div onclick="likes_updt()">
-			<img class="likes_on" alt="채운하트" src="/lanternProject/images/orangeHt.png" width="200" height="200">
-			<img class="likes_off" alt="빈 하트" src="/lanternProject/images/transHt.png" width="200" height="200">
+			<img class="likes_off" alt="채운하트" src="/lanternProject/images/orangeHt.png" width="200" height="200">
+			<img class="likes_on" alt="빈 하트" src="/lanternProject/images/transHt.png" width="200" height="200">
 		</div>
 	</div>
 	<p>
