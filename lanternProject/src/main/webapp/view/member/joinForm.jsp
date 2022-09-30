@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
  <head>
+ <style type="text/css">@import url("/lanternProject/css/common.css?1");</style>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,7 +11,7 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
       
 <!--        Animate.css-->
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
                 
                                 
         <link rel="stylesheet" href="../../css/log_joinForm.css" >
@@ -33,7 +34,7 @@
 			function dupChk() {
 				var id = document.getElementById("idChk");
 		
-				if (!id.value) {	alert("아이디를 입력하고 체크하시오");
+				if (!id.value) {	alert("아이디를 입력하고 체크하세요");
 					id.focus(); return false; 			
 				}
 				$.post("dupChk.do","id="+id.value,function(data){

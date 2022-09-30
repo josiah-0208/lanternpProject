@@ -1,7 +1,7 @@
 select * from fest;
 INSERT INTO FEST(FNO, FNAME, THUMBNAIL, START_DATE, END_DATE, HOURS, INTRO, HOST, LOC, ADDR, 
 SPOT, HOME_PG, TEL, FEE, FEE_ADULT, FEE_TEEN, FEE_CHILD, F_IMAGE, F_TXT) 
-VALUES (1, '2022 한강페스티벌', '2022 한강페스티벌.jpg', TO_DATE('2022-09-27 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
+VALUES (6, '2022 한강페스티벌', '2022 한강페스티벌.jpg', TO_DATE('2022-09-27 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
 TO_DATE('2035-12-31 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), '오전 10:00 ~ 오후 4:30', 
 '서울의 대표 휴식 공간 한강', '서울특별시 한강사업본부', '서울/경기/인천', '서울특별시 성동구 강변북로 257 한강사업본부',
 '한강 수상 및 한강공원 일대', 'https://festival.seoul.go.kr/hangang', '02-120', 0, 0, 0, 0,
@@ -13,7 +13,7 @@ TO_DATE('2035-12-31 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), '오전 10:00 ~ 오후 
 선사한다.');
 INSERT INTO FEST(FNO, FNAME, THUMBNAIL, START_DATE, END_DATE, HOURS, INTRO, HOST, LOC, ADDR, 
 SPOT, HOME_PG, TEL, FEE, FEE_ADULT, FEE_TEEN, FEE_CHILD, F_IMAGE, F_TXT) 
-VALUES (5, '부산불꽃축제', '부산불꽃축제_thumbnail.jpg', TO_DATE('2022-09-27 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
+VALUES (1, '부산불꽃축제', '부산불꽃축제_thumbnail.jpg', TO_DATE('2022-09-27 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
 TO_DATE('2035-12-31 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), '오전 10:00 ~ 오후 4:30', 
 '세계 속 빛으로 물들인 부산의 가을밤', '부산광역시', '경상지역', '부산광역시 수영구 광안해변로 219',
 '광안리해수욕장 일원', '	http://www.bfo.or.kr', '051-888-4135', 0, 0, 0, 0,
@@ -27,7 +27,7 @@ delete from fest where fno=3;
 
 INSERT INTO FEST(FNO, FNAME, THUMBNAIL, START_DATE, END_DATE, HOURS, INTRO, HOST, LOC, ADDR, 
 SPOT, HOME_PG, TEL, FEE, FEE_ADULT, FEE_TEEN, FEE_CHILD, F_IMAGE, F_TXT) 
-VALUES (3, '무형유산이음축제-가을의 예', '가을의 예_thumbnail.jpg', TO_DATE('2022-09-27 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
+VALUES (2, '무형유산이음축제-가을의 예', '가을의 예_thumbnail.jpg', TO_DATE('2022-09-27 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
 TO_DATE('2035-12-31 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), '오전 10:00 ~ 오후 6:00', 
 '잇다, 無에서 YOU로', '전라일보', '전라지역', '전라북도 전주시 덕진구 권삼득로 390-1 연화정',
 '덕진공원 일대', 'https://blog.naver.com', '070-4750-5076', 0, 0, 0, 0,
@@ -38,7 +38,7 @@ TO_DATE('2035-12-31 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), '오전 10:00 ~ 오후 
 
 INSERT INTO FEST(FNO, FNAME, THUMBNAIL, START_DATE, END_DATE, HOURS, INTRO, HOST, LOC, ADDR, 
 SPOT, HOME_PG, TEL, FEE, FEE_ADULT, FEE_TEEN, FEE_CHILD, F_IMAGE, F_TXT) 
-VALUES (2, '2022 강릉문화재야행', '강릉문화재야행_thumbnail.jpg', TO_DATE('2022-09-27 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
+VALUES (5, '2022 강릉문화재야행', '강릉문화재야행_thumbnail.jpg', TO_DATE('2022-09-27 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
 TO_DATE('2035-12-31 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), '오전 10:00 ~ 오후 6:00', 
 '다시 깨어나는 천년의 관아, 강릉대도호부', '강릉문화원', '강원지역', '강원도 강릉시 임영로131번길 6',
 '강릉대도호부 관아, 토성로, 서부시장', 'http://www.gncn.or.kr', '033-823-3226', 0, 0, 0, 0,
@@ -48,7 +48,7 @@ TO_DATE('2035-12-31 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), '오전 10:00 ~ 오후 
 
 INSERT INTO FEST(FNO, FNAME, THUMBNAIL, START_DATE, END_DATE, HOURS, INTRO, HOST, LOC, ADDR, 
 SPOT, HOME_PG, TEL, FEE, FEE_ADULT, FEE_TEEN, FEE_CHILD, F_IMAGE, F_TXT) 
-VALUES (2, '백제문화제 「제68회 백제문화제」', '백제문화제_thumbnail.jpg', TO_DATE('2022-09-27 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
+VALUES (3, '백제문화제 「제68회 백제문화제」', '백제문화제_thumbnail.jpg', TO_DATE('2022-09-27 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
 TO_DATE('2035-12-31 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), '오전 10:00 ~ 오후 6:00', 
 '한류원조, 백제의 빛과 향', '백제문화제재단', '충청지역', '충청남도 부여군 백강로 135',
 '부여군 구드래 일원, 공주시 금강신관공원 일원', 'http://www.baekje.org', '041-635-6980', 0, 0, 0, 0,
@@ -57,7 +57,7 @@ TO_DATE('2035-12-31 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), '오전 10:00 ~ 오후 
 부여군에서 1955년부터 매년 개최하는 역사재현형 축제이다.
 또한 2015년7월 백제역사유적지구의 유네스코 세계유산 등재를 계기로 백제의 후예들과 관광객들이 만들어가는 세계적인 
 역사문화축제로 나아가고 있다. 제68회 백제문화제는 찬란한 문화를 꽃 피워 이웃나라에 전파함으로써 고대 동아시아의 
-문화발전에 크게 기여했던 '한류원조로서의 백제문화'를 국내외에 확산시키고, 세계적인 축제로 거듭나기 위하여 
+문화발전에 크게 기여했던 "한류원조로서의 백제문화"를 국내외에 확산시키고, 세계적인 축제로 거듭나기 위하여 
 2022년 10월 1일부터 10월 10일까지 10일간 충청남도 공주시와 부여군 일원에서 "백제의 빛과 향"이라는 주제로 
 화려하게 펼쳐진다.
 세계유산인 백제역사유적지구를 배경으로 펼쳐지는 제68회 백제문화제에서 다양한 축제 프로그램과 더불어 백제로의 
@@ -66,7 +66,7 @@ TO_DATE('2035-12-31 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), '오전 10:00 ~ 오후 
 
 INSERT INTO FEST(FNO, FNAME, THUMBNAIL, START_DATE, END_DATE, HOURS, INTRO, HOST, LOC, ADDR, 
 SPOT, HOME_PG, TEL, FEE, FEE_ADULT, FEE_TEEN, FEE_CHILD, F_IMAGE, F_TXT) 
-VALUES (2, '제주레저힐링축제', '제주레저힐링축제_thumbnail.jpg', TO_DATE('2022-09-27 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
+VALUES (4, '제주레저힐링축제', '제주레저힐링축제_thumbnail.jpg', TO_DATE('2022-09-27 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
 TO_DATE('2035-12-31 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), '오전 10:00 ~ 오후 6:00', 
 '체험형 액티비티 축제', '제주시', '제주지역', '제주특별자치도 제주시 조함해안로 525',
 '함덕해수욕장, 새별오름', '	https://jejulhfestival.kr', '064-728-2751~6', 0, 0, 0, 0,
@@ -88,7 +88,7 @@ TO_DATE('2036-12-31 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), '오전 10:00 ~ 오후 
 
 INSERT INTO FEST(FNO, FNAME, THUMBNAIL, START_DATE, END_DATE, HOURS, INTRO, HOST, LOC, ADDR, 
 SPOT, HOME_PG, TEL, FEE, FEE_ADULT, FEE_TEEN, FEE_CHILD, F_IMAGE, F_TXT) 
-VALUES (2, '조치원봄꽃축제', '제주레저힐링축제_thumbnail.jpg', TO_DATE('2034-09-27 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
+VALUES (7, '조치원봄꽃축제', '제주레저힐링축제_thumbnail.jpg', TO_DATE('2034-09-27 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
 TO_DATE('2036-12-31 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), '오전 10:00 ~ 오후 6:00', 
 '우리동네 여기저기 꽃피었네', '세종특별자치시 조치원읍', '충청지역', '온라인개최',
 '온라인개최', 'http://www.flowerfestival.kr', '044-301-5052', 0, 0, 0, 0,
@@ -97,7 +97,7 @@ TO_DATE('2036-12-31 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), '오전 10:00 ~ 오후 
 
 INSERT INTO FEST(FNO, FNAME, THUMBNAIL, START_DATE, END_DATE, HOURS, INTRO, HOST, LOC, ADDR, 
 SPOT, HOME_PG, TEL, FEE, FEE_ADULT, FEE_TEEN, FEE_CHILD, F_IMAGE, F_TXT) 
-VALUES (2, '고양가을꽃축제', '고양가을꽃축제_thumbnail.jpg', TO_DATE('2034-09-27 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
+VALUES (8, '고양가을꽃축제', '고양가을꽃축제_thumbnail.jpg', TO_DATE('2034-09-27 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
 TO_DATE('2036-12-31 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), '오전 10:00 ~ 오후 4:30', 
 '낭만적인 가을을 만날 수 있는 고양가을꽃축제', '재단법인 고양국제꽃박람회', '서울/경기/인천', '경기도 고양시 일산동구 호수로 595',
 '일산호수공원', 'http://www.flower.or.kr', '031-908-7750~2', 0, 0, 0, 0,

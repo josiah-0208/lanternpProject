@@ -3,7 +3,8 @@
 <%@ include file="../sessionChk.jsp" %>
 <!DOCTYPE html>
 <html>
- <head>
+<head>
+<style type="text/css">@import url("/lanternProject/css/common.css?1");</style>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,7 +28,7 @@
 			else alert("탈퇴가 취소 되었습니다.");
 		}
 		</script>
-    </head>
+</head>
     <body>
         <div>
            <div class="panel shadow1">

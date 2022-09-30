@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">@import url("/lanternProject/css/festRegistForm.css");</style>
+<style type="text/css">@import url("/lanternProject/css/festRegist.css");</style>
 <style type="text/css">@import url("/lanternProject/css/common.css");</style>
 </head>
 <body>
@@ -163,7 +163,7 @@
 				</div>
 			</div>
 			<div class="line">
-				<div class="bottom btn">
+				<div class="botton_btn">
 					<input type="submit" value="등록하기">
 					<input type="button" onclick="history.back()" value="취소">
 				</div>

@@ -35,7 +35,7 @@ CREATE TABLE fest
     fee_teen   NUMBER(6) default 0,
     fee_child  NUMBER(6) default 0,
     f_image    VARCHAR2(200),
-    f_txt      VARCHAR2(2000),
+    f_txt      VARCHAR2(1000 char),
 	del        CHAR(1) default 'n'
 );
 select * from fest;
@@ -62,8 +62,8 @@ drop table review_board;
 CREATE TABLE review_board (
 	review_no NUMBER(5) PRIMARY KEY NOT NULL,
 	member_no NUMBER(15) constraint review_board_member_no_fk references member NOT NULL,
-	title VARCHAR2(20) NOT NULL,
-	content VARCHAR2(2999) NOT NULL,
+	title VARCHAR2(20 char) NOT NULL,
+	content VARCHAR2(2999 char) NOT NULL,
 	filedata varchar(200),
 	likes NUMBER default 0,
 	read_cnt NUMBER default 0 NOT NULL,
@@ -77,7 +77,7 @@ CREATE TABLE board_reply (
 	reply_no NUMBER(5) PRIMARY KEY NOT NULL,
 	member_no NUMBER(15) constraint board_reply_member_no_fk references member  NOT NULL,
 	review_no NUMBER(5) references review_board NOT NULL,
-	rp_content VARCHAR2(200) NOT NULL,
+	rp_content VARCHAR2(200 char) NOT NULL,
 	rp_reg_date DATE NOT NULL,
 	rp_del CHAR(1) default 'n' NOT NULL
 );

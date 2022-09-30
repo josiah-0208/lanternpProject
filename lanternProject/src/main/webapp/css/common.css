@@ -13,3 +13,86 @@ button { color: black; }
 		display: flex;
 		justify-content: center;
 	}
+	
+	/* input태그 text */
+	input[type=text] {
+		border: 0;
+		width: 500px;
+		height: 23px;
+		font-size: 10pt;
+		border-radius: 18px;
+		outline: none; 
+		padding-left: 25px;
+		background-color: #39393D;
+		color: #edbd16;
+	}
+	
+	/* input태그 number */
+	input[type=number] {
+		border: 0;
+		width: 300px;
+		height: 23px;
+		font-size: 10pt;
+		border-radius: 18px;
+		outline: none; 
+		padding-left: 25px;
+		background-color: #39393D;
+		color: #edbd16;
+	}
+	
+	/* input태그 date */
+	input[type=date] {
+		border: 0;
+		width: 223px;
+		height: 23px;
+		font-size: 10pt;
+		border-radius: 18px;
+		outline: none; 
+		padding-left: 25px;
+		background-color: #39393D;
+		color: #edbd16;
+	}
+	
+	/* input태그 tel */
+	input[type=tel] {
+		border: 0;
+		width: 300px;
+		height: 23px;
+		font-size: 10pt;
+		border-radius: 18px;
+		outline: none; 
+		padding-left: 25px;
+		background-color: #39393D;
+		color: #edbd16;
+	}
+	
+	textarea {
+		border: 0;
+		width: 600px;
+		height: 300px;
+		font-size: 10pt;
+		border-radius: 18px;
+		outline: none; 
+		padding-left: 20px;
+		padding-right: 20px;
+		background-color: #39393D;
+		color: #edbd16;
+	}
+	
+	select, option {
+		border: 0;
+		width: 300px;
+		height: 23px;
+		font-size: 10pt;
+		border-radius: 18px;
+		outline: none; 
+		padding-left: 25px;
+		background-color: #39393D;
+		color: #edbd16;
+	}
+	
+	input[type=button] {
+		border: 1px;
+		background-color: #08080D;
+		color: #edbd16;
+	}
