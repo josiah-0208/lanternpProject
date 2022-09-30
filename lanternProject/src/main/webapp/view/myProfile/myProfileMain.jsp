@@ -17,7 +17,6 @@ article { background: pink; height: 400px; float: left; width: 80%; }
 </style>
 </head>
 <body>
-
 	<nav><jsp:include page="profileMenu.jsp"/></nav>
 </body>
 </html>

@@ -19,7 +19,7 @@
 		<pattern>/view/display/bookmarkUpdate.*</pattern>
 		<pattern>/view/board/bdLikesCnt.*</pattern>
 		<pattern>/view/board/rpLikesCnt.*</pattern>
-		<pattern>/view/myPage/myMainMenu.*</pattern> -->
+		<pattern>/view/myProfile/profileMenu.*</pattern> -->
 	</excludes>
 </decorators>
 
