@@ -10,6 +10,7 @@ import dao.BoardDao;
 import dao.BoardLikesDao;
 import dao.BoardReplyDao;
 import model.Board;
+import model.BoardLikes;
 import model.BoardReply;
 import service.CommandProcess;
 
@@ -27,7 +28,6 @@ public class BoardContent implements CommandProcess {
 		HttpSession session = request.getSession();
 		if (session.getAttribute("member_no") != null) {
 			member_no = (int)session.getAttribute("member_no");
-			System.out.println(member_no);
 			BoardLikes bl = bld.select(review_no, member_no);
 			
 			if (bl != null) {

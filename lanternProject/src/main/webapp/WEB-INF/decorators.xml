@@ -10,6 +10,7 @@
 		<pattern>/view/master/*</pattern>   
 	</decorator>
 	<excludes>
+		<pattern>/view/fest/festHome.*</pattern>
 		<!-- <pattern>/view/member/confirmNick_nm.*</pattern>
 		<pattern>/view/member/confirmId.*</pattern>
 		<pattern>/view/member/mailResult.*</pattern>

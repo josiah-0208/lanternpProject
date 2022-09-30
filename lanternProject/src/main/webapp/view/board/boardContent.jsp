@@ -15,9 +15,9 @@
 	/* 게시글 좋아요 */
 	$(function () {
 		if (${check} === 1) {
-			$('.likes_on').hide();
-		} else {
 			$('.likes_off').hide();
+		} else {
+			$('.likes_on').hide();
 		};
 			
 		$('.likes_on').on('click', function() {
@@ -38,7 +38,7 @@
 				location.href="/lanternProject/view/member/loginForm.do";
 			}
 		} else {
-			$.post("boardLikes.en", "review_no=${board.review_no}");		
+			$.post("boardLikesUpdate.en", "review_no=${board.review_no}");		
 		}
 	}
 	/* 게시글 삭제 */
