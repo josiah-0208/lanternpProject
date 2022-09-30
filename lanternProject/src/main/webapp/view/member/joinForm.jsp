@@ -48,7 +48,7 @@
     <body>
         <div id="d1">
            <div class="panel shadow1" id="d2">
-                <form class="login-form" name="frm"action="joinResult.do" onsubmit="return chk()">
+                <form class="login-form" name="frm"action="joinResult.do" onsubmit="return chk()" method="post">
                     <div class="panel-switch animated fadeIn">
                         <button type="button" id="sign_up" class="" disabled>회원가입</button>
                         <button type="button" id="log_in" class="active-button" onclick="location.href='loginForm.do'">로그인</button>

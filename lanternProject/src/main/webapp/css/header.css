@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+	header {
+		width: 100%;
+		height: 150px;
+	}
+	
+	.header {
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	.nav {
+		flex-direction: column;
+	}
+	
+	.nav_top {
+		display: flex;
+	}
+	
+	.nav_bottom {
+		display: flex;
+	}
+	
+	.active {
+		color: orange;
+	}
+
