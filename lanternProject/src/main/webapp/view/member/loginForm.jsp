@@ -39,7 +39,7 @@
                         <input class="login animated fadeInUp animate2" name="id" type="textbox"  required   placeholder="ID" value="" >
                         <input class="login animated fadeInUp animate3" name="password" type="password" required placeholder="비밀번호" value="">
                     </fieldset>
-                    <input type="submit" id="login-form-submit" class="login_form button animated fadeInUp animate4" value="Log in" formaction="loginResult.do?prevUrl=${prevUrl}" formmethod="post" onclick="return logchk()">
+                    <input type="submit" id="login-form-submit" class="login_form button animated fadeInUp animate4" value="Log in" formaction="loginResult.do?prevUrl=${prevUrl}" formmethod="post">
                     <p><a id="lost-password-link" onclick="forgotPopup()" class="animated fadeIn animate7">아이디나 비밀번호를 잊어버리셨나요?</a></p>
                 </form>
             </div>

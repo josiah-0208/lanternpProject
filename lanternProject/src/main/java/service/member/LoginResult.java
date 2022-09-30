@@ -16,13 +16,11 @@ public class LoginResult implements CommandProcess {
 		String prevUrl = request.getParameter("prevUrl"); //
 		if(prevUrl.equals("/lanternProject/view/member/joinResult.do")) 
 			prevUrl ="/lanternProject/index.html";
-		
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
 		
 		MemberDao md = MemberDao.getInstance();  
 		Member member = md.select(id);
-		
 		int result = 0;
 		if(member==null||member.getDel().equals("y"))
 			result=-1;
