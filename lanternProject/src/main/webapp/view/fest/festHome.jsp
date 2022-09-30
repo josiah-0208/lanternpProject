@@ -32,7 +32,7 @@
 </head>
 <body>
 	<div class="video_box">
-		<video src="/lanternProject/css/homevideo4.mp4" muted autoplay loop></video>
+		<video src="/lanternProject/css/homevideo1.mp4" muted autoplay loop></video>
 	</div>
 	
 	<div class="title1">축제를 비추다</div>

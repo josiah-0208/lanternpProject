@@ -6,7 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">@import url("/lanternProject/css/festMain.css?2");</style>
+<style type="text/css">@import url("/lanternProject/css/festMain.css?1");</style>
+<style type="text/css">@import url("/lanternProject/css/common.css?1");</style>
 <script type="text/javascript" src="../../js/jquery.js"></script>
 <script type="text/javascript">
 	$(function() {
@@ -34,15 +35,19 @@
 </head>
 <body>
 <div class="container_main">
-	<div class="festival_tab"> 
-			<div class="title" id="tab1" onclick="location.href='festMain.so?tab=1'">진행중인</div>
-			<div class="title" id="tab2" onclick="location.href='festMain.so?tab=2'">예정된</div>
-	</div>
 	<div class="filter_box">
 		<div class="filter">
 			<img src="/lanternProject/images/icons/filter.png" style="width: 25px">
 		</div>				
 	</div>
+	
+	<div class="festival_tab"> 
+			<div></div>
+			<div class="title" id="tab1" onclick="location.href='festMain.so?tab=1'">진행중인</div>
+			<div class="title" id="tab2" onclick="location.href='festMain.so?tab=2'">예정된</div>
+			<div></div>
+	</div>
+
 	<!-- 축제 리스트 불러오기 뷰, 썸네일이미지파일, 데이터 입력 해야함-->
 	 <div class="festival_list">
 		<c:if test="${tab == 1}">
@@ -55,7 +60,7 @@
 							</div>
 							<div class="item_fname">${festival.fname }
 							</div>
-							<div class="item_term">${festival.start_date }//${today } ~ ${festival.end_date }
+							<div class="item_term">${festival.start_date } ~ ${festival.end_date }
 							</div>
 							<div class="item_loc">${festival.loc }
 							</div>
@@ -97,7 +102,7 @@
 							</div>
 							<div class="item_fname">${festival.fname }
 							</div>
-							<div class="item_term">${festival.start_date }//${today } ~ ${festival.end_date }
+							<div class="item_term">${festival.start_date } ~ ${festival.end_date }
 							</div>
 							<div class="item_loc">${festival.loc }
 							</div>
@@ -174,27 +179,27 @@
 			<div class="tag_box">
 				<div class="tag_item">
 					<label class="tag" for="l1">서울/경기/인천</label>
-					<input type="checkbox" name="loc" id="l1" value="서울/경기/인천">
+					<input type="radio" name="loc" id="l1" value="서울/경기/인천">
 				</div>
 				<div class="tag_item">
 					<label class="tag" for="l2">강원 지역</label>
-					<input type="checkbox" name="loc" id="l2" value="강원지역">
+					<input type="radio" name="loc" id="l2" value="강원지역">
 				</div>
 				<div class="tag_item">
 					<label class="tag" for="l3">충청 지역</label>
-					<input type="checkbox" name="loc" id="l3" value="충청지역">
+					<input type="radio" name="loc" id="l3" value="충청지역">
 				</div>
 				<div class="tag_item">
 					<label class="tag" for="l4">전라 지역</label>
-					<input type="checkbox" name="loc" id="l4" value="전라지역">
+					<input type="radio" name="loc" id="l4" value="전라지역">
 				</div>
 				<div class="tag_item">
 					<label class="tag" for="l5">경상 지역</label>
-					<input type="checkbox" name="loc" id="l5" value="경상지역">
+					<input type="radio" name="loc" id="l5" value="경상지역">
 				</div>
 				<div class="tag_item">
 					<label class="tag" for="l6">제주 지역</label>
-					<input type="checkbox" name="loc" id="l6" value="제주지역">
+					<input type="radio" name="loc" id="l6" value="제주지역">
 				</div>
 			</div>
 			<div class="modal_btn">

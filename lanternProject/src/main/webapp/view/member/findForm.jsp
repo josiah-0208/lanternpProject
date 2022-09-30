@@ -5,9 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-	@import url("../../css/find.css")
-</style>
+<style type="text/css">@import url("/lanternProject/css/common.css?1");</style>
+<style type="text/css">@import url("../../css/find.css")</style>
 
 <script type="text/javascript">
 	function wincl(){

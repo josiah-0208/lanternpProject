@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+	/* 컨테이너 */
+	.container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	
+	.login-form {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	
+	/* 회원가입/로그인 선택 버튼 */
+	.top_button {
+		display: flex;
+	}
