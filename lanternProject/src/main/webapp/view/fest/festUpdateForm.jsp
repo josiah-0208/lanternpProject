@@ -10,8 +10,7 @@
 <script type="text/javascript" src="/lanternProject/js/jquery.js"></script>
 <script type="text/javascript">
 	$(function() {
-		var selectValue = ${festival.loc};
-		$('select option[value='+selectValue+']').attr('selected', true);
+		$("#locSelect").val("${festival.loc}").prop("selected", true);
 	})
 </script>
 </head>
@@ -74,10 +73,10 @@
 					지역
 				</div>
 				<div class="loc">
-					<select name="loc" required>
-						<option>서울/경기/인천</option><option>강원지역</option>
-						<option>충청지역</option><option>전라지역</option>
-						<option>경상지역</option><option>제주지역</option>
+					<select name="loc" id="locSelect" required>
+						<option value="서울/경기/인천">서울/경기/인천</option><option value="강원지역">강원지역</option>
+						<option value="충청지역">충청지역</option><option value="전라지역">전라지역</option>
+						<option value="경상지역">경상지역</option><option value="제주지역">제주지역</option>
 					</select>
 				</div>
 			</div>

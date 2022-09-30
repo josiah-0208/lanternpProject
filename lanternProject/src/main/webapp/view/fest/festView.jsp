@@ -29,7 +29,11 @@
 				$('.bm_img2').show();
 				$('.bm_img1').hide();
 			});
-			
+			if( ${id != 'master'} ) {
+				$('.view_bottom').hide();
+			} else {
+				$('.view_bottom').show();
+			}
 		
 	});
 	

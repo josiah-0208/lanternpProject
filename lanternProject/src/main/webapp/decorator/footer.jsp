@@ -10,7 +10,7 @@
 <body>
 	<footer>
 		<div class="footer">
-			<img class="footer_logo" alt="" src="../../images/logo.svg" width="130px">
+			<img class="footer_logo" src=""">
 			<p>© 2022, lanterProject. All Rights Reserved.</p>
 		</div>
 	</footer>

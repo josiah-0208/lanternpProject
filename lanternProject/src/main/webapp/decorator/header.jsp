@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="">
+<link rel="stylesheet" type="text/css" href="/lanternProject/css/header.css">
 <script type="text/javascript">
 	// nav active control
 	$(document).ready(function() { // window.onload보다 document.ready가 더 빠르고 안정적!
@@ -16,59 +16,49 @@
 		
 		//$('.nav_main a').removeClass("active");
 		$('#'+sliceUrl[5]).addClass("active");
-//		alert(curUrl+" : "+sliceUrl[5]);
+		
 	});
 	
 	function ssChk(name) {
 		if (${empty id}) {
 			var con = confirm("로그인 후 이용해 주시기 바랍니다.");
 			if (con) {
-				if (name == 'main') {
-					location.href = "/semojeon/views/myPage/myMain.wo";
-				} else if (name == 'book') {
-					location.href = "/semojeon/views/myPage/myBookmarkList.wo";
-				}
-			} 
-		} else {
-			if (name == 'main') {
-				location.href = "/semojeon/views/myPage/myMain.wo";
-			} else if (name == 'book') {
-				location.href = "/semojeon/views/myPage/myBookmarkList.wo";
+				location.href="/lanternProject/view/member/loginForm.do";
 			}
-		}
-	}
+			} else {
+				location.href="/lanternProject/view/myProfile/myProfileMain.do";
+			}
+		};
 </script>
 </head>
 <body>   
 	<header>
-		<div class='header_inner'>
+		<div class='header'>
 			<div class='header_logo'>
 				<a href="/lanternProject/view/fest/festMain.so?tab=1"><img src=''></a>
 			</div>
-			<nav>
-				<ul class='nav_sub'>
+			<div class='nav'>
+				<div class='nav_top'>
 					<c:if test="${empty id }">
-						<li><a href="/semojeon/views/member/loginForm.na">로그인</a></li>
-						<li><a href="/semojeon/views/member/joinForm.na">회원가입</a></li>
+						<div><a href="/lanternProject/view/member/loginForm.do">로그인</a></div>
+						<div><a href="/lanternProject/view/member/joinForm.do">회원가입</a></div>
 					</c:if>
 					<c:if test="${not empty id }">
-						<c:if test="${id != 'admin'}">
-							<li><a href="/semojeon/views/member/logout.na">로그아웃</a></li>
+						<c:if test="${id != 'master'}">
+							<div><a href="/lanternProject/view/member/logout.do">로그아웃</a></div>
 						</c:if>
-						<c:if test="${id == 'admin'}">
-							<li><a href="/semojeon/views/member/logout.na">로그아웃</a></li>
-							<li><a href="/semojeon/views/admin/adminMain.na">관리자페이지</a></li>
+						<c:if test="${id == 'master'}">
+							<div><a href="/lanternProject/view/member/logout.do">로그아웃</a></div>
+							<div><a href="/lanternProject/view/master/masterMain.do">관리자페이지</a></div>
 						</c:if>
 					</c:if>
-				</ul>
-				<ul class='nav_main'>
-					<li><a href="/semojeon/views/display/dpMain.do?tab=1" id="display">전시</a></li>
-					<li><a href="/semojeon/views/board/boardMain.wo?pageNum=1" id="board">스토리</a></li>
-					<li><a id="myPage" onclick="return ssChk('main')">마이페이지</a></li>
-					<li><a onclick="return ssChk('book')"><img alt="북마크" src="/semojeon/images/icons/bookmark.png" ></a></li>
-					<li><a id="search"><img alt="검색" src="/semojeon/images/icons/search.png"></a></li>
-				</ul>
-			</nav>
+				</div>
+				<div class='nav_bottom'>
+					<div><a href="/lanternProject/view/fest/festMain.so?tab=1" id="festival">축제</a></div>
+					<div><a href="/lanternProject/view/board/boardList.en" id="board">리뷰</a></div>
+					<div><a id="myPage" onclick="return ssChk('main')">마이페이지</a></div>
+				</div>
+			</div>
 		</div>
 	</header>
 
