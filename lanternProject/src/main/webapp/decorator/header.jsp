@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="/lanternProject/css/header.css">
+<link rel="stylesheet" type="text/css" href="/lanternProject/css/header.css?1">
 <script type="text/javascript">
 	// nav active control
 	$(document).ready(function() { // window.onload보다 document.ready가 더 빠르고 안정적!
@@ -16,6 +16,9 @@
 		
 		//$('.nav_main a').removeClass("active");
 		$('#'+sliceUrl[5]).addClass("active");
+		if (sliceUrl[6] === 'loginForm.do' || sliceUrl[6] === 'joinForm.do') {
+			$('.nav_top').hide();
+		}
 		
 	});
 	
@@ -54,9 +57,9 @@
 					</c:if>
 				</div>
 				<div class='nav_bottom'>
-					<div><a href="/lanternProject/view/fest/festMain.so?tab=1" id="festival">축제</a></div>
+					<div><a href="/lanternProject/view/fest/festMain.so?tab=1" id="fest">축제</a></div>
 					<div><a href="/lanternProject/view/board/boardList.en" id="board">리뷰</a></div>
-					<div><a id="myPage" onclick="return ssChk('main')">마이페이지</a></div>
+					<div><a id="member" onclick="return ssChk('main')">마이페이지</a></div>
 				</div>
 			</div>
 		</div>

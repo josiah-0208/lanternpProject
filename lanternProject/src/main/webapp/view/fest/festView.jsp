@@ -70,8 +70,8 @@
 		<p>
 		<div>
 			<div class="bookmark1" onclick="bookmark()">
-				<img class="bm_img2" src="/lanternProject/images/icons/bm2.png" style="width: 100px; height: 100px;"> 
-				<img class="bm_img1" src="/lanternProject/images/icons/bm1.png" style="width: 100px; height: 100px;">
+				<img class="bm_img2" src="/lanternProject/images/bm2.png" style="width:100%; height:100%;"> 
+				<img class="bm_img1" src="/lanternProject/images/bm1.png" style="width:100%; height:100%;">
 			</div>
 		</div>
 		<p>

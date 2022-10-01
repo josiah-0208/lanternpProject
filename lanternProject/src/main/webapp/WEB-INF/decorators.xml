@@ -12,6 +12,7 @@
 	<excludes>
 		<pattern>/view/fest/festHome.*</pattern>
 		<pattern>/view/member/dupChk.*</pattern>
+		<pattern>/view/member/findForm.*</pattern>
 		<!-- <pattern>/view/member/confirmNick_nm.*</pattern>
 		<pattern>/view/member/confirmId.*</pattern>
 		<pattern>/view/member/mailResult.*</pattern>

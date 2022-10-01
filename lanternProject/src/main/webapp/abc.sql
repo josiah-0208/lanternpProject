@@ -23,13 +23,6 @@ CREATE TABLE fest
 );
 
 drop table bookmark;
-CREATE TABLE bookmark
-(
-    bm_no        NUMBER PRIMARY KEY,
-    member_no    NUMBER NOT NULL,
-    fno          NUMBER NOT NULL
-);
-select * from bookmark;
 
 DROP TABLE fest;
 select * from fest;

@@ -37,7 +37,7 @@
 <div class="container_main">
 	<div class="filter_box">
 		<div class="filter">
-			<img src="/lanternProject/images/icons/filter.png" style="width: 25px">
+			<img src="/lanternProject/images/filter.png" style="width: 25px">
 		</div>				
 	</div>
 	
@@ -136,37 +136,33 @@
 	
 	
 	<div class="paging">
-		<div class="paging_box">
-			<div class="pre_btn">
-				<c:if test="${startPage > PAGE_PER_BLOCK}">
-					<button class="pre1" onclick="location.href='festMain.so?tab=${tab }&pageNum=${startPage - 1}&loc=${loc }'">
-						<img alt="이전" src="/lanternProject/images/icons/arrow_left1.png">
-						<img alt="이전" src="/lanternProject/images/icons/arrow_left1.png">
-					</button> 
-				</c:if>
-				<c:if test="${pageNum > 1}">
-					<button class="pre2" onclick="location.href='festMain.so?tab=${tab }&pageNum=${currentPage - 1}&loc=${loc }'">
-						<img alt="이전" src="/lanternProject/images/icons/arrow_left1.png">
-					</button>
-				</c:if>
-			</div>
-			<c:forEach var="i" begin="${startPage}" end="${endPage}">
-				<span id="page${i}" class="page_num" onclick="location.href='festMain.so?tab=${tab }&pageNum=${i}&loc=${loc }'">${i}</span>
-			</c:forEach>
-			<div class="next_btn">
-				<c:if test="${currentPage < totalPage}">
-					<button class="next1" onclick="location.href='festMain.so?tab=${tab }&pageNum=${currentPage + 1}&loc=${loc }'">
-						<img alt="다음" src="/lanternProject/images/icons/arrow_right.png">
-					</button>
-				</c:if>
-				<c:if test="${endPage < totalPage}">
-					<button class=next2 onclick="location.href='festMain.so?tab=${tab }&pageNum=${endPage + 1}&loc=${loc }'">
-						<img alt="다음" src="/lanternProject/images/icons/arrow_right.png">
-						<img alt="다음" src="/lanternProject/images/icons/arrow_right.png">
-					</button> 
-				</c:if>
-			</div>	
+		<div class="pre_btn">
+			<c:if test="${startPage > PAGE_PER_BLOCK}">
+				<div class="" onclick="location.href='festMain.so?tab=${tab }&pageNum=${startPage - 1}&loc=${loc }'">
+					<img alt="이전" src="/lanternProject/images/left_arrow2.png" style="width: 20px;">
+				</div> 
+			</c:if>
+			<c:if test="${pageNum > 1}">
+				<div class="" onclick="location.href='festMain.so?tab=${tab }&pageNum=${currentPage - 1}&loc=${loc }'">
+					<img alt="이전" src="/lanternProject/images/left_arrow.png" style="width: 20px;">
+				</div>
+			</c:if>
 		</div>
+		<c:forEach var="i" begin="${startPage}" end="${endPage}">
+			<span id="page${i}" class="page_num" onclick="location.href='festMain.so?tab=${tab }&pageNum=${i}&loc=${loc }'">${i}</span>
+		</c:forEach>
+		<div class="nxt_btn">
+			<c:if test="${currentPage < totalPage}">
+				<div class="" onclick="location.href='festMain.so?tab=${tab }&pageNum=${currentPage + 1}&loc=${loc }'">
+					<img alt="다음" src="/lanternProject/images/right_arrow.png" style="width: 20px;">
+				</div>
+			</c:if>
+			<c:if test="${endPage < totalPage}">
+				<div class="" onclick="location.href='festMain.so?tab=${tab }&pageNum=${endPage + 1}&loc=${loc }'">
+					<img alt="다음" src="/lanternProject/images/right_arrow2.png" style="width: 20px;">
+				</div> 
+			</c:if>
+		</div>	
 	</div>
 </div>
 

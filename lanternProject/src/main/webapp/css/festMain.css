@@ -57,6 +57,18 @@
 		/* background: orange; */
 	}
 	
+	.paging_box {
+		display: flex;
+		justify-content: center;
+	}
+	
+	.pre_btn {
+		display: flex;
+	}
+	
+	.nxt_btn {
+		display: flex;
+	}
 
 	
 	/* 지역선택 모달 설정 */

@@ -11,6 +11,7 @@ TO_DATE('2035-12-31 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), '오전 10:00 ~ 오후 
 가을 한강을 배경으로 노을과 함께 펼쳐지는 문화예술 공연ㆍ전시, 발로 걷고, 눈으로 보고, 귀로 듣는 한강의 생태ㆍ환경 
 체험, 한강 수상과 한강공원에서 즐기는 레저ㆍ스포츠 등 오직 한강에서만 할 수 있는 경험으로 ‘10월의 어느 멋진 날’을 
 선사한다.');
+
 INSERT INTO FEST(FNO, FNAME, THUMBNAIL, START_DATE, END_DATE, HOURS, INTRO, HOST, LOC, ADDR, 
 SPOT, HOME_PG, TEL, FEE, FEE_ADULT, FEE_TEEN, FEE_CHILD, F_IMAGE, F_TXT) 
 VALUES (1, '부산불꽃축제', '부산불꽃축제_thumbnail.jpg', TO_DATE('2022-09-27 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
@@ -23,7 +24,6 @@ TO_DATE('2035-12-31 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), '오전 10:00 ~ 오후 
 스토리텔링이 가미된 부산멀티불꽃쇼와 해외 초청 불꽃쇼를 만나볼 수 있다. 또한 광안리 해수욕장뿐만 아니라 동백섬, 
 이기대 앞까지 “3 point" 연출로 다양한 장소에서 불꽃쇼를 관람할 수 있다.
 가을밤, 불꽃이 내리는 부산! 세계인과 함께하는 부산불꽃축제로 여러분을 초대한다.');
-delete from fest where fno=3;
 
 INSERT INTO FEST(FNO, FNAME, THUMBNAIL, START_DATE, END_DATE, HOURS, INTRO, HOST, LOC, ADDR, 
 SPOT, HOME_PG, TEL, FEE, FEE_ADULT, FEE_TEEN, FEE_CHILD, F_IMAGE, F_TXT) 
@@ -76,15 +76,6 @@ TO_DATE('2035-12-31 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), '오전 10:00 ~ 오후 
 레저와 힐링이 어우러진 융합형 관광축제이다. 체험형 액티비티를 통해 레저 스포츠의 역동성을 즐기고 제주만의 감성적인 
 문화 예술로 힐링을 느낀다. 지역 문화 예술인과 소상송인 등 지역민과 함께 만들어가는 지역 밀착형 축제로서 다양한 
 환경친화적 캠페인과 프로그램 도입으로 축제의 지속가능성 또한 확보한다.');
-
-INSERT INTO FEST(FNO, FNAME, THUMBNAIL, START_DATE, END_DATE, HOURS, INTRO, HOST, LOC, ADDR, 
-SPOT, HOME_PG, TEL, FEE, FEE_ADULT, FEE_TEEN, FEE_CHILD, F_IMAGE, F_TXT) 
-VALUES (2, '조치원봄꽃축제', '제주레저힐링축제_thumbnail.jpg', TO_DATE('2034-09-27 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
-TO_DATE('2036-12-31 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), '오전 10:00 ~ 오후 6:00', 
-'우리동네 여기저기 꽃피었네', '세종특별자치시 조치원읍', '충청지역', '온라인개최',
-'온라인개최', 'http://www.flowerfestival.kr', '044-301-5052', 0, 0, 0, 0,
-'조치원봄꽃축제_f_image', '2021조치원봄꽃축제는 4/1~4/11, 11일 간 온라인으로 개최된다.
-홈페이지에서 봄꽃과 관련된 다양한 온라인 이벤트를 진행한다.');
 
 INSERT INTO FEST(FNO, FNAME, THUMBNAIL, START_DATE, END_DATE, HOURS, INTRO, HOST, LOC, ADDR, 
 SPOT, HOME_PG, TEL, FEE, FEE_ADULT, FEE_TEEN, FEE_CHILD, F_IMAGE, F_TXT) 
