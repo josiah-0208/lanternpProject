@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+	/* 컨테이너 */
+	.container {
+		display: flex;
+		justify-content: center;
+		font-weight: bold;
+	}
+
+	/* 사진과 인사말 */
+	.profile {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	
+	/* 마이페이지 메뉴 */
+	.profile_menu {
+		display: flex;
+		flex-direction: column;
+		align-content: space-evenly;
+	}

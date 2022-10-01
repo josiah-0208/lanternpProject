@@ -19,6 +19,7 @@
 	.view_title {
 		display: flex;
 		font-size: 32px;
+		font-weight: bold;
 	}
 	
 	/* 축제 인트로 */

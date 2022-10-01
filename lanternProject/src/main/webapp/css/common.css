@@ -1,12 +1,40 @@
 @charset "UTF-8";
-caption { font-size: 25px; line-height: 150%; }
-body { background-color: #08080D; }
-table { background-color: #08080D; width: 100%; }
-td { background-color: #08080D; }
-th { background-color: #08080D; }
-td, th { padding: 12px; }
-* { color: white; }
-button { color: black; }
+
+	caption { 
+		font-size: 25px; line-height: 150%; 
+	}
+	
+	body {
+		background-color: #08080D; 
+	 }
+	 
+	table { 
+		background-color: #08080D; width: 100%; 
+	}
+	
+	td { 
+		background-color: #08080D;
+	}
+	
+	th {
+		background-color: #08080D; 
+	}
+	
+	td, th { 
+		padding: 12px; 
+	}
+	
+	* { 
+		color: white; 
+	}
+	
+	button {
+		color: black; 
+	}
+	
+	a {
+		text-decoration-line: none;
+	}
 
 	/* 페이징 */
 	.paging {
@@ -95,4 +123,18 @@ button { color: black; }
 		border: 1px;
 		background-color: #08080D;
 		color: #edbd16;
+	}
+	
+	input[type=submit] {
+		border: 1px;
+		background-color: #edbd16;
+		color: #39393D;
+		font-size: 17px;
+	}
+	
+	button[type=button] {
+		border: 1px;
+		background-color: #39393D;
+		color: #edbd16;
+		font-size: 17px;
 	}
