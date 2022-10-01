@@ -23,23 +23,28 @@ public class BoardList implements CommandProcess {
 		if(filter==null)filter="recent";
 		String pageNum = request.getParameter("pageNum");
 		if (pageNum == null || pageNum.equals(""))
-			pageNum = "1"; // 페이지 초기값 1로 설정
+			pageNum = "1"; // 처음이거나 값이 없으면 페이지값 1로 설정
 		int currentPage = Integer.parseInt(pageNum); // 현재 페이지
+		
+		// 게시글 시작 번호: (페이지번호 -1) *  페이지당 갯수 +1
+		int startRow = (currentPage - 1) * ROW_PER_PAGE + 1;
+		// 게시글 끝 번호: 시작번호 + 페이지당 갯수 -1
+		int endRow = startRow + ROW_PER_PAGE - 1;
+		// 시작 페이지: 현재 페이지 - (현재 페이지 -1) % 블록당 갯수 => 1, 11, 21,..
+		int startPage = currentPage - (currentPage - 1) % PAGE_PER_BLOCK;
+		// 끝 페이지: 시작 페이지 + 블록당 페이지수 -1
+		int endPage = startPage + PAGE_PER_BLOCK - 1;
 		
 		int total = bd.getTotal(); // 총 게시글수
 		int totalPage = (int) Math.ceil((double)total/ROW_PER_PAGE); // 총 페이지수
 		
-		int startRow = (currentPage - 1) * ROW_PER_PAGE + 1; // 게시글 시작 번호 (변수 num의 끝)
-		int endRow = startRow + ROW_PER_PAGE - 1; // 게시글의 마지막 번호 (변수 num = 1)
-		
-		int startPage = currentPage - (currentPage - 1) % PAGE_PER_BLOCK; // 한 블럭당 시작 페이지(1, 11, ..)
-		int endPage = startPage + PAGE_PER_BLOCK - 1; // 한 블럭당 마지막 페이지
-		
-		if (endPage > totalPage) // 마지막 페이지가 총 페이지보다 클 경우
+		// 끝 페이지가 총 페이지보다 크면, 끝 페이지 => 총 페이지로 변경
+		if (endPage > totalPage)
 			endPage = totalPage;
 		
-		List<Board> list = bd.list(startRow, endRow);			
 		// 데이터를 담을 객체 생성
+		List<Board> list = bd.list(startRow, endRow);		
+		
 		if(filter.equals("recent")) {
 			list = bd.list(startRow, endRow);			
 		}else if(filter.equals("cnt")) {
