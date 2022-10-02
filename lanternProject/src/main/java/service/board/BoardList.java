@@ -1,12 +1,17 @@
 package service.board;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.BoardDao;
+import dao.MemberDao;
 import model.Board;
+import model.Bookmark;
+import model.Festival;
+import model.Member;
 import service.CommandProcess;
 
 public class BoardList implements CommandProcess {
@@ -44,16 +49,26 @@ public class BoardList implements CommandProcess {
 		
 		// 데이터를 담을 객체 생성
 		List<Board> list = bd.list(startRow, endRow);		
-		
+		List<Member> mlist = new ArrayList<>();
+		MemberDao md = MemberDao.getInstance();
 		if(filter.equals("recent")) {
-			list = bd.list(startRow, endRow);			
+			list = bd.list(startRow, endRow);	
+			for(Board b1 : list) {
+				int member_no=b1.getMember_no();
+				mlist.add(md.select(member_no));
+			}
 		}else if(filter.equals("cnt")) {
 			list = bd.list2(startRow, endRow);			
+			for(Board b1 : list) {
+				int member_no=b1.getMember_no();
+				mlist.add(md.select(member_no));
+			}
 		}
 
 		// 객체 안에 담을 데이터 준비
 		request.setAttribute("filter", filter);
 		request.setAttribute("list", list);
+		request.setAttribute("mlist", mlist);
 		request.setAttribute("pageNum", pageNum);
 		request.setAttribute("currentPage", currentPage);
 		request.setAttribute("totalPage", totalPage);

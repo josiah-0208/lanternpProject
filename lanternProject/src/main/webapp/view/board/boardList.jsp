@@ -10,7 +10,6 @@
 	
 </style>
 <c:set var="member_no" value='${sessionScope.member_no}'></c:set>
-<c:set var="id" value='${sessionScope.id}'></c:set>
 <link rel="stylesheet" type="text/css" href="../../css/common.css">
 <link rel="stylesheet" type="text/css" href="../../css/boardList.css">
 <script type="text/javascript">
@@ -90,6 +89,11 @@
 							<c:forEach var="board" items="${list }">
 								<tr>		
 									<c:if test="${board.del == 'n' }">
+										<c:forEach var="member" items="${mlist }">
+											<c:if test="${member.member_no==board.member_no }">
+												<c:set var="id" value="${member.id }"></c:set>
+											</c:if>
+										</c:forEach>
 										<th>
 											${id }
 										</th>
