@@ -12,6 +12,7 @@
 <c:set var="member_no" value='${sessionScope.member_no}'></c:set>
 <c:set var="id" value='${sessionScope.id}'></c:set>
 <link rel="stylesheet" type="text/css" href="../../css/common.css">
+<link rel="stylesheet" type="text/css" href="../../css/boardList.css">
 <script type="text/javascript">
   //페이지 로드 시 board_list로 세팅, 페이지넘 색상 세팅
 	$(document).ready(function() {
@@ -36,35 +37,35 @@
 </script>
 </head>
 <body>
-		<h2>축제 후기</h2>
-			<!-- 후기 게시글 작성 버튼 -->
-			<div>
+		<h2 class="title">축제 후기</h2>
+			<!-- 게시판 정렬 설정 -->
+			<div class="top">
 				<div>
-					<a href="boardWriteForm.en?member_no=${board.member_no }">글작성</a>
+					<select id="filter" onchange="filterChange()" >
+						<option value="1">최신순</option>
+						<c:if test="${filter=='recent' }">
+							<option value="2">조회순</option>
+						</c:if>
+						<c:if test="${filter=='cnt' }">
+							<option value="2" selected="selected">조회순</option>
+						</c:if>
+					</select>
+				</div>
+			<!-- 후기 게시글 작성 버튼 -->
+				<div class="write_btn">
+					<a href="boardWriteForm.en?member_no=${board.member_no }">글쓰기</a>
 					<ul></ul>
 				</div>
-				<hr>
 			</div>
-			<!-- 게시판 정렬 설정 -->
-			<select id="filter" onchange="filterChange()" >
-				<option value="1">최신순</option>
-				<c:if test="${filter=='recent' }">
-				<option value="2">조회순</option>
-				</c:if>
-				<c:if test="${filter=='cnt' }">
-				<option value="2" selected="selected">조회순</option>
-				</c:if>
-				
-			</select>
+			<hr>
 			
 			<table>
 				<!-- 테이블 헤드 간격 설정 -->
 				<colgroup>
-					<col width="10%" />
-					<col width="50%" />
-					<col width="15%" />
-					<col width="15%" />
-					<col width="10%" />
+					<col width="11%" />
+					<col width="55%" />
+					<col width="12%" />
+					<col width="12%" />
 				</colgroup>
 				
 				<thead>
@@ -73,7 +74,6 @@
 						<th>제목</th>
 						<th>작성일</th>
 						<th>조회수</th>
-						<th>❤</th>
 					</tr>
 				</thead>
 				
@@ -101,9 +101,6 @@
 										</th>
 										<th>
 											${board.read_cnt }
-										</th>
-										<th>
-											${board.likes }
 										</th>
 									</c:if>
 								</tr>

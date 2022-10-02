@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+	/* 컨테이너 */
+	.container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	
+	/* 후기 작성 */
+	.top_title {
+		display: flex;
+		justify-content: center;
+		font-size: 32px;
+		font-weight: bold;
+	}
+
+	/* 제목 작성 칸 */
+	.bd_title {
+		display: flex;
+	}
+	
+	/* 제목 textarea */
+	.title_textarea {
+		border: 0;
+		width: 850px;
+		height: 20px;
+		font-size: 10pt;
+		border-radius: 18px;
+		outline: none; 
+		padding-left: 20px;
+		padding-right: 20px;
+		background-color: #39393D;
+		color: #edbd16;
+	}
+	
+	/* 내용 textarea */
+	.content_textarea {
+		border: 0;
+		width: 850px;
+		height: 600px;
+		font-size: 10pt;
+		border-radius: 18px;
+		outline: none; 
+		padding-left: 20px;
+		padding-right: 20px;
+		background-color: #39393D;
+		color: #edbd16;
+	}
+	
+	/* 내용 작성 칸 */
+	.bd_content {
+		display: flex;
+	}
+	
+	/* 작성 버튼 */
+	.submit {
+		display: flex;
+		justify-content: space-evenly;
+	}
+	
+
+	

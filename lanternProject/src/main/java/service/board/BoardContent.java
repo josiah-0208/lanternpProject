@@ -20,9 +20,11 @@ public class BoardContent implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		int check = 0;
 		int member_no=-1;
+		
 		/* boardList에서 받아온 데이터 */
 		int review_no = Integer.parseInt(request.getParameter("review_no"));
 		String pageNum = request.getParameter("pageNum");
+		
 		/* 좋아요 체크 */
 		BoardLikesDao bld = BoardLikesDao.getInstance();
 		HttpSession session = request.getSession();

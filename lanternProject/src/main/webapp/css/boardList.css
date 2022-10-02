@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+	/* 최신순/글작성 */
+	.top {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.title {
+		display: flex;
+		justify-content: center;
+	}

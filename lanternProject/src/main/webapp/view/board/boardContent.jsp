@@ -9,6 +9,7 @@
 <c:set var="member_no" value='${sessionScope.member_no}'></c:set>
 <c:set var="id" value='${sessionScope.id}'></c:set>
 <link rel="stylesheet" type="text/css" href="../../css/common.css">
+<link rel="stylesheet" type="text/css" href="../../css/boardContent.css">
 <script type="text/javascript" src="/lanternProject/js/jquery.js"></script>
 <script type="text/javascript">
 
@@ -62,15 +63,15 @@
 </script>
 </head>
 <body>
+	<div class="top">게시글</div><p>
 	<!-- 게시글 불러오기 -->
-	<table>
-		<caption>게시글</caption>
+	<table class="board_view">
 		<tr>
 			<th width="50">제목</th>
 			<td>${board.title }</td>
 		</tr>
 		<tr>
-			<th>작성자 ${check }</th>
+			<th>작성자</th>
 			<td>${board.member_no }</td>
 		</tr>
 		<tr>
@@ -81,7 +82,7 @@
 			<th>작성일</th>
 			<td>${board.reg_date}</td>
 		</tr>
-		<tr>
+		<tr class="content">
 			<th>내용</th>
 			<td>
 				<pre>${board.content}</pre>
@@ -89,10 +90,10 @@
 		</tr>
 	</table>
 	<!-- 좋아요 -->
-	<div>
+	<div class="likes_btn">
 		<div onclick="likes_updt()">
-			<img class="likes_off" alt="채운하트" src="/lanternProject/images/orangeHt.png" width="200" height="200">
-			<img class="likes_on" alt="빈 하트" src="/lanternProject/images/transHt.png" width="200" height="200">
+			<img class="likes_off" alt="채운하트" src="/lanternProject/images/orangeHt.png" width="50" height="50">
+			<img class="likes_on" alt="빈 하트" src="/lanternProject/images/transHt.png" width="50" height="50">
 		</div>
 	</div>
 	<p>
@@ -112,13 +113,13 @@
 			<input type="hidden" name="member_no" value="${sessionScope.member_no}">
 			<input type="hidden" name="reply_no" value="${reply.reply_no }">
 				<!-- 댓글 작성 -->
-				<div class="container">
+				<div class="reply_write">
 					<pre>
-						<textarea name="rp_content" maxlength="300"
-						rows="5" cols="80" style="background-color: transparent; color: white;"
-						placeholder="댓글을 입력하세요. (최대 300자)" required="required"></textarea>
+						<textarea class="reply_text" name="rp_content" maxlength="300"
+						rows="5" cols="80" required="required" style="resize: none;"
+						placeholder="댓글을 입력하세요. (최대 300자)"></textarea>
 					</pre>
-					<input type="submit" value="댓글 작성">
+					<input class="submit" type="submit" value="댓글 작성">
 				</div>
 		</form>
 				<!-- 댓글 리스트 -->
@@ -152,9 +153,11 @@
 							${reply.rp_reg_date }
 						</th>
 						<c:if test="${member_no==reply.member_no }">
-						<th>
-							<a onclick="reply_del(${reply.reply_no})">삭제</a>
-						</th>
+							<th>
+								<a onclick="reply_del(${reply.reply_no})">
+									<img alt="" src="/lanternProject/images/icons/delete_white.png" width="20px" height="20px">
+								</a>
+							</th>
 						</c:if>
 					</tr>
 				</table>

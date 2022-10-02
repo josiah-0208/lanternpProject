@@ -5,42 +5,46 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../../css/common.css">
+<link rel="stylesheet" type="text/css" href="../../css/common.css?1">
+<link rel="stylesheet" type="text/css" href="../../css/boardWrite.css">
 </head>
 <body>
 	<form action="boardWriteAction.en" method="post">
 		<input type="hidden" name="member_no" value="${member_no }">
 
-	<h2>후기 작성</h2>
-	<table>			
+	<div class="top_title">후기 작성</div>
+		
 		<!-- 게시판 글 작성 폼 -->
-		<tbody>
-			<tr>
-				<td>
+		<div class="container">
+			<div class="bd_title">
+				<div>
 					<pre>
 						<textarea name="title" maxlength="20" autofocus="autofocus"
-						rows="1" cols="50" style="background-color: transparent; color: white;"
+						class="title_textarea" rows="1" cols="50" style="resize: none;"
 						placeholder="제목을 입력하세요. (최대 20자)" ></textarea>
 					</pre>
-				</td>
-			</tr>
-			<tr>
-				<td>
+				</div>
+			</div>
+			<div class="bd_content">
+				<div>
 					<pre>
-						<textarea name="content" maxlength="2999"
-						rows="30" cols="150" style="background-color: transparent; color: white;"
+						<textarea name="content" maxlength="2999" style="resize: none;"
+						class="content_textarea" rows="30" cols="150"
 						placeholder="내용을 입력하세요. (최대 2999자)" ></textarea>
 					</pre>
-				</td>
-			</tr>
-			<tr>
-				<td><input type="file" value="파일 업로드"><p>
+				</div>
+			</div>
+			<div class="submit">
+				<div></div>
+				<div>
 					<input type="submit" value="게시">
-				</td>
-			</tr>
-		</tbody>
-		
-	</table>
+				</div>
+				<div>
+					<button type="button" onclick="history.back()">취소</button>
+				</div>
+				<div></div>
+			</div>
+		</div>
 	</form>
 </body>
 </html>

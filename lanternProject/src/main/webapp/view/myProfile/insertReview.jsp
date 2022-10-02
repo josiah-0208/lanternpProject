@@ -11,13 +11,13 @@
 <%
 	BoardDao bd = BoardDao.getInstance();
 	
-	for (int i = 1; i <= 100; i++) {
+	for (int i = 1; i <= 55; i++) {
 		Board board = new Board();
 		
 		board.setReview_no(i);
 		board.setMember_no(1);
 		board.setTitle("제목"+i);
-		board.setContent("네용"+i);
+		board.setContent("내용"+i);
 	
 		bd.insert(board);
 	}
