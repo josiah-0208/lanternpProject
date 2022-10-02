@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../../css/common.css">
 <title>Insert title here</title>
 <script type="text/javascript">
 	$(document).ready(function() {

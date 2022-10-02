@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="../../css/common.css">
-<link rel="stylesheet" type="text/css" href="../../css/boardWrite.css">
+<link rel="stylesheet" type="text/css" href="../../css/boardWrite.css?1">
 </head>
 <body>
 <!-- 게시글 수정 폼 -->

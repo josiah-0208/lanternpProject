@@ -125,6 +125,7 @@
 		color: #edbd16;
 	}
 	
+	/* 확인 버튼 */
 	input[type=submit] {
 		border: 1px;
 		background-color: #edbd16;
@@ -132,6 +133,7 @@
 		font-size: 17px;
 	}
 	
+	/* 취소 버튼 */
 	button[type=button] {
 		border: 1px;
 		background-color: #39393D;

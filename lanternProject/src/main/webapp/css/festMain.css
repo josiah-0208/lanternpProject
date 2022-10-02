@@ -107,5 +107,11 @@
 		min-height: 50vh;
 		padding: 60px;
 	}
+	
+	/* 모달 조회 버튼 */	
+	.modal_btn {
+		display: flex;
+		justify-content: center;
+	}
 
 	

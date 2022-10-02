@@ -50,3 +50,38 @@
 		flex-direction: column;
 	}
 	
+	/* 상세 설명 */
+	.f_txt_title {
+		display: flex;
+		font-size: 26px;
+		flex-grow: 1;
+	}
+	
+	.f_txt_box {
+		display: flex;
+		font-size: 17px;
+		flex-direction: column;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	
+	.view_bottom {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+	
+	.view_update {
+		border: 1px;
+		background-color: #edbd16;
+		color: #39393D;
+		font-size: 17px;
+	}
+	
+	.view_delete {
+		border: 1px;
+		background-color: #39393D;
+		color: #edbd16;
+		font-size: 17px;
+	}
+	

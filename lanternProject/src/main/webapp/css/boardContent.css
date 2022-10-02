@@ -7,6 +7,11 @@
 		justify-content: center;
 	}
 	
+	.like_clike_area {
+		border: 1px solid white;
+		padding: 5px;
+	}
+	
 	.board_view {
 		display: flex;
 	}
@@ -25,9 +30,10 @@
 		color: #edbd16;
 	}
 	
+	/* 댓글 작성 버튼 */
 	.submit {
 		display: flex;
-		
+		justify-content: center;
 	}
 	
 	.top {
@@ -40,4 +46,10 @@
 	.content {
 		display: flex;
 		width: 800px;
+	}
+	
+	/* 작성된 댓글이 없습니다 */
+	.nothing_reply {
+		display: flex;
+		justify-content: center;
 	}
