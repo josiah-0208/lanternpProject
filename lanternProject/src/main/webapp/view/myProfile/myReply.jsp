@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/common.css">
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#myBookmarkList .dot").css("display", "block");
@@ -16,7 +17,7 @@
 		});
 	});
 	function del(delreview_no) {
-		var con = confirm("해당 후기를 삭제 하시겠습니까?");
+		var con = confirm("해당 댓글을 삭제 하시겠습니까?");
 		if(con) {
 			location.href="../board/replyDelete.en?review_no=${board.review_no}&reply_no="+reply_no;
 		}
@@ -40,7 +41,7 @@ article { background: pink; height: 400px; float: left; width: 80%; }
 		<div class="container-table">
 		<table>
 			<tr>
-				<th>글번호</th><th>글제목</th><th>내가쓴 댓글</th>
+				<th>글번호</th><th>글제목</th><th>내가 쓴 댓글</th>
 			</tr>
 			<c:if test="${empty list} ">
 				<tr><th colspan="4">데이터가 존재하지 않습니다</th></tr>

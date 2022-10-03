@@ -9,7 +9,7 @@
 <c:set var="member_no" value='${sessionScope.member_no}'></c:set>
 <c:set var="id" value='${sessionScope.id}'></c:set>
 <link rel="stylesheet" type="text/css" href="../../css/common.css">
-<link rel="stylesheet" type="text/css" href="../../css/boardContent.css">
+<link rel="stylesheet" type="text/css" href="../../css/boardContent.css?3">
 <script type="text/javascript" src="/lanternProject/js/jquery.js"></script>
 <script type="text/javascript">
 
@@ -65,6 +65,7 @@
 <body>
 	<div class="top">게시글</div><p>
 	<!-- 게시글 불러오기 -->
+	<div></div>
 	<table class="board_view">
 		<tr>
 			<th width="50">제목</th>
@@ -85,16 +86,16 @@
 		<tr class="content">
 			<th>내용</th>
 			<td>
-				<pre>${board.content}</pre>
+				${board.content}
 			</td>
 		</tr>
 	</table>
 	<!-- 좋아요 -->
 	<div class="likes_btn">
-		<div onclick="likes_updt()">
-			<img class="likes_off" alt="채운하트" src="/lanternProject/images/orangeHt.png" width="50" height="50">
-			<img class="likes_on" alt="빈 하트" src="/lanternProject/images/transHt.png" width="50" height="50">
-		</div>
+		<div onclick="likes_updt()" class="like_clike_area">
+			<img class="likes_on" alt="채운하트" src="/lanternProject/images/orangeHt.png" width="30" height="30">
+			<img class="likes_off" alt="빈 하트" src="/lanternProject/images/transHt.png" width="30" height="30">
+		&nbsp;좋아요</div>
 	</div>
 	<p>
 	
@@ -125,7 +126,7 @@
 				<!-- 댓글 리스트 -->
 		<div>
 	 		<c:if test="${empty rp_list }">
-				<div>
+				<div class="nothing_reply">
 					작성된 댓글이 없습니다.
 				</div>
 			</c:if>

@@ -197,7 +197,7 @@
 					<label class="tag" for="l6">제주 지역</label>
 					<input type="radio" name="loc" id="l6" value="제주지역">
 				</div>
-			</div>
+			</div><p><p>
 			<div class="modal_btn">
 				<input type="submit" value="조회"> 
 			</div>

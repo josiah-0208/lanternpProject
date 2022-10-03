@@ -5,6 +5,7 @@
 		display: flex;
 		justify-content: center;
 		font-weight: bold;
+		justify-content: space-evenly;
 	}
 
 	/* 사진과 인사말 */
