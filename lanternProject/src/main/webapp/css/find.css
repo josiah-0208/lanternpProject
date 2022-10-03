@@ -1,1 +1,18 @@
 @charset "UTF-8";
+
+#btn1 {
+	position: relative;
+	bottom: 25px;
+	left: 200px;
+}
+
+#btn2 {
+	position: relative;
+	bottom: 25px;
+}
+
+#btn3 {
+	position: relative;
+	left: 300px;
+	top: 40px;
+}
