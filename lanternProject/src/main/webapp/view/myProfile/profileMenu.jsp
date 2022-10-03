@@ -2,15 +2,10 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="../sessionChk.jsp" %>
-<!DOCTYPE html>
-<html>
-<head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">@import url("/lanternProject/css/profileMenu.css?1");</style>
 <style type="text/css">@import url("/lanternProject/css/common.css?2");</style>
-</head>
-<body>
 	<div class="container">
 	<div></div><div></div>
 		<div class="profile">
@@ -52,5 +47,3 @@
 		</div>
 		<div></div><div></div>
 	</div>
-</body>
-</html>

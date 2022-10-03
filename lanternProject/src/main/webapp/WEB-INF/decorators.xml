@@ -13,7 +13,7 @@
 		<pattern>/view/fest/festHome.*</pattern>
 		<pattern>/view/member/dupChk.*</pattern>
 		<pattern>/view/member/findForm.*</pattern>
-		<pattern>/view/myProfile/profileMenu.jsp</pattern> 
+		<pattern>/view/myProfile/profileMenu.*</pattern> 
 		<!-- <pattern>/view/member/confirmNick_nm.*</pattern>
 		<pattern>/view/member/confirmId.*</pattern>
 		<pattern>/view/member/mailResult.*</pattern>
@@ -22,6 +22,8 @@
 		<pattern>/view/display/bookmarkUpdate.*</pattern>
 		<pattern>/view/board/bdLikesCnt.*</pattern>
 		<pattern>/view/board/rpLikesCnt.*</pattern>-->
+		<pattern>/view/board/rpLikesCnt.*</pattern>
+		<pattern>/view/myProfile/profileMenu.*</pattern>
 	</excludes>
 </decorators>
 
