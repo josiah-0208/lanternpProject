@@ -33,7 +33,7 @@
 			</div><br>
 			<div>
 				<a href="myBookmark.do">
-					<img alt="" src="/lanternProject/images/icons/bm2.png" width="40px" height="40px">
+					<img alt="" src="/lanternProject/images/bm2.png" width="40px" height="40px">
 					&nbsp;&nbsp;&nbsp;북마크한 축제
 				</a>
 			</div><br>
