@@ -14,7 +14,7 @@ public class LoginResult implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		
 		String prevUrl = request.getParameter("prevUrl"); //
-		if(prevUrl.equals("/lanternProject/view/member/joinResult.do")) 
+		if(prevUrl.equals("/lanternProject/view/member/joinResult.do")||prevUrl.equals("/lanternProject/view/member/joinForm.do")) 
 			prevUrl ="/lanternProject/index.html";
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
