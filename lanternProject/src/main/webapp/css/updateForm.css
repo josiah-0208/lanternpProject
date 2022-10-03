@@ -9,8 +9,6 @@ html{
 }
 
 body {
-    background: #e5e5e5;
-    background-image:url("../images/4-5.jpg");
     width: 100%;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
@@ -22,11 +20,12 @@ body {
     width: 450px;
     max-width: 90%;
     height: 700px;
-    background:url('../images/wallpaperbetter (1).jpg')  #fff;
     background-repeat:no-repeat;
     background-position: top center;
     background-size: cover;
     margin:5% auto 0px;
+    position: relative;
+    bottom: 100px;
 }
 
 
@@ -153,6 +152,25 @@ fieldset input{
     text-indent: 10px;
     color: #fff;
     font-weight: 600;
+}
+
+#f1, #f2, #f3 {
+	background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 5em;
+    height: 20px;
+    width: 80%;
+    margin: 10px 0;
+    padding: 5px;
+    text-indent: 10px;
+    color: #fff;
+    font-weight: 600;
+}
+
+#f4 {
+	position: relative;
+	top: 17px;
+	left: 90px;
 }
 
 fieldset input::placeholder {

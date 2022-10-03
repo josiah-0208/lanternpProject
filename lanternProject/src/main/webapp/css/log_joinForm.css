@@ -180,6 +180,34 @@
 	    z-index: 0;
 	}
 	
+	#f1 {
+		background: rgba(255, 255, 255, 0.2);
+	    border: none;
+	    border-radius: 5em;
+	    height: 20px;
+	    width: 80%;
+	    margin: 10px 0;
+	    padding: 5px;
+	    text-indent: 10px;
+	    color: #fff;
+	    font-weight: 600;
+	    z-index: 0;
+	}
+	
+	#f2 {
+		background: rgba(255, 255, 255, 0.2);
+	    border: none;
+	    border-radius: 5em;
+	    height: 20px;
+	    width: 80%;
+	    margin: 10px 0;
+	    padding: 5px;
+	    text-indent: 10px;
+	    color: #fff;
+	    font-weight: 600;
+	    z-index: 0;
+	}
+	
 	fieldset input::placeholder {
 	    color: #c7c6c6;
 	}
@@ -194,7 +222,7 @@
 	
 	.login_form{
 	    position: relative;
-	    bottom:0;
+	    bottom: 20px;
 	    width: 70%;
 	    height: 4em;
 	    margin-top: 150px;
@@ -239,18 +267,18 @@
 	}
 	.chk-msg {
 		position: relative;
-		right:500px;
-		top:405px;
-		color: #E5331E;
+		right: 0px;
+		top: 0px;
+		color: white;
 		font-size: 10px;
-		z-index: 3;
+		z-index: 10;
 	}
 	
 	.chk-btn {
 		display: inline-block;
-		position: relative;
-		top:362px;
-	    right: 410px;
+		position: absolute;
+		top: 0px;
+	    right: 38px;
 		width: 60px;
 		height: 30px;
 		line-height: 48px;
@@ -263,4 +291,19 @@
 	}
 	#delete{
 		text-decoration: underline;
+	}
+	
+	#title-signup {
+		position: relative;
+		bottom: 20px;
+	}
+	
+	#signup-fieldset {
+		position: relative;
+		bottom: 40px;
+	}
+	
+	#lost-password-link {
+		position: relative;
+		bottom: 18px;
 	}
