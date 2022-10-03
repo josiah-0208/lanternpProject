@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.BoardDao;
+import dao.MemberDao;
 import model.Board;
 import service.CommandProcess;
 

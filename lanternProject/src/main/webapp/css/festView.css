@@ -50,3 +50,25 @@
 		flex-direction: column;
 	}
 	
+	.inform_bmk {
+		position: relative;
+	}
+	
+	.bookmark1 {
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		right: -50px;
+		bottom: -2px;
+	}
+	
+	.view_middle {
+		display: flex;
+		justify-content: space-between;
+		width: 90%;
+	}
+	
+	.view_bottom {
+		display: flex;
+	}
+	

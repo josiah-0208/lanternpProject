@@ -127,8 +127,8 @@
 	
 	input[type=submit] {
 		border: 1px;
-		background-color: #edbd16;
-		color: #39393D;
+		background-color: #39393D;
+		color: #edbd16;
 		font-size: 17px;
 	}
 	

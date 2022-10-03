@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">@import url("/lanternProject/css/festMain.css?1");</style>
-<style type="text/css">@import url("/lanternProject/css/common.css?1");</style>
+<style type="text/css">@import url("/lanternProject/css/festMain.css?a");</style>
+<style type="text/css">@import url("/lanternProject/css/common.css?a");</style>
 <script type="text/javascript" src="../../js/jquery.js"></script>
 <script type="text/javascript">
 	$(function() {
@@ -43,8 +43,8 @@
 	
 	<div class="festival_tab"> 
 			<div></div>
-			<div class="title" id="tab1" onclick="location.href='festMain.so?tab=1'">진행중인</div>
-			<div class="title" id="tab2" onclick="location.href='festMain.so?tab=2'">예정된</div>
+			<div class="title" id="tab1" onclick="location.href='festMain.so?tab=1'" style="font-size: 17px;">진행중인</div>
+			<div class="title" id="tab2" onclick="location.href='festMain.so?tab=2'" style="font-size: 17px;">예정된</div>
 			<div></div>
 	</div>
 
@@ -60,11 +60,11 @@
 							</div>
 							<div class="item_fname">${festival.fname }
 							</div>
+							<div class="item_intro"> ${festival.intro }
+							</div>
 							<div class="item_term">${festival.start_date } ~ ${festival.end_date }
 							</div>
 							<div class="item_loc">${festival.loc }
-							</div>
-							<div class="item_intro"> ${festival.intro }
 							</div>
 						</div>
 					</c:if>
@@ -79,11 +79,11 @@
 							</div>
 							<div class="item_fname">${festival.fname }
 							</div>
+							<div class="item_intro"> ${festival.intro }
+							</div>
 							<div class="item_term">${festival.start_date } ~ ${festival.end_date }
 							</div>
 							<div class="item_loc">${festival.loc }
-							</div>
-							<div class="item_intro"> ${festival.intro }
 							</div>
 						</div>
 					</c:if>
@@ -102,11 +102,11 @@
 							</div>
 							<div class="item_fname">${festival.fname }
 							</div>
+							<div class="item_intro"> ${festival.intro }
+							</div>
 							<div class="item_term">${festival.start_date } ~ ${festival.end_date }
 							</div>
 							<div class="item_loc">${festival.loc }
-							</div>
-							<div class="item_intro"> ${festival.intro }
 							</div>
 						</div>
 					</c:if>
@@ -121,11 +121,11 @@
 							</div>
 							<div class="item_fname">${festival.fname }
 							</div>
+							<div class="item_intro"> ${festival.intro }
+							</div>
 							<div class="item_term">${festival.start_date } ~ ${festival.end_date }
 							</div>
 							<div class="item_loc">${festival.loc }
-							</div>
-							<div class="item_intro"> ${festival.intro }
 							</div>
 						</div>
 					</c:if>
@@ -135,7 +135,7 @@
 	</div>
 	
 	
-	<div class="paging">
+	<div class="paging_box">
 		<div class="pre_btn">
 			<c:if test="${startPage > PAGE_PER_BLOCK}">
 				<div class="" onclick="location.href='festMain.so?tab=${tab }&pageNum=${startPage - 1}&loc=${loc }'">
@@ -148,9 +148,11 @@
 				</div>
 			</c:if>
 		</div>
-		<c:forEach var="i" begin="${startPage}" end="${endPage}">
-			<span id="page${i}" class="page_num" onclick="location.href='festMain.so?tab=${tab }&pageNum=${i}&loc=${loc }'">${i}</span>
-		</c:forEach>
+		<div style="position: relative; margin: 2px; bottom: 3px;">
+			<c:forEach var="i" begin="${startPage}" end="${endPage}">
+				<span id="page${i}" class="page_num" onclick="location.href='festMain.so?tab=${tab }&pageNum=${i}&loc=${loc }'" style="margin: 3px;">${i}</span>
+			</c:forEach>
+		</div>
 		<div class="nxt_btn">
 			<c:if test="${currentPage < totalPage}">
 				<div class="" onclick="location.href='festMain.so?tab=${tab }&pageNum=${currentPage + 1}&loc=${loc }'">
@@ -198,6 +200,7 @@
 					<input type="radio" name="loc" id="l6" value="제주지역">
 				</div>
 			</div>
+			<p>
 			<div class="modal_btn">
 				<input type="submit" value="조회"> 
 			</div>

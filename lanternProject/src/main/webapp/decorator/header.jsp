@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="/lanternProject/css/header.css?1">
+<link rel="stylesheet" type="text/css" href="/lanternProject/css/header.css?c">
 <script type="text/javascript">
 	// nav active control
 	$(document).ready(function() { // window.onload보다 document.ready가 더 빠르고 안정적!
