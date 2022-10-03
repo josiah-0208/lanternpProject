@@ -11,7 +11,7 @@
 </style>
 <c:set var="member_no" value='${sessionScope.member_no}'></c:set>
 <link rel="stylesheet" type="text/css" href="../../css/common.css">
-<link rel="stylesheet" type="text/css" href="../../css/boardList.css">
+<link rel="stylesheet" type="text/css" href="../../css/boardList.css?2">
 <script type="text/javascript">
   //페이지 로드 시 board_list로 세팅, 페이지넘 색상 세팅
 	$(document).ready(function() {
@@ -119,27 +119,32 @@
 
 
 		<!-- 게시판 페이징 -->
-		<div align="center">
+		<div class="paging_box" align="center">
 			<!-- startPage가 PAGE_PER_BLOCK보다 크다면 앞에 보여줄 내용이 있는 것 -->
 			<c:if test="${startPage - PAGE_PER_BLOCK > 0 }">
-	
-				<button
-					onclick="location.href='boardList.en?pageNum=${startPage-1 }&filter=${filter }'">◀</button>
+				<div onclick="location.href='boardList.en?pageNum=${startPage-1 }&filter=${filter }'">
+					<img alt="이전" src="/lanternProject/images/left_arrow.png" style="width: 20px;">
+				</div>
 			</c:if>
-			<c:forEach var="i" begin="${startPage }" end="${endPage }">
-			
-				<!-- 숫자를 클릭하면 그 숫자에 해당하는 page를 출력한다 -->
-				<c:if test="${currentPage == i }">
-					<button onclick="location.href='boardList.en?pageNum=${i }&filter=${filter }'"
-						style="background: skyblue; color: black">${i }</button>					</c:if>
-				<c:if test="${currentPage != i }">
-					<button onclick="location.href='boardList.en?pageNum=${i }&filter=${filter }'">${i }</button>
-				</c:if>
+			<div style="display: flex; position: relative; margin: 2px; bottom: 6px;">
+				<c:forEach var="i" begin="${startPage }" end="${endPage }">
 				
-			</c:forEach>
+					<!-- 숫자를 클릭하면 그 숫자에 해당하는 page를 출력한다 -->
+					<c:if test="${currentPage == i }">
+						<div onclick="location.href='boardList.en?pageNum=${i }&filter=${filter }'"
+							style="color: #edbd16; margin: 3px;">${i }</div>
+					</c:if>
+					<c:if test="${currentPage != i }">
+						<div onclick="location.href='boardList.en?pageNum=${i }&filter=${filter }'"
+						style="margin: 3px;" >${i }</div>
+					</c:if>
+				</c:forEach>
+			</div>
 			<!-- endPage가 totalPage가 작다는 것은 아직 보여줄 것이 남아있는 것 -->
 			<c:if test="${endPage - totalPage < 0 }">
-				<button onclick="location.href='boardList.en?pageNum=${endPage+1 }&filter=${filter }'">▶</button>
+				<div onclick="location.href='boardList.en?pageNum=${endPage+1 }&filter=${filter }'">
+					<img alt="다음" src="/lanternProject/images/right_arrow.png" style="width: 20px;">
+				</div>
 			</c:if>
 		</div>
 </body>

@@ -28,13 +28,13 @@
 	
 	/* 글자색 반전 */
 	.title.active {
-		color: orange;
+		color: #edbd16;
 	}
 	
 	/* 지역선택 필터 아이콘 이미지 */
 	.filter {
 		position: absolute;
-		right: 200px;
+		right: 120px;
 	}
 	
 	/* main페이지 축제 썸네일 */
@@ -55,6 +55,16 @@
 		display: flex;
 		flex-direction: column;
 		/* background: orange; */
+	}
+	
+	.item_fname {
+		text-align: center;
+		margin: 10px;
+		font-size: 17px;
+	}
+	
+	.item_intro {
+		margin: 1px;
 	}
 	
 	.paging_box {

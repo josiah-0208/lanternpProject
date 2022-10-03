@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">@import url("/lanternProject/css/festView.css?3");</style>
-<style type="text/css">@import url("/lanternProject/css/common.css?1");</style>
+<style type="text/css">@import url("/lanternProject/css/festView.css?");</style>
+<style type="text/css">@import url("/lanternProject/css/common.css?");</style>
 <c:set var="id" value='${sessionScope.id}'></c:set>
 <script type="text/javascript" src="/lanternProject/js/jquery.js"></script>
 <script type="text/javascript">
@@ -68,14 +68,13 @@
 			<img src="/lanternProject/images/festival/${festival.thumbnail }" style="width:100%; height:100%;">
 		</div>
 		<p>
-		<div>
+		<div class="inform_bmk">
+			<div class="information">상세 정보</div>
 			<div class="bookmark1" onclick="bookmark()">
-				<img class="bm_img2" src="/lanternProject/images/bm2.png" style="width:100%; height:100%;"> 
-				<img class="bm_img1" src="/lanternProject/images/bm1.png" style="width:100%; height:100%;">
+						<img class="bm_img2" src="/lanternProject/images/bm2.png" style="width:100%; height:100%;"> 
+						<img class="bm_img1" src="/lanternProject/images/bm1.png" style="width:100%; height:100%;">
 			</div>
 		</div>
-		<p>
-		<div class="information">상세 정보</div>
 		<p>
 		<div class="top_content">
 			<div>
@@ -88,39 +87,37 @@
 				어린이: ${festival.fee_child }원 <br>
 				중고등학생: ${festival.fee_teen }원 <br>
 				성인: ${festival.fee_adult }원
-			</div><p><p>
-		</div>
-		<div class="f_txt_box">
-			<div class="f_txt_title">상세 설명</div><p>
-			
-			<div class="f_txt">
-				${festival.f_txt }
 			</div>
 		</div>
 		<p>
 		<div class="view_middle">
 			<div>
 				주최: ${festival.host }
-			</div><p>
+			</div>
+			<div class="addr">
+				주소 : ${festival.addr } 
+			</div>
 			<div class="tel">
 				전화번호 : ${festival.tel }
 			</div>
 			<div>
 				홈페이지 : ${festival.home_pg }	
 			</div>
-			<div class="addr">
-				주소 : ${festival.addr } 
-			</div>
-			
 		</div>
-	</div>
-</div>
+		<p>
+		<div class="f_txt" style="width: 85%;">
+				${festival.f_txt }
+		</div>
+		<p>
 		<div class="view_bottom">
 			<div class="view_update" onclick="location.href='festUpdateForm.so?fno=${festival.fno}'">수정
 			</div>
 			<div class="view_delete" onclick="location.href='festDelete.so?fno=${festival.fno}'">삭제
 			</div>
 		</div>
-	
+	</div>
+</div>
+
+
 </body>
 </html>
