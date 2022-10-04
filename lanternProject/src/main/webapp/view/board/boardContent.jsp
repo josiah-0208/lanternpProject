@@ -95,17 +95,17 @@
 		<div onclick="likes_updt()" class="like_clike_area">
 			<img class="likes_on" alt="채운하트" src="/lanternProject/images/orangeHt.png" width="30" height="30">
 			<img class="likes_off" alt="빈 하트" src="/lanternProject/images/transHt.png" width="30" height="30">
-			&nbsp;좋아요
+		<div class="likes_txt">&nbsp;좋아요</div>
 		</div>
 	</div>
 	<p>
 	
 	<div align="center">
 		<c:if test="${member_no==board.member_no }">
-		<button type="button" onclick="location.href='boardUpdateForm.en?review_no=${board.review_no}&pageNum=${pageNum }'">수정</button>
-		<button type="button" onclick="del()">삭제</button>
+		<button onclick="location.href='boardUpdateForm.en?review_no=${board.review_no}&pageNum=${pageNum }'">수정</button>
+		<button onclick="del()">삭제</button>
 		</c:if>
-		<button type="button" onclick="location.href='boardList.en?pageNum=${pageNum }'">목록</button>
+		<button onclick="location.href='boardList.en?pageNum=${pageNum }'">목록</button>
 	</div>
 
 	<!-- 댓글 -->

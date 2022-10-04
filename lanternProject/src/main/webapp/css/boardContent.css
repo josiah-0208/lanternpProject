@@ -2,6 +2,8 @@
 
 	/* 좋아요 버튼 */
 	.likes_btn {
+		position: relative;
+		left: 554px;
 		display: flex;
 		width: 330px;
 		justify-content: center;
@@ -10,6 +12,7 @@
 	.like_clike_area {
 		border: 1px solid white;
 		padding: 5px;
+		display: flex;
 	}
 	
 	.board_view {
@@ -32,6 +35,9 @@
 	
 	/* 댓글 작성 버튼 */
 	.submit {
+		position: relative;
+		left: 1120px;
+		bottom: 70px;
 		display: flex;
 		justify-content: center;
 	}
@@ -54,9 +60,7 @@
 		justify-content: center;
 	}
 	
-	button[type=button] {
-		border: 1px;
-		background-color: #39393D;
-		color: #edbd16;
-		font-size: 17px;
+	.likes_txt {
+		position: relative;
+		top: 3px;
 	}
