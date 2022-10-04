@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style type="text/css">@import url("/lanternProject/css/common.css?s");</style>
+<style type="text/css">@import url("/lanternProject/css/common.css?f");</style>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,7 +15,7 @@
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
                 
                                 
-        <link rel="stylesheet" href="../../css/updateForm.css?s" >
+        <link rel="stylesheet" href="../../css/updateForm.css?f" >
         
         <!-- Google JQuery CDN -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -38,14 +38,14 @@
 						<input type="submit" onclick="return false"/>
 						<input type="text"/>
 					</div>
-                    <div class="animated fadeIn">
-                        <h1 class="animated fadeInUp animate1" id="title-update">회원정보 수정</h1>
+                    <div class="animated fadeIn d12">
+                        <h2 class="animated fadeInUp animate1" id="title-update">회원정보 수정</h2>
                     </div>
 						<!-- 프로필 -->
-					<div class="profile">
-						<div id="image_container">
-							<img src="<%-- /semojeon/upload/${member.profile } --%>" alt="프로필사진">
-						</div>													<!-- 프로필 경로 설정 -->
+					<div class="profile animated fadeInUp animate2">
+						<div id="image_container" style="width:60px; height:60px; position:relative; top:40px; left:50px;">
+							<img src="/lanternProject/images/${member.profile }" alt="프로필사진" style="width:100%; height:100%">
+						</div>													
 							<label for="f4" class="file_profile"></label>
 							<input type="file" id="f4" name="profile" onchange="setProfile(event)" value="${member.profile}">
 					</div>

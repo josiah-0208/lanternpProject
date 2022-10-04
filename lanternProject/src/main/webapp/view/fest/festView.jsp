@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">@import url("/lanternProject/css/festView.css?");</style>
-<style type="text/css">@import url("/lanternProject/css/common.css?");</style>
+<style type="text/css">@import url("/lanternProject/css/festView.css?w");</style>
+<style type="text/css">@import url("/lanternProject/css/common.css?w");</style>
 <c:set var="id" value='${sessionScope.id}'></c:set>
 <script type="text/javascript" src="/lanternProject/js/jquery.js"></script>
 <script type="text/javascript">
@@ -105,15 +105,16 @@
 			</div>
 		</div>
 		<p>
+		<div><h4>상세 내용</h4></div>
 		<div class="f_txt" style="width: 85%;">
 				${festival.f_txt }
 		</div>
 		<p>
 		<div class="view_bottom">
-			<div class="view_update" onclick="location.href='festUpdateForm.so?fno=${festival.fno}'">수정
-			</div>
-			<div class="view_delete" onclick="location.href='festDelete.so?fno=${festival.fno}'">삭제
-			</div>
+			<button type="button" class="view_update" onclick="location.href='festUpdateForm.so?fno=${festival.fno}'">수정
+			</button>
+			<button type="button" class="view_delete" onclick="location.href='festDelete.so?fno=${festival.fno}'">삭제
+			</button>
 		</div>
 	</div>
 </div>

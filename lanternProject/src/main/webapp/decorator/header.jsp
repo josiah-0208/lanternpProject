@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="/lanternProject/css/header.css?c">
+<link rel="stylesheet" type="text/css" href="/lanternProject/css/header.css?f">
 <script type="text/javascript">
 	// nav active control
 	$(document).ready(function() { // window.onload보다 document.ready가 더 빠르고 안정적!
@@ -38,7 +38,9 @@
 	<header>
 		<div class='header'>
 			<div class='header_logo'>
-				<a href="/lanternProject/view/fest/festMain.so?tab=1"><img src=''></a>
+				<div class="icon1" onclick="location.href='/lanternProject/view/fest/festMain.so?tab=1'">
+					<img src="/lanternProject/images/lantern.png" style="width:100%; height:100%;">
+				</div> 
 			</div>
 			<div class='nav'>
 				<div class='nav_top'>
@@ -48,11 +50,11 @@
 					</c:if>
 					<c:if test="${not empty id }">
 						<c:if test="${id != 'master'}">
-							<div><a href="/lanternProject/view/member/logout.do">로그아웃</a></div>
+							<div class="g13"><a href="/lanternProject/view/member/logout.do">로그아웃</a></div>
 						</c:if>
 						<c:if test="${id == 'master'}">
-							<div><a href="/lanternProject/view/member/logout.do">로그아웃</a></div>
-							<div><a href="/lanternProject/view/master/masterMain.do">관리자페이지</a></div>
+							<div class="g12"><a href="/lanternProject/view/member/logout.do">로그아웃</a></div>
+							<div class="g12"><a href="/lanternProject/view/master/masterMain.do">관리자페이지</a></div>
 						</c:if>
 					</c:if>
 				</div>

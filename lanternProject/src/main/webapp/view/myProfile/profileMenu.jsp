@@ -11,10 +11,10 @@
 		<div class="profile">
 			<!-- Masthead Avatar Image-->
 			<c:if test="${empty member.profile }">
-			<img  src="assets/img/avataaars.svg" width="300" height="300">
+			<img  src="/lanternProject/images/user.png" width="300" height="300">
 			</c:if>
 			<c:if test="${not empty member.profile }">
-			<img  alt="프로필사진" src="/lanternProject/upload/${member.profile}" width="300" height="300">
+			<img  alt="프로필사진" src="/lanternProject/images/${member.profile}" width="300" height="300">
 			</c:if><br>
 			<p>안녕하세요 ${id }님!</p>
 		</div>&nbsp;

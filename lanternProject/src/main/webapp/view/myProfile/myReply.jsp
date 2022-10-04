@@ -42,20 +42,18 @@ article { background: pink; height: 400px; float: left; width: 80%; }
 		<div class="container-table">
 		<table>
 			<tr>
-				<th>글번호</th><th>글제목</th><th>내가 쓴 댓글</th>
+				<th>글번호</th><th>글제목</th><th>내가 쓴 댓글 (게시글로 이동)</th>
 			</tr>
 			<c:if test="${empty list} ">
 				<tr><th colspan="4">데이터가 존재하지 않습니다</th></tr>
 			</c:if>
 			<c:if test="${not empty list }">
 				<c:forEach var="board" items="${blist }">
-				<tr>	<td>${board.review_no} </td>
+				<tr style="text-align:center;">	<td>${board.review_no} </td>
 						<td> ${board.title }</td><td>
 								<c:forEach var="reply" items="${list }">
 									<c:if test="${reply.review_no==board.review_no }">
-										<img alt="" src="../../images/level.gif" height="5" width="10">
-										<img alt="" src="../../images/re.gif">
-										<a href="../board/boardUpdateForm.en?review_no=${board.review_no}">${reply.rp_content }</a><br>
+										<a href="../board/boardContent.en?review_no=${board.review_no}">${reply.rp_content }</a><br>
 									</c:if>
 								</c:forEach>
 						</td>
