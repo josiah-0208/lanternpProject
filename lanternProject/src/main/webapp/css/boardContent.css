@@ -53,3 +53,10 @@
 		display: flex;
 		justify-content: center;
 	}
+	
+	button[type=button] {
+		border: 1px;
+		background-color: #39393D;
+		color: #edbd16;
+		font-size: 17px;
+	}
