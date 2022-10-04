@@ -102,10 +102,10 @@
 	
 	<div align="center">
 		<c:if test="${member_no==board.member_no }">
-		<button onclick="location.href='boardUpdateForm.en?review_no=${board.review_no}&pageNum=${pageNum }'">수정</button>
-		<button onclick="del()">삭제</button>
+		<button type="button" onclick="location.href='boardUpdateForm.en?review_no=${board.review_no}&pageNum=${pageNum }'">수정</button>
+		<button type="button" onclick="del()">삭제</button>
 		</c:if>
-		<button onclick="location.href='boardList.en?pageNum=${pageNum }'">목록</button>
+		<button type="button" onclick="location.href='boardList.en?pageNum=${pageNum }'">목록</button>
 	</div>
 
 	<!-- 댓글 -->
