@@ -52,15 +52,15 @@ article { background: pink; height: 400px; float: left; width: 80%; }
 			<c:if test="${not empty list }">
 				<c:forEach var="board" items="${list }">
 					<tr>
-						<td>${board.review_no} </td>
-						<td>${board.member_no} </td>
-						<td>${board.title} </td>
-						<td>${board.reg_date} </td>
-						<td>${board.read_cnt} </td>
-						<td>${board.likes} </td>
-						<td>${board.del} </td>
-						<td><a href="../board/boardUpdateForm.en?review_no=${board.review_no}" class="btn btn_stroke btn_small">수정</a></td>
-						<td><a onclick="del(${board.review_no})" class="btn btn_small">삭제</a></td>
+						<td style="text-align:center;">${board.review_no} </td>
+						<td style="text-align:center;">${board.member_no} </td>
+						<td style="text-align:center;">${board.title} </td>
+						<td style="text-align:center;">${board.reg_date} </td>
+						<td style="text-align:center;">${board.read_cnt} </td>
+						<td style="text-align:center;">${board.likes} </td>
+						<td style="text-align:center;">${board.del} </td>
+						<td style="text-align:center;"><a href="../board/boardUpdateForm.en?review_no=${board.review_no}" class="btn btn_stroke btn_small">수정</a></td>
+						<td style="text-align:center;"><a onclick="del(${board.review_no})" class="btn btn_small">삭제</a></td>
 					</tr>
 				</c:forEach>
 			</c:if>		

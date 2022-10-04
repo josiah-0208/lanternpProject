@@ -9,10 +9,11 @@
 </head>
 <body>
 	<footer>
-		<div class="footer">
-			<img class="footer_logo" src=""">
-			<p>© 2022, lanterProject. All Rights Reserved.</p>
-		</div>
+		<div style="width: 100%; display:flex; justify-content:center;">
+			<div class="footer">
+				<p>© 2022, lanterProject. All Rights Reserved.</p>
+			</div>
+		</div>	
 	</footer>
 </body>
 </html>

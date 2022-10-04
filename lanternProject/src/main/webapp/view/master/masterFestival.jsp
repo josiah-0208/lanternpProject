@@ -23,7 +23,7 @@
 		
 		<div class="mng">
 			<a class="txt" href="festList.do">
-				<img id = "member_icon" alt="" src="../../images/document.png" width="300" height="300">축제정보 수정/삭제
+				<img id = "member_icon" alt="" src="/lanternProject/images/setting.png" width="300" height="300">축제정보 수정/삭제
 			</a>
 		</div>
 	</div>

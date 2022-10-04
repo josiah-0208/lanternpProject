@@ -14,6 +14,10 @@
 <body>
 <div class="container_middle">
 	<h1 class="title">관리자님 환영합니다</h1>
+	<h3 style="position:relative; left: 350px; bottom: 50px;">
+		<a href="/lanternProject/view/fest/festMain.so?tab=1">-메인으로</a>
+	</h3>
+	<p>
 	<div class="main">
 		<div class="mng">
 			<a class="txt" href="masterFestival.do">	

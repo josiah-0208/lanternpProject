@@ -8,8 +8,8 @@
 <title>Insert title here</title>
 <c:set var="member_no" value='${sessionScope.member_no}'></c:set>
 <c:set var="id" value='${sessionScope.id}'></c:set>
-<link rel="stylesheet" type="text/css" href="../../css/common.css">
-<link rel="stylesheet" type="text/css" href="../../css/boardContent.css?3">
+<link rel="stylesheet" type="text/css" href="../../css/common.css?f">
+<link rel="stylesheet" type="text/css" href="../../css/boardContent.css?f">
 <script type="text/javascript" src="/lanternProject/js/jquery.js"></script>
 <script type="text/javascript">
 
@@ -95,7 +95,8 @@
 		<div onclick="likes_updt()" class="like_clike_area">
 			<img class="likes_on" alt="채운하트" src="/lanternProject/images/orangeHt.png" width="30" height="30">
 			<img class="likes_off" alt="빈 하트" src="/lanternProject/images/transHt.png" width="30" height="30">
-		&nbsp;좋아요</div>
+		<div class="likes_txt">&nbsp;좋아요</div>
+		</div>
 	</div>
 	<p>
 	

@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">@import url("/lanternProject/css/festRegist.css?2");</style>
-<style type="text/css">@import url("/lanternProject/css/common.css?3");</style>
+<style type="text/css">@import url("/lanternProject/css/festRegist.css?w");</style>
+<style type="text/css">@import url("/lanternProject/css/common.css?w");</style>
 <script type="text/javascript" src="/lanternProject/js/jquery.js"></script>
 <script type="text/javascript">
 	$(function() {
@@ -179,8 +179,7 @@
 						상세 이미지
 					</div>
 					<div class="f_image">
-						<label for="f2">${festival.f_image }</label>
-						<input type="file" id="f2" name="f_image" required>
+						<input type="file" id="f2" name="f_image" required>${festival.f_image }
 					</div>
 				</div>
 				
