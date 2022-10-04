@@ -6,9 +6,9 @@
 		<pattern>/view/member/*</pattern>
 		<pattern>/view/myProfile/*</pattern>
 	</decorator>
-	<decorator name="decorator_master" page="view_master.jsp">
+	<!-- <decorator name="decorator_master" page="view_master.jsp">
 		<pattern>/view/master/*</pattern>   
-	</decorator>
+	</decorator> -->
 	<excludes>
 		<pattern>/view/fest/festHome.*</pattern>
 		<pattern>/view/member/dupChk.*</pattern>
