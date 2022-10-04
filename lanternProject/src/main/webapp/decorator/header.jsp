@@ -59,7 +59,7 @@
 				<div class='nav_bottom'>
 					<div><a href="/lanternProject/view/fest/festMain.so?tab=1" id="fest">축제</a></div>
 					<div><a href="/lanternProject/view/board/boardList.en" id="board">리뷰</a></div>
-					<div><a id="member" onclick="return ssChk('main')">마이페이지</a></div>
+					<div><a id="myProfile" onclick="return ssChk('main')">마이페이지</a></div>
 				</div>
 			</div>
 		</div>

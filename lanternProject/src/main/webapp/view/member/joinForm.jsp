@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
                 
                                 
-        <link rel="stylesheet" href="../../css/log_joinForm.css" >
+        <link rel="stylesheet" href="../../css/log_joinForm.css?a" >
         
         <!-- Google JQuery CDN -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -49,7 +49,7 @@
     <body>
         <div id="d1">
            <div class="panel shadow1" id="d2">
-                <form class="login-form" name="frm"action="joinResult.do" onsubmit="return chk()" method="post">
+                <form class="login-form" name="frm" action="joinResult.do" onsubmit="return chk()" method="post">
                     <div class="panel-switch animated fadeIn">
                         <button type="button" id="sign_up" class="" disabled>회원가입</button>
                         <button type="button" id="log_in" class="active-button" onclick="location.href='loginForm.do'">로그인</button>
@@ -61,9 +61,9 @@
 						<div class="chk-msg" id="err"></div>
                         <input class="login animated fadeInUp animate3" name="password" type="password" placeholder="비밀번호"  required  value="" id="pw">
                         <input class="login animated fadeInUp animate3" name="passwordchk" type="password" placeholder="비밀번호 확인"  required  value="" id="pwChk">
-                        <input class="login animated fadeInUp animate4" name="name" type="text" placeholder="성명"  required  value="">
+                        <input class="login animated fadeInUp animate4" id="f1" name="name" type="text" placeholder="성명"  required  value="">
                         <input class="login animated fadeInUp animate5" name="email" type="email" placeholder="E-mail"  required  value="">
-                        <input class="login animated fadeInUp animate6" type="tel" name="phone" required="required"placeholder="010-0000-0000" pattern="010-\d{3,4}-\d{4}" title="형식 010-1111-1111">
+                        <input class="login animated fadeInUp animate6" id="f2" type="tel" name="phone" required="required"placeholder="010-0000-0000" pattern="010-\d{3,4}-\d{4}" title="형식 010-1111-1111">
                     </fieldset>
                     <input type="submit" id="signup-form-submit" class="login_form button animated fadeInUp animate7" value="Sign up">
                     <p><a id="lost-password-link" onclick="forgotPopup()" class="animated fadeIn animate7">아이디나 비밀번호를 잊어버리셨나요?</a></p>

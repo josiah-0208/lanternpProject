@@ -22,3 +22,20 @@
 		flex-direction: column;
 		align-content: space-evenly;
 	}
+	
+	.content2 {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.thumbnail_box {
+		width: 130px;
+		height: 180px;
+	}
+	
+	.boomarkOb {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 21%;
+	}

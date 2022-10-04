@@ -7,8 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">@import url("/lanternProject/css/profileMenu.css?1");</style>
-<style type="text/css">@import url("/lanternProject/css/common.css?2");</style>
+<style type="text/css">@import url("/lanternProject/css/profileMenu.css?a");</style>
+<style type="text/css">@import url("/lanternProject/css/common.css?a");</style>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#myBookmarkList .dot").css("display", "block");
@@ -33,31 +33,28 @@ article { background: pink; height: 400px; float: left; width: 80%; }
 		<nav><jsp:include page="profileMenu.jsp"></jsp:include></nav>
 		<article>
 		<!-- 내용 -->
-		<div class="content">
+		<div class="content1">
 			<c:if test="${list.size() == 0}">
 				<ul class="noItems">
 					<li><span class="txt_title">북마크한 축제가 없습니다.</span></li>
 				</ul>
 			</c:if>
 			<c:if test="${list.size() != 0}">
-				<h3>북마크한 축제 ${total}</h3>
-				<ul>
+				<div style="position:relative; left:30px;"><h3>북마크한 축제 - ${total}개</h3></div>
+				<br>
+				<div class="content2">
 					<c:forEach var="fest" items="${flist}">
-						<li>
-							<a href="../fest/festView.so?fno=${fest.fno}">
-								<img alt="포스터" src="/lanternProject/images/festival/${fest.thumbnail}"> 
-							</a>
-							<br>
-							<a href="../fest/festView.so?fno=${fest.fno}">${fest.fname }</a>
-							<a href="../fest/festView.so?fno=${fest.fno}" class="cursor">
-									<span class="txt_title"></span>
-									<span class="txt"><span>장소</span>${fest.spot } </span>
-									<span class="txt"><span>기간</span>${fest.start_date }~${fest.end_date } </span>
-							</a>
-						</li>
+						<div class="boomarkOb">
+							<div class="thumbnail_box" onclick="location.href='../fest/festView.so?fno=${fest.fno}'">
+									<img alt="포스터" src="/lanternProject/images/festival/${fest.thumbnail}" style="width: 100%; height: 100%;"> 
+							</div>
+							<div>${fest.fname }</div>
+							<div>${fest.spot }</div>
+							<div>${fest.start_date }~${fest.end_date }</div>
+						</div>
 					</c:forEach>
-				</ul>
-			</c:if>
+				</div>
+		</c:if>
 		</div>
 
 		<!-- paging -->
