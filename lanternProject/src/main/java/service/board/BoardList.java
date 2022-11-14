@@ -47,7 +47,7 @@ public class BoardList implements CommandProcess {
 		if (endPage > totalPage)
 			endPage = totalPage;
 		
-		// 데이터를 담을 객체 생성
+		// 데이터를 담을 객체 생성dd
 		List<Board> list = bd.list(startRow, endRow);		
 		List<Member> mlist = new ArrayList<>();
 		MemberDao md = MemberDao.getInstance();
